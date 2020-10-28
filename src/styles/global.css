@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.btn {
+    background-color: #F49725;
+    color: white;
+    flex-direction: row;
+    padding: 8px;
+    align-items: center;
+}

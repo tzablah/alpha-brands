@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import BackGroundImage from "gatsby-background-image"
 import { graphql } from "gatsby"
 export default function Home({ data }) {
@@ -8,14 +7,7 @@ export default function Home({ data }) {
   return (
     <div className="">
       <Layout>
-        {/* <div>
-          <h1>im back y no soy espalda</h1>
-          <Image
-            filename="gatsby-astronaut.png"
-            alt="astronauta"
-            className="w-full"
-          />
-        </div> */}
+        
         <BackGroundImage
           className="relative h-screen w-screen flex flex-col justify-center items-center "
           fluid={data.heroImage.childImageSharp.fluid}
