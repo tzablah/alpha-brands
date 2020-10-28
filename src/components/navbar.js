@@ -1,5 +1,5 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 const Navbar = () => {
   return (
     <div>
@@ -33,13 +33,13 @@ const Navbar = () => {
         <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
           <div className="text-sm lg:flex-grow">
             <Link
-              href="/"
+              to="/"
               className="block mt-4 lg:inline-block lg:mt-0 text-red-500 hover:text-white mr-4"
             >
               Examples
             </Link>
             <Link
-              href="/"
+              to="/"
               className="block mt-4 lg:inline-block lg:mt-0 text-red-500 hover:text-white"
             >
               Blog
@@ -47,7 +47,7 @@ const Navbar = () => {
           </div>
           <div>
             <Link
-              href="/"
+              to="/"
               className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
             >
               Download
@@ -56,7 +56,7 @@ const Navbar = () => {
         </div>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

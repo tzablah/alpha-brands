@@ -1,0 +1,4 @@
+para convertir los px de figma a rem de tailwind
+
+https://nekocalc.com/es/px-a-rem-conversor
+

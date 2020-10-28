@@ -1,21 +1,13 @@
-import React from "react"
-import Layout from "../components/layout"
-import Image from "../components/image"
-import BackGroundImage from "gatsby-background-image"
-import { graphql } from "gatsby"
+import React from "react";
+import Layout from "../components/layout";
+import InfoSection from "../components/infosection";
+import BackGroundImage from "gatsby-background-image";
+import { graphql } from "gatsby";
 export default function Home({ data }) {
-  console.log(data, "hola banda")
+  console.log(data, "hola banda");
   return (
     <div className="">
       <Layout>
-        {/* <div>
-          <h1>im back y no soy espalda</h1>
-          <Image
-            filename="gatsby-astronaut.png"
-            alt="astronauta"
-            className="w-full"
-          />
-        </div> */}
         <BackGroundImage
           className="relative h-screen w-screen flex flex-col justify-center items-center "
           fluid={data.heroImage.childImageSharp.fluid}
@@ -43,9 +35,28 @@ export default function Home({ data }) {
             </button>
           </div>
         </BackGroundImage>
+        <InfoSection
+          title="NOSOTROS"
+          image={data.heroImage}
+          position="right"
+          text="AlphaBrands es una compañía de confianza, basada en El Salvador, que se enfoca en desarrollar diversas marcas privadas en Latinoámerica."
+        />
+        <InfoSection
+          title="NUESTRO OBJETIVO"
+          image={data.heroImage}
+          position="left"
+          text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
+        />
+        <InfoSection
+          title="DÓNDE ESTAMOS"
+          image={data.heroImage}
+          position="right"
+          text="Actualmente vendemos a distribuidores en 
+          El Salvador, Honduras, Guatemala y Costa Rica."
+        />
       </Layout>
     </div>
-  )
+  );
 }
 
 export const hero = graphql`
@@ -54,8 +65,9 @@ export const hero = graphql`
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
+          originalName
         }
       }
     }
   }
-`
+`;
