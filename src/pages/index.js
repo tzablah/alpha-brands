@@ -4,7 +4,7 @@ import InfoSection from "../components/infosection";
 import BackGroundImage from "gatsby-background-image";
 import { graphql } from "gatsby";
 export default function Home({ data }) {
-  console.log(data, "hola banda");
+  
   return (
     <div className="">
       <Layout>

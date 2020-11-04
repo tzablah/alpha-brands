@@ -1,55 +1,71 @@
-import React from "react"
+import React, {useState} from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import {Link} from 'gatsby'
+import downloadIcon from '../assets/download-icon.svg'
 
-
-var navbar = document.querySelector(".navbar")
-var ham = document.querySelector(".ham")
-
-// toggles hamburger menu in and out when clicking on the hamburger
-function toggleHamburger(){
-  navbar.classList.toggle("showNav")
-  ham.classList.toggle("showClose")
-}
-
-ham.addEventListener("click", toggleHamburger)
-
-// toggle when clicking on links
-
-// METHOD 1
-var menuLinks = document.querySelectorAll(".menuLink")
-menuLinks.forEach( 
-  function(menuLink) { 
-    menuLink.addEventListener("click", toggleHamburger) 
-  }
-)
 
 const Navbar = () => {
+  const [open, toggleMenu] = useState(false);
 
-  return (
-    <>
-      <div class='w-1/2 flex-row justify-between  hidden md:flex'>
-        <p>
-          <AnchorLink to='/#brands'> Nuestra Marcas</AnchorLink>
-        </p>
-        <p>
-          <AnchorLink to="/#aboutus">Conózcanos</AnchorLink>
-        </p>
-        <p>
-          <AnchorLink to="/#contacto">Contacto</AnchorLink>
-        </p>
+  const mobileNav = () => (
+        <div className={`${open ? 'flex' : 'hidden'}`}>
+          <button className='showClose' onClick={ () => {toggleMenu(!open);}}></button>
+          <nav className="navbar">
+            <ul>
+              <li><Link className="menuLink" to="/">Nuestras Marcas</Link></li>
+              <li><Link className="menuLink" to="/">Conózcanos</Link></li>
+              <li><Link className="menuLink" to="/">Contacto</Link></li>
+              <li><button className='w-4/5 btn flex justify-center'>CATÁLOGO
+                <img className='ml-3' src={downloadIcon} alt='download'/>
+            </button>
+            </li>
+            </ul>
+            
+          </nav>
+        </div>
+  )
+
+    return (
+      <>
+          <button 
+              onClick={ () => {toggleMenu(!open);}}
+              className={`${open ? 'hidden' : 'md:hidden ham'}`}
+            >
+            </button> 
+            {open ? (
+          mobileNav()
+        ) : ( 
+        <div className="md:w-2/4 flex justify-center relative">
+          <div
+            className={`${
+              open ? "block" : "hidden"
+            } px-2 pt-2 pb-4" sm:flex sm:p-0 w-full justify-between`}
+          >
+            <AnchorLink
+              to="#about"
+              className=""
+            >
+              Nuestras Marcas
+            </AnchorLink>
+            <AnchorLink
+              to="#nuestras-marcas"
+              className=""
+            >
+              Conózcanos
+            </AnchorLink>
+            <AnchorLink
+              to="#contacto"
+              className=""
+            >
+              Contacto
+            </AnchorLink>
+          </div>
+        
       </div>
-      <div class='flex md:hidden'>
-        <button class="ham"></button>
-        <nav class="navbar">
-          <ul>
-            <li><a class="menuLink" href="/">Nuestras Marcas</a></li>
-            <li><a class="menuLink" href="/">Conózcanos</a></li>
-            <li><a class="menuLink" href="/">Contacto</a></li>
-          </ul>
-        </nav>
-      </div>
-    </>
-  );
+      )}
+    
+      </>
+    );
 };
 
 
