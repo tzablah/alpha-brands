@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import phoneImg from "../images/phone.svg";
 import mailImg from "../images/mail.svg";
+import Title from "../components/title"
 
 const ContactSection = () => {
   const [form, setForm] = useState({});
@@ -20,25 +21,22 @@ const ContactSection = () => {
   return (
     <section className="bg-gray px-4 min-h-screen">
       <div className="container mx-auto py-16 text-center">
-        <p
-          className={`text-3xl font-bold text-title ${
-            send ? "tracking-wider mt-40" : "tracking-widest"
-          }`}
-        >
-          {send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
-        </p>
+        <Title
+          text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
+          className={send && "tracking-wider mt-40"}
+        />
         {send ? (
           <p className="text-base my-6">
             Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
             pronto posible.
           </p>
         ) : (
-          <p className="text-base my-6">
-            Si te interesa saber más de nuestras marcas y sus productos,
-            <br className="hidden sm:block" />
+            <p className="text-base my-6">
+              Si te interesa saber más de nuestras marcas y sus productos,
+              <br className="hidden sm:block" />
             ¡no dudes en contactarnos!
-          </p>
-        )}
+            </p>
+          )}
         <ul className="flex justify-center items-center flex-col md:flex-row">
           <li className="flex items-center my-2 sm:my-0">
             {/*             <img className="mr-3" src={phoneImg} />
@@ -52,9 +50,8 @@ const ContactSection = () => {
           </li>
         </ul>
         <div
-          className={`flex flex-col items-center mt-6 sm:mt-12 ${
-            send && "hidden"
-          }`}
+          className={`flex flex-col items-center mt-6 sm:mt-12 ${send && "hidden"
+            }`}
         >
           <input
             className="w-11/12 md:w-3/5 lg:w-2/5 h-12 my-3 p-4"
@@ -76,9 +73,8 @@ const ContactSection = () => {
             onChange={handleInputs}
           />
           <button
-            className={`mt-6 sm:mt-12 bg-blue2 w-64 h-12 rounded-full text-white tracking-widest font-semibold ${
-              !valid && "opacity-50 cursor-not-allowed"
-            }`}
+            className={`mt-6 sm:mt-12 bg-blue2 w-64 h-12 rounded-full text-white tracking-widest font-semibold ${!valid && "opacity-50 cursor-not-allowed"
+              }`}
             disabled={!valid}
             onClick={() => setSend(true)}
           >

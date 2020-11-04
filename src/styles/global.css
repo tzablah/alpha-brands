@@ -87,3 +87,15 @@
 .navbar ul li a:hover, .navbar ul li a:focus {
   border-bottom: 2px solid white;
 }
+
+.img-size {
+  width: 18rem;
+  height: 18rem;
+}
+
+@media (max-width: 639px) {
+  .img-size {
+    width: 14rem;
+    height: 14rem;
+  }
+}

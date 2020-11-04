@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
+import BrandsSection from "../components/brandssection"
 import ContactSection from "../components/contactsection";
 import InfoSection from "../components/infosection";
 import BackGroundImage from "gatsby-background-image";
@@ -10,32 +11,18 @@ export default function Home({ data }) {
     <div className="">
       <Layout>
         <BackGroundImage
-          className="relative h-screen w-screen flex flex-col justify-center items-center "
+          className="w-screen flex flex-col justify-center items-center py-24 sm:py-40 lg:py-56"
           fluid={data.heroImage.childImageSharp.fluid}
         >
-          <div
-            data-aos="zoom-in"
-            className="py-3 px-3 w-10/12 absolute b-solid border-4
-             border-green-500  flex flex-col justify-center 
-             items-center  shadow-md
-             sm:max-w-lg 
-             md:max-w-2xl
-             lg:max-w-2xl
-             xl:max-w-5xl
-             "
-          >
-            <h1 className="text-center text-4xl font-bold mt-3 mb-3">
-              Codice liber, Omnes in Codice
+          <h1 className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-widest">
+            MARCAS INNOVADORAS DE LATINOÁMERICA
             </h1>
-            <h3 className="xl:text-4xl lg:text-4xl tracking-wide  px-3 py-3 text-purplelight text-center text-3xl font-bold  leading-relaxed  mt-3 mb-3">
-              Witchcraft & Magic for developers
-            </h3>
-            <button className="px-4 bg-orange-500 rounded-xl w-24 h-12">
-              Go now
+          <button className="px-4 bg-orange-500 rounded-xl w-24 h-12">
+            Go now
             </button>
-          </div>
         </BackGroundImage>
-        <div className="container mx-auto">
+        <BrandsSection />
+        <section className="container mx-auto">
           <InfoSection
             title="NOSOTROS"
             image={data.heroImage}
@@ -55,7 +42,7 @@ export default function Home({ data }) {
             text="Actualmente vendemos a distribuidores en 
           El Salvador, Honduras, Guatemala y Costa Rica."
           />
-        </div>
+        </section>
         <ContactSection />
       </Layout>
     </div>
