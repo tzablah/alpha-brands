@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from "../components/layout";
+import ContactSection from '../components/contactsection'
 import InfoSection from "../components/infosection";
 import BackGroundImage from "gatsby-background-image";
 import { graphql } from "gatsby";
+
 export default function Home({ data }) {
-  console.log(data, "hola banda");
   return (
     <div className="">
       <Layout>
@@ -24,36 +25,38 @@ export default function Home({ data }) {
              "
           >
             <h1 className="text-center text-4xl font-bold mt-3 mb-3">
-              {" "}
               Codice liber, Omnes in Codice
             </h1>
             <h3 className="xl:text-4xl lg:text-4xl tracking-wide  px-3 py-3 text-purplelight text-center text-3xl font-bold  leading-relaxed  mt-3 mb-3">
               Witchcraft & Magic for developers
             </h3>
             <button className="px-4 bg-orange-500 rounded-xl w-24 h-12">
-              Go now{" "}
+              Go now
             </button>
           </div>
         </BackGroundImage>
-        <InfoSection
-          title="NOSOTROS"
-          image={data.heroImage}
-          position="right"
-          text="AlphaBrands es una compañía de confianza, basada en El Salvador, que se enfoca en desarrollar diversas marcas privadas en Latinoámerica."
-        />
-        <InfoSection
-          title="NUESTRO OBJETIVO"
-          image={data.heroImage}
-          position="left"
-          text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
-        />
-        <InfoSection
-          title="DÓNDE ESTAMOS"
-          image={data.heroImage}
-          position="right"
-          text="Actualmente vendemos a distribuidores en 
+        <div className="container mx-auto">
+          <InfoSection
+            title="NOSOTROS"
+            image={data.heroImage}
+            position="right"
+            text="AlphaBrands es una compañía de confianza, basada en El Salvador, que se enfoca en desarrollar diversas marcas privadas en Latinoámerica."
+          />
+          <InfoSection
+            title="NUESTRO OBJETIVO"
+            image={data.heroImage}
+            position="left"
+            text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
+          />
+          <InfoSection
+            title="DÓNDE ESTAMOS"
+            image={data.heroImage}
+            position="right"
+            text="Actualmente vendemos a distribuidores en 
           El Salvador, Honduras, Guatemala y Costa Rica."
-        />
+          />
+        </div>
+        <ContactSection />
       </Layout>
     </div>
   );
