@@ -1,14 +1,15 @@
-import React from "react"
-import Navbar from "./navbar"
-import Footer from "./footer"
+import React from "react";
+import Footer from "./footer";
+import Header from "./header";
+
 const Layout = ({ children }) => {
   return (
     <div className="text-content">
-      <Navbar />
+      <Header />
       {children}
-      <Footer />
+      <Footer></Footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

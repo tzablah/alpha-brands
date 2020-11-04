@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-import ContactSection from '../components/contactsection'
+import ContactSection from "../components/contactsection";
 import InfoSection from "../components/infosection";
 import BackGroundImage from "gatsby-background-image";
 import { graphql } from "gatsby";

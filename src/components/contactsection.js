@@ -1,18 +1,18 @@
-import React, { useState } from "react"
-import phoneImg from "../images/phone.svg"
-import mailImg from "../images/mail.svg"
+import React, { useState } from "react";
+import phoneImg from "../images/phone.svg";
+import mailImg from "../images/mail.svg";
 
 const ContactSection = () => {
   const [form, setForm] = useState({});
-  const [send, setSend] = useState(false)
-  const valid = Object.values(form).length === 3
+  const [send, setSend] = useState(false);
+  const valid = Object.values(form).length === 3;
 
-  const handleInputs = e => {
+  const handleInputs = (e) => {
     e.persist();
-    setForm(prevState => {
+    setForm((prevState) => {
       return {
         ...prevState,
-        [e.target.name]: e.target.value
+        [e.target.name]: e.target.value,
       };
     });
   };
@@ -20,29 +20,42 @@ const ContactSection = () => {
   return (
     <section className="bg-gray px-4 min-h-screen">
       <div className="container mx-auto py-16 text-center">
-        <p className={`text-3xl font-bold text-title ${send ? "tracking-wider mt-40" : "tracking-widest"}`}>
+        <p
+          className={`text-3xl font-bold text-title ${
+            send ? "tracking-wider mt-40" : "tracking-widest"
+          }`}
+        >
           {send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
         </p>
-        {send ?
+        {send ? (
           <p className="text-base my-6">
-            Gracias por tomar el tiempo de escribirnos. Te responderemos lo más pronto posible.
-          </p> :
+            Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
+            pronto posible.
+          </p>
+        ) : (
           <p className="text-base my-6">
             Si te interesa saber más de nuestras marcas y sus productos,
-            <br className="hidden sm:block" />¡no dudes en contactarnos!
+            <br className="hidden sm:block" />
+            ¡no dudes en contactarnos!
           </p>
-        }
+        )}
         <ul className="flex justify-center items-center flex-col md:flex-row">
           <li className="flex items-center my-2 sm:my-0">
-            <img className="mr-3" src={phoneImg} />
+            {/*             <img className="mr-3" src={phoneImg} />
+             */}{" "}
             <p>123-456-7890</p>
           </li>
           <li className="flex items-center my-2 sm:my-0 md:ml-10">
-            <img className="mr-3" src={mailImg} />
+            {/*             <img className="mr-3" src={mailImg} />
+             */}{" "}
             <p>info@alphabrands.com</p>
           </li>
         </ul>
-        <div className={`flex flex-col items-center mt-6 sm:mt-12 ${send && "hidden"}`}>
+        <div
+          className={`flex flex-col items-center mt-6 sm:mt-12 ${
+            send && "hidden"
+          }`}
+        >
           <input
             className="w-11/12 md:w-3/5 lg:w-2/5 h-12 my-3 p-4"
             placeholder="Nombre"
@@ -61,18 +74,20 @@ const ContactSection = () => {
             placeholder="Mensaje..."
             name="Mensaje"
             onChange={handleInputs}
-
           />
           <button
-            className={`mt-6 sm:mt-12 bg-blue2 w-64 h-12 rounded-full text-white tracking-widest font-semibold ${!valid && "opacity-50 cursor-not-allowed"}`}
+            className={`mt-6 sm:mt-12 bg-blue2 w-64 h-12 rounded-full text-white tracking-widest font-semibold ${
+              !valid && "opacity-50 cursor-not-allowed"
+            }`}
             disabled={!valid}
-            onClick={() => setSend(true)}>
+            onClick={() => setSend(true)}
+          >
             MANDAR MENSAJE
           </button>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ContactSection
+export default ContactSection;
