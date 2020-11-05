@@ -4,19 +4,18 @@ import Navbar from './navbar'
 
 import textLogo from "../assets/text-logo.png";
 import downloadIcon from '../assets/download-icon.svg'
+import PrimaryButton from "./primary-button";
 
 
 const Header = () => (
     <div>
-      <header class='bg-white w-full'>
-        <div class='flex flex-row items-center justify-between'>
-          <Link className='ml-3' to="/">
-            <img src={textLogo} alt="Alpha Brands Logo" />
+      <header className='bg-white h-20'>
+        <div className='flex flex-row items-center justify-between w-full h-full'>
+          <Link className='ml-8' to="/">
+            <img className='w-3/4 md:w-full' src={textLogo} alt="Alpha Brands Logo" />
           </Link>
           <Navbar />
-          <button className='mr-3 btn hidden md:flex'>CATÁLOGO
-              <img className='ml-3' src={downloadIcon} alt='download'/>
-          </button>
+          <PrimaryButton title='Catálogo' icon={downloadIcon}/>
         </div>
       </header>
     </div>

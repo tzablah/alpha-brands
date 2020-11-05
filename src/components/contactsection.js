@@ -19,7 +19,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="bg-gray px-4 min-h-screen">
+    <section id='contacto' className="bg-gray px-4 min-h-screen">
       <div className="container mx-auto py-16 text-center">
         <Title
           text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}

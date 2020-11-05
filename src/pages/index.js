@@ -22,7 +22,7 @@ export default function Home({ data }) {
             </button>
         </BackGroundImage>
         <BrandsSection />
-        <section className="container mx-auto">
+        <section id='nosotros' className="container mx-auto">
           <InfoSection
             title="NOSOTROS"
             image={data.heroImage}

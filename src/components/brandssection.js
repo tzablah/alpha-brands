@@ -4,7 +4,7 @@ import Title from "./title";
 const BrandsSection = () => {
 
   return (
-    <section className="px-4">
+    <section id='marcas' className="px-4">
       <div className="container mx-auto py-16">
         <Title text="NUESTRAS MARCAS" />
       </div>
