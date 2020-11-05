@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+button {
+  outline: none !important;
+}
 
 .btn {
     background-color: #F49725;
@@ -9,83 +12,6 @@
     flex-direction: row;
     padding: 8px;
     align-items: center;
-}
-
-.ham {
-  position: absolute;
-  /* always keep ham on top of everything */
-  z-index: 1000;
-  right: 20px;
-  width: 36px;
-  height: 36px;
-  border: none;
-  cursor: pointer;
-  background-color: transparent;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px'%0Awidth='24' height='24'%0AviewBox='0 0 172 172'%0Astyle=' fill:%23000000;'%3E%3Cg fill='none' fill-rule='nonzero' stroke='none' stroke-width='1' stroke-linecap='butt' stroke-linejoin='miter' stroke-miterlimit='10' stroke-dasharray='' stroke-dashoffset='0' font-family='none' font-weight='none' font-size='none' text-anchor='none' style='mix-blend-mode: normal'%3E%3Cpath d='M0,172v-172h172v172z' fill='none'%3E%3C/path%3E%3Cg fill='%233498db'%3E%3Cpath d='M21.5,35.83333c-2.58456,-0.03655 -4.98858,1.32136 -6.29153,3.55376c-1.30295,2.2324 -1.30295,4.99342 0,7.22582c1.30295,2.2324 3.70697,3.59031 6.29153,3.55376h129c2.58456,0.03655 4.98858,-1.32136 6.29153,-3.55376c1.30295,-2.2324 1.30295,-4.99342 0,-7.22582c-1.30295,-2.2324 -3.70697,-3.59031 -6.29153,-3.55376zM21.5,78.83333c-2.58456,-0.03655 -4.98858,1.32136 -6.29153,3.55376c-1.30295,2.2324 -1.30295,4.99342 0,7.22582c1.30295,2.2324 3.70697,3.59031 6.29153,3.55376h129c2.58456,0.03655 4.98858,-1.32136 6.29153,-3.55376c1.30295,-2.2324 1.30295,-4.99342 0,-7.22582c-1.30295,-2.2324 -3.70697,-3.59031 -6.29153,-3.55376zM21.5,121.83333c-2.58456,-0.03655 -4.98858,1.32136 -6.29153,3.55376c-1.30295,2.2324 -1.30295,4.99342 0,7.22582c1.30295,2.2324 3.70697,3.59031 6.29153,3.55376h129c2.58456,0.03655 4.98858,-1.32136 6.29153,-3.55376c1.30295,-2.2324 1.30295,-4.99342 0,-7.22582c-1.30295,-2.2324 -3.70697,-3.59031 -6.29153,-3.55376z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-size: 100%;
-}
-
-
-/* change ham image to close */
-.showClose {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px'%0Awidth='26' height='26'%0AviewBox='0 0 172 172'%0Astyle=' fill:%23000000;'%3E%3Cg fill='none' fill-rule='nonzero' stroke='none' stroke-width='1' stroke-linecap='butt' stroke-linejoin='miter' stroke-miterlimit='10' stroke-dasharray='' stroke-dashoffset='0' font-family='none' font-weight='none' font-size='none' text-anchor='none' style='mix-blend-mode: normal'%3E%3Cpath d='M0,172v-172h172v172z' fill='none'%3E%3C/path%3E%3Cg fill='%233498db'%3E%3Cpath d='M143.78125,129.93029l-13.8768,13.85096c-2.53246,2.55829 -6.66707,2.55829 -9.22536,0l-34.67909,-34.65324l-34.65324,34.65324c-2.55829,2.55829 -6.71875,2.55829 -9.25121,0l-13.8768,-13.85096c-2.55829,-2.55829 -2.55829,-6.69291 0,-9.2512l34.65324,-34.67909l-34.65324,-34.65324c-2.53245,-2.58413 -2.53245,-6.74459 0,-9.25121l13.8768,-13.8768c2.53246,-2.55829 6.69291,-2.55829 9.25121,0l34.65324,34.67909l34.67909,-34.67909c2.55829,-2.55829 6.71875,-2.55829 9.22536,0l13.8768,13.85096c2.55829,2.55829 2.55829,6.71875 0.02584,9.27704l-34.67908,34.65324l34.65324,34.67909c2.55829,2.55829 2.55829,6.6929 0,9.2512z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 1000;
-  width: 36px;
-  height: 36px;
-  position: relative;
-  right: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.navbar {
-  position: absolute;
-  height: 97vh;
-  width: 65vw;
-  top: 0;
-  right: 0;
-  background: white;
-  z-index: 999;
-  overflow: hidden;
-  color: black;
-  /* transition adds a little animation when sliding in and out the menu */
-  transition: transform 0.2s ease;
-}
-
-
-.showNav {
-  /* show the menu */
-  transform: translateY(0);
-}
-
-/* basic nav styling below */
-
-.navbar ul {
-  width: 100%;
-  height: 100%;
-  list-style: none;
-  display: flex;
-  margin-left: 20px;
-  flex-direction: column;
-  text-transform: uppercase;
-}
-
-.navbar ul li {
-  margin-bottom: 10px;
-  margin-top: 60px;
-}
-
-.navbar ul li a {
-  color: rgb(0,0,0,0.55);
-  text-decoration: none;
-  font-size: 1.2rem;
-  
-}
-
-.navbar ul li a:hover, .navbar ul li a:focus {
-  border-bottom: 2px solid white;
 }
 
 .img-size {
