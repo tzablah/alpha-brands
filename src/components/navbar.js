@@ -16,7 +16,7 @@ const Navbar = () => {
               <li><Link className="menuLink" to="/">Nuestras Marcas</Link></li>
               <li><Link className="menuLink" to="/">Conózcanos</Link></li>
               <li><AnchorLink className="menuLink" to="/#contacto">Contacto</AnchorLink></li>
-              <li>
+              <li className='md:ml-16'>
               <PrimaryButton id='sideBarButton' title='Catálogo' icon={downloadIcon}/>
               </li>
             </ul>
