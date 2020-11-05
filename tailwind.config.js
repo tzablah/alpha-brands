@@ -11,9 +11,9 @@ module.exports = {
         blue2: "#3380CC",
         orange1: "#F49725",
         orange2: "#EC8A13",
-        gray: "rgba(231, 238, 249, 0.3)",
+        gray: "#F6F7F9",
         title: "rgba(0, 0, 0, 0.77)",
-        content: "rgba(0, 0, 0, 0.65)"
+        content: "rgba(0, 0, 0, 0.65)",
       },
     },
   },
