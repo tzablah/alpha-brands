@@ -3,7 +3,7 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: [false],
   theme: {
     extend: {
       colors: {
@@ -15,7 +15,7 @@ module.exports = {
         gray: "#F6F7F9",
         title: "rgba(0, 0, 0, 0.77)",
         content: "rgba(0, 0, 0, 0.65)",
-        lightBlue: "rgba(51,128,204,0.07)"
+        lightBlue: "rgba(51,128,204,0.07)",
       },
     },
   },
