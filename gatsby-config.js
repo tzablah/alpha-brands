@@ -12,13 +12,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-anchor-links",
       options: {
-        offset: -100
-      }
+        offset: -100,
+      },
     },
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require("tailwindcss")],
+        postCssPlugins: [require("tailwindcss"), require("autoprefixer")],
       },
     },
     {
@@ -37,4 +37,4 @@ module.exports = {
       },
     },
   ],
-}
+};

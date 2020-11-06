@@ -3,7 +3,8 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: [false],
+  purge: ["./src/**/*.js"],
+  target: "relaxed",
   theme: {
     extend: {
       colors: {
