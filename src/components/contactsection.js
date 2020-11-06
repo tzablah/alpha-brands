@@ -65,7 +65,8 @@ const ContactSection = () => {
             onChange={handleInputs}
           />
           <button
-            className={`mt-6 sm:mt-12 bg-blue2 w-64 h-12 rounded-full text-white tracking-widest font-semibold ${!valid && "opacity-50 cursor-not-allowed"}`}
+            className={`mt-6 sm:mt-12 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold hover:bg-blue
+             ${!valid && "opacity-50 cursor-not-allowed"}`}
             disabled={!valid}
             onClick={() => setSend(true)}
           >

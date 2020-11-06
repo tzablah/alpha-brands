@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import BackGroundImage from "gatsby-background-image";
 import BrandsSection from "../components/brandssection"
+import Catalog from "../components/catalog"
 import ContactSection from "../components/contactsection";
 import Distributors from "../components/distributors"
 import InfoSection from "../components/infosection";
@@ -11,14 +12,18 @@ import PrimaryButton from "../components/primary-button"
 
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false)
+  const [showCatalog, setShowCatalog] = useState(false)
 
   return (
     <div>
-      {showModal &&
+      {(showModal || showCatalog) &&
         <Modal
-          show={showModal}
-          onClick={() => setShowModal(false)}
-          children={<Distributors />}
+          show={showModal || showCatalog}
+          onClick={() => {
+            setShowModal(false)
+            setShowCatalog(false)
+          }}
+          children={showModal ? <Distributors /> : showCatalog ? <Catalog /> : ''}
         />
       }
       <Layout>
@@ -26,33 +31,33 @@ export default function Home({ data }) {
           className="w-screen flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
           fluid={data.heroImage.childImageSharp.fluid}
         >
-          <h1 className="px-4 text-center text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-widest">
+          <h1 className="px-4 text-center text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-widest">
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton
             className="hidden md:flex mt-12"
             title="DESCARGAR CATÁLOGO"
-          // onClick={() => setShowModal(true)}
+            onClick={() => setShowCatalog(true)}
           />
         </BackGroundImage>
         <BrandsSection />
-        <section id='nosotros' className="container mx-auto">
+        <section id='nosotros' className="container mx-auto w-full">
           <InfoSection
             title="NOSOTROS"
             id="#nosotros"
-            image={data.heroImage}
+            image="gatsby-astronaut.png"
             position="right"
-            text="AlphaBrands es una compañía de confianza, basada en El Salvador, que se enfoca en desarrollar diversas marcas privadas en Latinoámerica."
+            text="Sabemos que en la vida se aprecia una mano amiga y nosotros queremos brindártela. Nuestros productos son de alta calidad, sostenibles, innovadores y sobre todos accesibles para acompañarte a ti y a tu familia en el día a día."
           />
           <InfoSection
             title="NUESTRO OBJETIVO"
-            image={data.heroImage}
+            image="gatsby-astronaut.png"
             position="left"
             text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
           />
           <InfoSection
             title="DÓNDE ESTAMOS"
-            image={data.heroImage}
+            image="gatsby-astronaut.png"
             position="right"
             text={
               <div>

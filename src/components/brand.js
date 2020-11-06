@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import Catalog from "./catalog"
+import Modal from "./modal"
 import PrimaryButton from "./primary-button"
 import Title from "./title"
 
 const Brand = ({ title, description, imgs }) => {
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <div className="container mx-auto py-8 flex flex-col md:flex-row">
+      {showModal &&
+        <Modal
+          show={showModal}
+          onClick={() => setShowModal(false)}
+          children={<Catalog />}
+        />
+      }
       <div className="w-full md:w-1/2 flex flex-wrap justify-center">
         {imgs.map((img, i) => (
           <img key={i} src={img} className="w-2/5 p-4" />
@@ -19,7 +30,7 @@ const Brand = ({ title, description, imgs }) => {
         <PrimaryButton
           className="flex"
           title="DESCARGAR CATÁLOGO"
-        // onClick={() => setShowModal(true)}
+          onClick={() => setShowModal(true)}
         />
       </div>
     </div>

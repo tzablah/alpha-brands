@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from 'gatsby'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import Catalog from "./catalog"
 import Modal from "./modal"
 import PrimaryButton from "./primary-button"
@@ -15,22 +16,22 @@ const Navbar = () => {
     <Modal
       show={open}
       onClick={() => setOpen(!open)}
-      width="w-2/3"
+      width="w-3/4"
       alignment="justify-end"
       children={
-        <ul className="h-full w-full flex ml-5 flex-col pt-4">
-          <li className="my-8">
+        <ul className="h-full w-full flex flex-col mt-8 pt-4">
+          <li className="my-3 focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
             <Link to="#nuestras-marcas" onClick={() => setOpen(false)}>NUESTRAS MARCAS</Link>
           </li>
-          <li className="my-8">
+          <li className="my-5 focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
             <Link to="#nosotros" onClick={() => setOpen(false)}>CONÓZCANOS</Link>
           </li>
-          <li className="my-8">
+          <li className="my-8 focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
             <Link to="#contacto" onClick={() => setOpen(false)}>CONTACTO</Link>
           </li>
           <li className="my-8">
             <PrimaryButton
-              className="flex"
+              className="flex w-full"
               title="CATÁLOGO"
               icon={downloadIcon}
               onClick={() => {
@@ -53,14 +54,14 @@ const Navbar = () => {
         />
       }
       {open && mobileNav()}
-      <div className="fixed top-0 z-40 bg-white p-2 flex w-full justify-start md:justify-between lg:justify-around items-center shadow-md">
+      <div className="fixed top-0 z-40 bg-white p-2 flex w-full justify-start md:justify-between lg:justify-around items-center shadow">
         <Link to="/">
           <img src={textLogo} alt="Alpha Brands Logo" className="w-32 sm:w-40 lg:w-full" />
         </Link>
         <div className="hidden md:flex items-center w-2/5 md:justify-between lg:justify-around">
-          <Link to="#nuestras-marcas">Nuestras Marcas</Link>
-          <Link to="#nosotros">Conózcanos</Link>
-          <Link to="#contacto">Contacto</Link>
+          <AnchorLink className="hover:text-blue" to="/#nuestras-marcas">Nuestras Marcas</AnchorLink>
+          <AnchorLink className="hover:text-blue" to="/#nosotros">Conózcanos</AnchorLink>
+          <AnchorLink className="hover:text-blue" to="/#contacto">Contacto</AnchorLink>
         </div>
         <PrimaryButton
           className="hidden md:flex"
