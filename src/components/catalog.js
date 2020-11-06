@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import PrimaryButton from "./primary-button"
 import Title from "./title"
 
 const Catalog = () => {
   const [form, setForm] = useState({});
+  const valid = Object.values(form).length === 3;
 
   const handleInputs = (e) => {
     e.persist();
@@ -15,7 +17,7 @@ const Catalog = () => {
   };
 
   return (
-    <div className="container mx-auto text-center py-16">
+    <div className="container mx-auto text-center py-8">
       <Title text="Catálogo de AlphaBrands" />
       <p className="text-base my-6">
         Compártanos tu información para poder descargar nuestro catálogo
@@ -41,6 +43,11 @@ const Catalog = () => {
           name="Mensaje"
           type="number"
           onChange={handleInputs}
+        />
+        <PrimaryButton
+          className={`flex mt-8 ${!valid && "opacity-50 cursor-not-allowed"}`}
+          title="DESCARGAR CATÁLOGO"
+        // onClick={() => setShowModal(true)}
         />
       </div>
     </div>

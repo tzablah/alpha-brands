@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import Distributors from "../components/distributors"
-import Modal from "../components/modal"
-import Layout from "../components/layout";
+import { graphql } from "gatsby";
+import BackGroundImage from "gatsby-background-image";
 import BrandsSection from "../components/brandssection"
 import ContactSection from "../components/contactsection";
+import Distributors from "../components/distributors"
 import InfoSection from "../components/infosection";
-import BackGroundImage from "gatsby-background-image";
-import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import Modal from "../components/modal"
+import PrimaryButton from "../components/primary-button"
 
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false)
@@ -22,20 +23,23 @@ export default function Home({ data }) {
       }
       <Layout>
         <BackGroundImage
-          className="w-screen flex flex-col justify-center items-center py-24 sm:py-40 lg:py-56"
+          className="w-screen flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
           fluid={data.heroImage.childImageSharp.fluid}
         >
           <h1 className="px-4 text-center text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-widest">
             MARCAS INNOVADORAS DE LATINOÁMERICA
-            </h1>
-          <button className="px-4 bg-orange-500 rounded-xl w-24 h-12">
-            Go now
-          </button>
+          </h1>
+          <PrimaryButton
+            className="hidden md:flex mt-12"
+            title="DESCARGAR CATÁLOGO"
+          // onClick={() => setShowModal(true)}
+          />
         </BackGroundImage>
         <BrandsSection />
         <section id='nosotros' className="container mx-auto">
           <InfoSection
             title="NOSOTROS"
+            id="#nosotros"
             image={data.heroImage}
             position="right"
             text="AlphaBrands es una compañía de confianza, basada en El Salvador, que se enfoca en desarrollar diversas marcas privadas en Latinoámerica."
@@ -59,7 +63,8 @@ export default function Home({ data }) {
                 <button className="mt-4 text-blue2" onClick={() => setShowModal(true)}>
                   Nuestros distribuidores
                 </button>
-              </div>}
+              </div>
+            }
           />
         </section>
         <ContactSection />
@@ -70,7 +75,7 @@ export default function Home({ data }) {
 
 export const hero = graphql`
   query {
-    heroImage: file(relativePath: { regex: "/bosque.jpg/" }) {
+    heroImage: file(relativePath: { regex: "/background.png/" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

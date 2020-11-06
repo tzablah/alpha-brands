@@ -6,13 +6,6 @@ button {
   outline: none !important;
 }
 
-.btn {
-    background-color: #F49725;
-    color: white;
-    padding: 8px;
-    align-items: center;
-}
-
 .img-size {
   width: 18rem;
   height: 18rem;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import Title from "./title"
 import phoneImg from "../images/phone.svg";
 import mailImg from "../images/mail.svg";
-import Title from "./title"
 
 const ContactSection = () => {
   const [form, setForm] = useState({});
@@ -21,9 +21,7 @@ const ContactSection = () => {
   return (
     <section className={`bg-gray px-4 ${send && "sm:py-56 lg:py-64"}`}>
       <div className={`container mx-auto py-16 text-center`}>
-        <Title
-          text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
-        />
+        <Title text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"} id="contacto" />
         {send ? (
           <p className="text-base my-6">
             Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
@@ -38,20 +36,15 @@ const ContactSection = () => {
           )}
         <ul className="flex justify-center items-center flex-col md:flex-row">
           <li className="flex items-center my-2 sm:my-0">
-            {/*             <img className="mr-3" src={phoneImg} />
-             */}{" "}
+            <img className="mr-3" src={phoneImg} />
             <p>123-456-7890</p>
           </li>
           <li className="flex items-center my-2 sm:my-0 md:ml-10">
-            {/*             <img className="mr-3" src={mailImg} />
-             */}{" "}
+            <img className="mr-3" src={mailImg} />
             <p>info@alphabrands.com</p>
           </li>
         </ul>
-        <div
-          className={`flex flex-col items-center mt-6 sm:mt-12 ${send && "hidden"
-            }`}
-        >
+        <div className={`flex flex-col items-center mt-6 sm:mt-12 ${send && "hidden"}`}>
           <input
             className="w-11/12 md:w-3/5 h-12 my-3 p-4"
             placeholder="Nombre"
@@ -72,8 +65,7 @@ const ContactSection = () => {
             onChange={handleInputs}
           />
           <button
-            className={`mt-6 sm:mt-12 bg-blue2 w-64 h-12 rounded-full text-white tracking-widest font-semibold ${!valid && "opacity-50 cursor-not-allowed"
-              }`}
+            className={`mt-6 sm:mt-12 bg-blue2 w-64 h-12 rounded-full text-white tracking-widest font-semibold ${!valid && "opacity-50 cursor-not-allowed"}`}
             disabled={!valid}
             onClick={() => setSend(true)}
           >

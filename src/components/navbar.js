@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from 'gatsby'
-import downloadIcon from '../assets/download-icon.svg'
-import Modal from "./modal"
 import Catalog from "./catalog"
-import textLogo from "../assets/text-logo.png";
+import Modal from "./modal"
+import PrimaryButton from "./primary-button"
+import downloadIcon from '../images/download-icon.svg'
 import menuImg from "../images/menu.svg"
+import textLogo from "../images/text-logo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -19,19 +19,25 @@ const Navbar = () => {
       alignment="justify-end"
       children={
         <ul className="h-full w-full flex ml-5 flex-col pt-4">
-          <li className="my-8"><Link to="/">NUESTRAS MARCAS</Link></li>
-          <li className="my-8"><Link to="/">CONÓZCANOS</Link></li>
-          <li className="my-8"><Link to="/">CONTACTO</Link></li>
           <li className="my-8">
-            <button
-              className='w-4/5 btn flex justify-center'
+            <Link to="#nuestras-marcas" onClick={() => setOpen(false)}>NUESTRAS MARCAS</Link>
+          </li>
+          <li className="my-8">
+            <Link to="#nosotros" onClick={() => setOpen(false)}>CONÓZCANOS</Link>
+          </li>
+          <li className="my-8">
+            <Link to="#contacto" onClick={() => setOpen(false)}>CONTACTO</Link>
+          </li>
+          <li className="my-8">
+            <PrimaryButton
+              className="flex"
+              title="CATÁLOGO"
+              icon={downloadIcon}
               onClick={() => {
                 setShowModal(true)
                 setOpen(false)
-              }}>
-              CATÁLOGO
-            <img className='ml-3' src={downloadIcon} alt='download' />
-            </button>
+              }}
+            />
           </li>
         </ul>}
     />
@@ -47,35 +53,29 @@ const Navbar = () => {
         />
       }
       {open && mobileNav()}
-      <div className="p-2 flex w-full justify-start lg:justify-around items-center">
+      <div className="fixed top-0 z-40 bg-white p-2 flex w-full justify-start md:justify-between lg:justify-around items-center shadow-md">
         <Link to="/">
-          <img src={textLogo} alt="Alpha Brands Logo" className="w-3/5 sm:w-4/5 lg:w-full" />
+          <img src={textLogo} alt="Alpha Brands Logo" className="w-32 sm:w-40 lg:w-full" />
         </Link>
-        <div className="hidden lg:flex items-center w-1/3 justify-around">
-          <AnchorLink to="#about">
-            Nuestras Marcas
-          </AnchorLink>
-          <AnchorLink to="#nuestras-marcas">
-            Conózcanos
-          </AnchorLink>
-          <AnchorLink to="#contacto">
-            Contacto
-          </AnchorLink>
+        <div className="hidden md:flex items-center w-2/5 md:justify-between lg:justify-around">
+          <Link to="#nuestras-marcas">Nuestras Marcas</Link>
+          <Link to="#nosotros">Conózcanos</Link>
+          <Link to="#contacto">Contacto</Link>
         </div>
-        <button className='mr-3 btn hidden lg:flex' onClick={() => setShowModal(true)}>
-          CATÁLOGO
-          <img className='ml-3' src={downloadIcon} alt='download' />
-        </button>
+        <PrimaryButton
+          className="hidden md:flex"
+          title="CATÁLOGO"
+          icon={downloadIcon}
+          onClick={() => setShowModal(true)}
+        />
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden absolute z-20 right-0 pr-3">
+          className="md:hidden absolute z-20 right-0 pr-3">
           <img src={menuImg} />
         </button>
       </div>
     </>
   );
 };
-
-
 
 export default Navbar;

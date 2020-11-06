@@ -4,72 +4,42 @@ import Title from "./title"
 const data = [{
   title: "El Salvador",
   distributors: [{
-    name: "DISNA",
-    description: "Terra"
+    name: "DIZNA",
+    description: "ILU, Starbrantdt, Estrella Blanca"
   }, {
-    name: "DISNA",
-    description: "Terra"
+    name: "UDISA",
+    description: "Terramonte, El Bárbaro"
   }, {
-    name: "DISNA",
-    description: "Terra"
-  }, {
-    name: "DISNA",
-    description: "Terra"
+    name: "DISZASA",
+    description: "Blanquita, Demonios, Productos Institucionales (PI)"
   }]
 }, {
-  title: "El Salvador",
+  title: "Honduras",
   distributors: [{
-    name: "DISNA",
-    description: "Terra"
-  }, {
-    name: "DISNA",
-    description: "Terra"
-  }, {
-    name: "DISNA",
-    description: "Terra"
-  }, {
-    name: "DISNA",
-    description: "Terra"
+    name: "DIZNA Honduras",
+    description: "Estrella Blanca, Terramonte, Starbrandt, Blanquita, Tita"
   }]
 }, {
-  title: "El Salvador",
+  title: "Guatemala",
   distributors: [{
-    name: "DISNA",
-    description: "Terra"
-  }, {
-    name: "DISNA",
-    description: "Terra"
-  }, {
-    name: "DISNA",
-    description: "Terra"
-  }, {
-    name: "DISNA",
-    description: "Terra"
+    name: "Grupo Curtis",
+    description: "Starbrandt"
   }]
 }, {
-  title: "El Salvador",
+  title: "Costa Rica",
   distributors: [{
-    name: "DISNA",
-    description: "Terra"
-  }, {
-    name: "DISNA",
-    description: "Terra"
-  }, {
-    name: "DISNA",
-    description: "Terra"
-  }, {
-    name: "DISNA",
-    description: "Terra"
+    name: "Grupo Curtis",
+    description: "Starbrandt"
   }]
 }]
 
 const Distributors = () => {
   return (
-    <div className="lg:mx-48 mt-4">
+    <div className="container mx-auto py-8 lg:mx-16 xl:mx-48">
       <Title text="NUESTROS DISTRIBUIDORES" />
       {data.map((country, i) => (
         <div key={i}>
-          <Title text={country.title} className="pt-10" />
+          <Title text={country.title} className="pt-8" />
           {country.distributors.map((element, idx) => (
             <div key={idx} className="py-2">
               <p className="text-blue2">{element.name}</p>

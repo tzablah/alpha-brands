@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Brand from "./brand"
 import Modal from "./modal"
+import PrimaryButton from "./primary-button"
 import Title from "./title";
 import downImg from "../images/chevron-down.svg"
 import upImg from "../images/chevron-up.svg"
@@ -63,9 +64,14 @@ const BrandsSection = () => {
           children={<Brand {...element} />}
         />
       }
-      <div className="container mx-auto sm:py-16">
+      <div className="container mx-auto md:py-16">
+        <PrimaryButton
+          className="flex md:hidden my-10 w-full"
+          title="DESCARGAR CATÁLOGO"
+        // onClick={() => setShowModal(true)}
+        />
         <div className="flex items-center sm:block">
-          <Title text="NUESTRAS MARCAS" />
+          <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
           <div className="flex justify-end">
             <button className="sm:my-6 text-blue2 text-xl" onClick={() => setToggle(!toggle)}>
               <span className="hidden sm:block">{toggle ? "Ver menos" : "Ver todas"}</span>
@@ -75,12 +81,12 @@ const BrandsSection = () => {
         </div>
         <div className={`flex my-8 sm:mt-0 justify-center ${toggle && "flex-wrap"}`}>
           {array.map((element, i) => (
-            <div key={i}
+            <button key={i}
               onClick={() => brandClick(element)}
-              className={`p-4 w-20 md:w-40 lg:w-48 xl:w-64 shadow-md m-3 cursor-pointer
+              className={`p-4 w-20 md:w-40 lg:w-48 xl:w-64 shadow-md m-3
               ${!toggle && ((i > slideIndex + (width > 640 ? 3 : 2) || i < slideIndex) && "hidden")}`}>
               <p>{i} Hola!</p>
-            </div>
+            </button>
           ))}
         </div>
         {!toggle &&
