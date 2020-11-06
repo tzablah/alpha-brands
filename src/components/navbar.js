@@ -1,71 +1,82 @@
-import React, {useState} from "react"
-import { AnchorLink } from "gatsby-plugin-anchor-links";
-import {Link} from 'gatsby'
-import downloadIcon from '../assets/download-icon.svg'
-import PrimaryButton from "./primary-button";
-
+import React, { useState } from "react"
+import { Link } from 'gatsby'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import Catalog from "./catalog"
+import Modal from "./modal"
+import PrimaryButton from "./primary-button"
+import downloadIcon from '../images/download-icon.svg'
+import menuImg from "../images/menu.svg"
+import textLogo from "../images/text-logo.png";
 
 const Navbar = () => {
-  const [open, toggleMenu] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   const mobileNav = () => (
-        <div className={`${open ? 'flex lg:hidden' : 'hidden'}`}>
-          <button className='showClose' onClick={ () => {toggleMenu(!open);}}></button>
-          <nav className="navbar">
-            <ul>
-              <li><Link className="menuLink" to="/">Nuestras Marcas</Link></li>
-              <li><Link className="menuLink" to="/">Conózcanos</Link></li>
-              <li><AnchorLink className="menuLink" to="/#contacto">Contacto</AnchorLink></li>
-              <li className='md:ml-16'>
-              <PrimaryButton id='sideBarButton' title='Catálogo' icon={downloadIcon}/>
-              </li>
-            </ul>
-            
-          </nav>
-        </div>
+    <Modal
+      show={open}
+      onClick={() => setOpen(!open)}
+      width="w-3/4"
+      alignment="justify-end"
+      children={
+        <ul className="h-full w-full flex flex-col mt-8 pt-4">
+          <li className="my-3 focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
+            <Link to="#nuestras-marcas" onClick={() => setOpen(false)}>NUESTRAS MARCAS</Link>
+          </li>
+          <li className="my-5 focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
+            <Link to="#nosotros" onClick={() => setOpen(false)}>CONÓZCANOS</Link>
+          </li>
+          <li className="my-8 focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
+            <Link to="#contacto" onClick={() => setOpen(false)}>CONTACTO</Link>
+          </li>
+          <li className="my-8">
+            <PrimaryButton
+              className="flex w-full"
+              title="CATÁLOGO"
+              icon={downloadIcon}
+              onClick={() => {
+                setShowModal(true)
+                setOpen(false)
+              }}
+            />
+          </li>
+        </ul>}
+    />
   )
 
-    return (
-      <>
-          <button 
-              onClick={ () => {toggleMenu(!open);}}
-              className={`${open ? 'hidden' : 'lg:hidden ham'}`}
-            >
-            </button> 
-            {open ? (
-          mobileNav()
-        ) : ( 
-        <div className="md:w-6/12 md:mr-3 hidden lg:flex items-center justify-center relative">
-          <div
-            className='px-2 pt-2 pb-4" sm:flex sm:p-0 w-full justify-around'
-          >
-            <AnchorLink
-              to="/#marcas"
-              className='text-opacity-50 text-black hover:text-blue'
-            >
-              Nuestras Marcas
-            </AnchorLink>
-            <AnchorLink
-              to="/#nosotros"
-              className='text-opacity-50 text-black hover:text-blue'
-            >
-              Conózcanos
-            </AnchorLink>
-            <AnchorLink
-              to="/#contacto"
-              className='text-opacity-50 text-black hover:text-blue'
-            >
-              Contacto
-            </AnchorLink>
-          </div>
-        
+  return (
+    <>
+      {showModal &&
+        <Modal
+          show={showModal}
+          onClick={() => setShowModal(false)}
+          children={<Catalog />}
+        />
+      }
+      {open && mobileNav()}
+      <div className="fixed top-0 z-40 bg-white p-2 flex w-full justify-start md:justify-between lg:justify-around items-center shadow">
+        <Link to="/">
+          <img src={textLogo} alt="Alpha Brands Logo" className="w-32 sm:w-40 lg:w-full" />
+        </Link>
+        <div className="hidden md:flex items-center w-2/5 md:justify-between lg:justify-around">
+          <AnchorLink className="hover:text-blue" to="/#nuestras-marcas">Nuestras Marcas</AnchorLink>
+          <AnchorLink className="hover:text-blue" to="/#nosotros">Conózcanos</AnchorLink>
+          <AnchorLink className="hover:text-blue" to="/#contacto">Contacto</AnchorLink>
+        </div>
+        <PrimaryButton
+          className="hidden md:flex"
+          title="CATÁLOGO"
+          icon={downloadIcon}
+          onClick={() => setShowModal(true)}
+        />
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden absolute z-20 right-0 pr-3">
+          <img src={menuImg} />
+        </button>
       </div>
-      )}
-    
-      </>
-    );
+    </>
+  );
 };
-
-
 
 export default Navbar;

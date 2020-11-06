@@ -1,14 +1,16 @@
 import React from 'react'
 
-
-const PrimaryButton = ({title, icon, id}) => (
-    <button id='' className={`${id ? 'uppercase hover:opacity-75 focus:outline-none flex btn w-4/5 justify-center flex-row items-center lg:mr-6' : 'btn hidden lg:flex flex-row items-center lg:mr-6 px-4 py-2 hover:opacity-75 focus:outline-none uppercase'}`}>
-        {title}
-        <figure className={`${icon ? 'block ml-2' : 'hidden'}`}>
-            <img src={icon} alt='download'/>
-        </figure>
-    </button>
-    
+const PrimaryButton = ({ title, icon, className, id, onClick = () => { } }) => (
+  <button
+    id={id && id}
+    className={`${className} bg-orange1 hover:bg-orange2 px-5 py-3 ${icon ? "justify-between" : "justify-center"}`}
+    onClick={() => onClick()}
+  >
+    <span className="text-sm tracking-widest text-white">{title}</span>
+    <figure className={`${icon ? 'block ml-3' : 'hidden'}`}>
+      <img src={icon} alt='download' />
+    </figure>
+  </button>
 )
 
 export default PrimaryButton
