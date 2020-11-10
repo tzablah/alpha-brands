@@ -79,7 +79,7 @@ const BrandsSection = () => {
         <div className="flex items-center sm:block">
           <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
           <div className="flex justify-end">
-            <button className="sm:my-6 text-blue2 text-xl" onClick={() => setToggle(!toggle)}>
+            <button className="sm:my-6 text-blue2 hover:text-blue text-xl" onClick={() => setToggle(!toggle)}>
               <span className="hidden sm:block">{toggle ? "Ver menos" : "Ver todas"}</span>
               <img className="sm:hidden ml-2" src={toggle ? upImg : downImg} />
             </button>

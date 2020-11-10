@@ -65,7 +65,7 @@ export default function Home({ data }) {
                   Actualmente vendemos a distribuidores en
                   El Salvador, Honduras, Guatemala y Costa Rica.
                 </p>
-                <button className="mt-4 text-blue2 text-base" onClick={() => setShowModal(true)}>
+                <button className="mt-4 text-blue2 hover:text-blue text-base" onClick={() => setShowModal(true)}>
                   Nuestros distribuidores
                 </button>
               </div>

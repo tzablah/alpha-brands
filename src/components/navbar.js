@@ -31,7 +31,7 @@ const Navbar = () => {
           </li>
           <li className="my-8">
             <PrimaryButton
-              className="flex w-full"
+              className="flex px-5 py-3 w-full"
               title="CATÁLOGO"
               icon={downloadIcon}
               onClick={() => {
@@ -55,7 +55,7 @@ const Navbar = () => {
       }
       {open && mobileNav()}
       <div className="fixed text-sm uppercase top-0 z-40 bg-white md:h-24 md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow">
-        <Link to="/">
+        <Link className='ml-5 md:ml-0' to="/">
           <img src={textLogo} alt="Alpha Brands Logo" className="w-32 sm:w-40 lg:w-full" />
         </Link>
         <div className="hidden lg:flex items-center w-2/4 md:justify-between lg:justify-around">
@@ -71,7 +71,7 @@ const Navbar = () => {
         />
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden mr-5 absolute z-20 right-0 pr-3">
+          className="lg:hidden mr-5 md:mr-8 absolute z-20 right-0 pr-3">
           <img src={menuImg} />
         </button>
       </div>
