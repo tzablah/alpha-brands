@@ -28,14 +28,14 @@ export default function Home({ data }) {
       }
       <Layout>
         <BackGroundImage
-          className="w-screen flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
+          className="w-screen m-0 flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
           fluid={data.heroImage.childImageSharp.fluid}
         >
           <h1 className="px-4 text-center text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-widest">
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton
-            className="hidden md:flex mt-12"
+            className="hidden px-5 py-3 md:py-5 md:px-12 md:flex mt-12"
             title="DESCARGAR CATÁLOGO"
             onClick={() => setShowCatalog(true)}
           />
@@ -65,7 +65,7 @@ export default function Home({ data }) {
                   Actualmente vendemos a distribuidores en
                   El Salvador, Honduras, Guatemala y Costa Rica.
                 </p>
-                <button className="mt-4 text-blue2" onClick={() => setShowModal(true)}>
+                <button className="mt-4 text-blue2 text-base" onClick={() => setShowModal(true)}>
                   Nuestros distribuidores
                 </button>
               </div>

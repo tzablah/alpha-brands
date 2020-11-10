@@ -4,10 +4,12 @@ import Navbar from "./navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div className="text-content mt-12 lg:mt-16 bg-white">
-      <Navbar />
+    <div className='flex flex-end'>
+    <Navbar />  
+    <div className="text-content bg-white">
       {children}
       <Footer></Footer>
+    </div>
     </div>
   );
 };

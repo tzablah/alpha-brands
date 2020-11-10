@@ -2,12 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@media only screen and (min-width:1024px) {
+  section {
+    padding-right:135px;
+    padding-left: 135px;
+  }
+}
+@media only screen and (max-width:1023px) {
+  section {
+    padding-right:20px;
+    padding-left: 20px;
+  }
+}
+
 button {
   outline: none !important;
 }
 
 .shadow {
-  box-shadow: 0px 0px 10px rgba(49, 74, 90, 0.16);
+  box-shadow: 10px 10px 10px rgba(49, 74, 90, 0.16);
 }
 
 .card-shadow {
@@ -25,3 +38,8 @@ button {
     height: 14rem;
   }
 }
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.50);
+}
+

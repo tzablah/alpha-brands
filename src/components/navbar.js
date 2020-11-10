@@ -20,13 +20,13 @@ const Navbar = () => {
       alignment="justify-end"
       children={
         <ul className="h-full w-full flex flex-col mt-8 pt-4">
-          <li className="my-3 focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
+          <li className="my-3 text-navgray focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
             <Link to="#nuestras-marcas" onClick={() => setOpen(false)}>NUESTRAS MARCAS</Link>
           </li>
-          <li className="my-5 focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
+          <li className="my-5 text-navgray focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
             <Link to="#nosotros" onClick={() => setOpen(false)}>CONÓZCANOS</Link>
           </li>
-          <li className="my-8 focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
+          <li className="my-8 text-navgray focus:bg-lightBlue focus:text-blue p-3 w-full tracking-widest text-base">
             <Link to="#contacto" onClick={() => setOpen(false)}>CONTACTO</Link>
           </li>
           <li className="my-8">
@@ -54,24 +54,24 @@ const Navbar = () => {
         />
       }
       {open && mobileNav()}
-      <div className="fixed top-0 z-40 bg-white p-2 flex w-full justify-start md:justify-between lg:justify-around items-center shadow">
+      <div className="fixed text-sm uppercase top-0 z-40 bg-white md:h-24 md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow">
         <Link to="/">
           <img src={textLogo} alt="Alpha Brands Logo" className="w-32 sm:w-40 lg:w-full" />
         </Link>
-        <div className="hidden md:flex items-center w-2/5 md:justify-between lg:justify-around">
-          <AnchorLink className="hover:text-blue" to="/#nuestras-marcas">Nuestras Marcas</AnchorLink>
-          <AnchorLink className="hover:text-blue" to="/#nosotros">Conózcanos</AnchorLink>
-          <AnchorLink className="hover:text-blue" to="/#contacto">Contacto</AnchorLink>
+        <div className="hidden lg:flex items-center w-2/4 md:justify-between lg:justify-around">
+          <AnchorLink className="text-navgray tracking-widest hover:text-blue" to="/#nuestras-marcas">Nuestras Marcas</AnchorLink>
+          <AnchorLink className="text-navgray tracking-widest hover:text-blue" to="/#nosotros">Conózcanos</AnchorLink>
+          <AnchorLink className="text-navgray tracking-widest hover:text-blue" to="/#contacto">Contacto</AnchorLink>
         </div>
         <PrimaryButton
-          className="hidden md:flex"
+          className="hidden px-5 py-3 lg:flex"
           title="CATÁLOGO"
           icon={downloadIcon}
           onClick={() => setShowModal(true)}
         />
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden absolute z-20 right-0 pr-3">
+          className="lg:hidden mr-5 absolute z-20 right-0 pr-3">
           <img src={menuImg} />
         </button>
       </div>

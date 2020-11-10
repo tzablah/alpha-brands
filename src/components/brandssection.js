@@ -58,7 +58,7 @@ const BrandsSection = () => {
   }
 
   return (
-    <section className="px-4">
+    <section>
       {(showModal || showCatalog) &&
         <Modal
           show={showModal || showCatalog}
@@ -71,7 +71,7 @@ const BrandsSection = () => {
       }
       <div className="container mx-auto md:py-16">
         <PrimaryButton
-          className="flex md:hidden my-10 w-full"
+          className="flex md:hidden px-5 py-3 my-10 w-full"
           title="DESCARGAR CATÁLOGO"
           onClick={() =>
             setShowCatalog(true)}
