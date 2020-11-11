@@ -23,6 +23,9 @@ module.exports = {
       height: {
             input : '52px'
       },
+      fontSize: {
+        brand: '26px'
+      },
     },
   },
   variants: {},

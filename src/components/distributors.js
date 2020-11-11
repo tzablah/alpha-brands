@@ -41,8 +41,8 @@ const Distributors = () => {
         <div key={i}>
           <Title text={country.title} className="pt-8" />
           {country.distributors.map((element, idx) => (
-            <div key={idx} className="py-2">
-              <p className="text-blue2">{element.name}</p>
+            <div key={idx} className="py-2 my-8">
+              <p className="text-blue2 pb-2">{element.name}</p>
               <p>{element.description}</p>
             </div>
           ))}
