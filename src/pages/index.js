@@ -1,59 +1,78 @@
-import React from "react";
-import Layout from "../components/layout";
-import InfoSection from "../components/infosection";
-import BackGroundImage from "gatsby-background-image";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
+import BackGroundImage from "gatsby-background-image";
+import BrandsSection from "../components/brandssection"
+import Catalog from "../components/catalog"
+import ContactSection from "../components/contactsection";
+import Distributors from "../components/distributors"
+import InfoSection from "../components/infosection";
+import Layout from "../components/layout";
+import Modal from "../components/modal"
+import PrimaryButton from "../components/primary-button"
+
 export default function Home({ data }) {
-  console.log(data, "hola banda");
+  const [showModal, setShowModal] = useState(false)
+  const [showCatalog, setShowCatalog] = useState(false)
+
   return (
-    <div className="">
+    <div>
+      {(showModal || showCatalog) &&
+        <Modal
+          show={showModal || showCatalog}
+          onClick={() => {
+            setShowModal(false)
+            setShowCatalog(false)
+          }}
+          children={showModal ? <Distributors /> : showCatalog ? <Catalog /> : ''}
+        />
+      }
       <Layout>
         <BackGroundImage
-          className="relative h-screen w-screen flex flex-col justify-center items-center "
+          className="w-screen flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
           fluid={data.heroImage.childImageSharp.fluid}
         >
-          <div
-            data-aos="zoom-in"
-            className="py-3 px-3 w-10/12 absolute b-solid border-4
-             border-green-500  flex flex-col justify-center 
-             items-center  shadow-md
-             sm:max-w-lg 
-             md:max-w-2xl
-             lg:max-w-2xl
-             xl:max-w-5xl
-             "
-          >
-            <h1 className="text-center text-4xl font-bold mt-3 mb-3">
-              {" "}
-              Codice liber, Omnes in Codice
-            </h1>
-            <h3 className="xl:text-4xl lg:text-4xl tracking-wide  px-3 py-3 text-purplelight text-center text-3xl font-bold  leading-relaxed  mt-3 mb-3">
-              Witchcraft & Magic for developers
-            </h3>
-            <button className="px-4 bg-orange-500 rounded-xl w-24 h-12">
-              Go now{" "}
-            </button>
-          </div>
+          <h1 className="px-4 text-center text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-widest">
+            MARCAS INNOVADORAS DE LATINOÁMERICA
+          </h1>
+          <PrimaryButton
+            className="hidden md:flex mt-12"
+            title="DESCARGAR CATÁLOGO"
+            onClick={() => setShowCatalog(true)}
+          />
         </BackGroundImage>
-        <InfoSection
-          title="NOSOTROS"
-          image={data.heroImage}
-          position="right"
-          text="AlphaBrands es una compañía de confianza, basada en El Salvador, que se enfoca en desarrollar diversas marcas privadas en Latinoámerica."
-        />
-        <InfoSection
-          title="NUESTRO OBJETIVO"
-          image={data.heroImage}
-          position="left"
-          text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
-        />
-        <InfoSection
-          title="DÓNDE ESTAMOS"
-          image={data.heroImage}
-          position="right"
-          text="Actualmente vendemos a distribuidores en 
-          El Salvador, Honduras, Guatemala y Costa Rica."
-        />
+        <BrandsSection />
+        <section id='nosotros' className="container mx-auto w-full">
+          <InfoSection
+            title="NOSOTROS"
+            id="#nosotros"
+            image="gatsby-astronaut.png"
+            position="right"
+            text="Sabemos que en la vida se aprecia una mano amiga y nosotros queremos brindártela. Nuestros productos son de alta calidad, sostenibles, innovadores y sobre todos accesibles para acompañarte a ti y a tu familia en el día a día."
+          />
+          <InfoSection
+            title="NUESTRO OBJETIVO"
+            image="gatsby-astronaut.png"
+            position="left"
+            text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
+          />
+          <InfoSection
+            title="DÓNDE ESTAMOS"
+            image="gatsby-astronaut.png"
+            position="right"
+            text={
+              <div>
+                <p>
+                  Actualmente vendemos a distribuidores en
+                  El Salvador, Honduras, Guatemala y Costa Rica.
+                </p>
+                <button className="mt-4 text-blue2" onClick={() => setShowModal(true)}>
+                  Nuestros distribuidores
+                </button>
+              </div>
+            }
+          />
+        </section>
+        <ContactSection />
       </Layout>
     </div>
   );
@@ -61,7 +80,7 @@ export default function Home({ data }) {
 
 export const hero = graphql`
   query {
-    heroImage: file(relativePath: { regex: "/bosque.jpg/" }) {
+    heroImage: file(relativePath: { regex: "/background.png/" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

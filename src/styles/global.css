@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button {
+  outline: none !important;
+}
+
+.shadow {
+  box-shadow: 0px 0px 10px rgba(49, 74, 90, 0.16);
+}
+
+.card-shadow {
+  box-shadow: 0px 0px 25px rgba(49, 74, 90, 0.16);
+}
+
+.img-size {
+  width: 23rem;
+  height: 23rem;
+}
+
+@media (max-width: 639px) {
+  .img-size {
+    width: 14rem;
+    height: 14rem;
+  }
+}
