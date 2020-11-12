@@ -28,7 +28,6 @@ const Brand = ({ title, description, imgs }) => {
           Para ver todos los productos disponibles de esta marca, descarga nuestro catálogo completo.
         </p>
         <PrimaryButton
-          className="flex h-16 w-64 items-center "
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowModal(true)}
         />

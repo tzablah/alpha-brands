@@ -31,7 +31,7 @@ const Navbar = () => {
           </li>
           <li className="my-8">
             <PrimaryButton
-              className="flex px-5 py-3 w-full"
+              className="py-3"
               title="CATÁLOGO"
               icon={downloadIcon}
               onClick={() => {

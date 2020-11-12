@@ -45,7 +45,7 @@ const Catalog = () => {
           onChange={handleInputs}
         />
         <PrimaryButton
-          className={`flex mt-8 ${!valid && "opacity-50 cursor-not-allowed"}`}
+          className={`mt-8 ${!valid && "opacity-50 cursor-not-allowed"}`}
           title="DESCARGAR CATÁLOGO"
         // onClick={() => setShowModal(true)}
         />

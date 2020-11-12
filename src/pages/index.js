@@ -35,7 +35,7 @@ export default function Home({ data }) {
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton
-            className="hidden px-5 py-3 md:py-5 md:px-12 md:flex mt-12"
+            className="hidden md:flex mt-12"
             title="DESCARGAR CATÁLOGO"
             onClick={() => setShowCatalog(true)}
           />

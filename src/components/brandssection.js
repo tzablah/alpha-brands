@@ -90,7 +90,7 @@ const BrandsSection = () => {
       )}
       <div className="container mx-auto md:py-16">
         <PrimaryButton
-          className="flex md:hidden px-5 py-3 my-10 w-full"
+          className="md:hidden my-10"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
@@ -109,20 +109,18 @@ const BrandsSection = () => {
           </div>
         </div>
         <div
-          className={`flex my-8 sm:mt-0 justify-between ${
-            toggle && "flex-wrap"
-          }`}
+          className={`flex my-8 sm:mt-0 justify-between ${toggle && "flex-wrap"
+            }`}
         >
           {array.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
               className={`p-4 w-24 md:w-40 lg:w-48 xl:w-64 card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
-              ${
-                !toggle &&
+              ${!toggle &&
                 (i > slideIndex + (width > 640 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
-              }`}
+                }`}
             >
               <p>{i} Hola!</p>
             </button>
