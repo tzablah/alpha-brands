@@ -17,7 +17,6 @@ module.exports = {
         title: "rgba(0, 0, 0, 0.77)",
         content: "rgba(0, 0, 0, 0.65)",
         lightBlue: "rgba(51,128,204,0.07)",
-<<<<<<< HEAD
         navgray: "rgba(0, 0, 0, 0.55)",
         contacBackground: "rgba(231, 238, 249, 0.3)",
         input: "rgba(0, 0, 0, 0.50)"
@@ -27,8 +26,6 @@ module.exports = {
       },
       fontSize: {
         brand: '26px'
-=======
->>>>>>> 0394dc4d1ad87fbcf145ca9848a3d0acd016fb22
       },
     },
   },

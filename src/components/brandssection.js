@@ -76,7 +76,7 @@ const BrandsSection = () => {
 
   return (
     <section>
-      {(showModal || showCatalog) &&(
+      {(showModal || showCatalog) && (
         <Modal
           show={showModal || showCatalog}
           onClick={() => {
@@ -101,7 +101,7 @@ const BrandsSection = () => {
               className="sm:my-6 text-blue2 text-xl"
               onClick={() => setToggle(!toggle)}
             >
-              <span className="hidden sm:block">
+              <span className="hidden hover:text-blue sm:block">
                 {toggle ? "Ver menos" : "Ver todas"}
               </span>
               <img className="sm:hidden ml-2" src={toggle ? upImg : downImg} />
