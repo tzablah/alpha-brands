@@ -22,8 +22,12 @@ module.exports = {
         input: "rgba(0, 0, 0, 0.50)"
       },
       height: {
-            input : '52px'
+        input : '52px'
       },
+      width: {
+        brandImage: '270px'
+      },
+
       fontSize: {
         brand: '26px'
       },
