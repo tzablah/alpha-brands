@@ -76,7 +76,7 @@ const BrandsSection = () => {
   };
 
   return (
-    <section id="brand-section">
+    <section id="brand-section" className="px-2">
       {(showModal || showCatalog) && (
         <Modal
           show={showModal || showCatalog}
@@ -89,7 +89,7 @@ const BrandsSection = () => {
           }
         />
       )}
-      <div className="container mx-auto md:py-16">
+      <div className="md:py-16">
         <PrimaryButton
           className="md:hidden my-10"
           title="DESCARGAR CATÁLOGO"
@@ -110,14 +110,14 @@ const BrandsSection = () => {
           </div>
         </div>
         <div
-          className={`flex my-8 sm:mt-0 justify-between -mx-4 ${toggle && "flex-wrap"
+          className={`flex my-8 sm:mt-0 justify-center xl:justify-between sm:-mx-4 ${toggle && "flex-wrap"
             }`}
         >
           {array.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`mx-4 w-24 md:w-40 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
+              className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
               ${!toggle && (i > slideIndex + (width > 640 ? 3 : 2) || i < slideIndex) && "hidden"}`}>
               <p>{i} Hola!</p>
             </button>
