@@ -8,10 +8,17 @@
     margin-left: 135px;
   }
 }
-@media only screen and (max-width:1023px) {
+@media (min-width:640px) and (max-width:1023px) {
   #brand-section {
-    margin-right:20px;
-    margin-left: 20px;
+    margin-right:60px;
+    margin-left: 60px;
+  }
+}
+@media only screen and (max-width:639px) {
+  #brand-section {
+    margin: 0px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 

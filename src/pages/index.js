@@ -28,7 +28,7 @@ export default function Home({ data }) {
       }
       <Layout>
         <BackGroundImage
-          className="w-screen m-0 flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
+          className="m-0 flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
           fluid={data.heroImage.childImageSharp.fluid}
         >
           <h1 className="px-4 text-center text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-widest">
@@ -41,7 +41,7 @@ export default function Home({ data }) {
           />
         </BackGroundImage>
         <BrandsSection />
-        <section id='nosotros'>
+        <section id='nosotros' className="px-4 md:px-16 lg:px-0">
           <InfoSection
             title="NOSOTROS"
             id="#nosotros"
