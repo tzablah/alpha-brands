@@ -19,7 +19,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className={`bg-gray px-4 ${send && "sm:py-56 lg:py-64"}`}>
+    <section className={`bg-contacBackground px-4 ${send && "sm:py-56 lg:py-64"}`}>
       <div className={`container mx-auto py-16 text-center`}>
         <Title text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"} id="contacto" />
         {send ? (
@@ -46,20 +46,20 @@ const ContactSection = () => {
         </ul>
         <div className={`flex flex-col items-center mt-6 sm:mt-12 ${send && "hidden"}`}>
           <input
-            className="w-11/12 md:w-3/5 h-12 my-3 p-4"
+            className="w-11/12 md:w-3/5 h-input placeholder-input my-3 p-4"
             placeholder="Nombre"
             name="Nombre"
             onChange={handleInputs}
           />
           <input
-            className="w-11/12 md:w-3/5 h-12 my-3 p-4"
+            className="w-11/12 md:w-3/5 h-input  placeholder-input my-3 p-4"
             placeholder="Correo electrónico"
             name="Correo electrónico"
             type="email"
             onChange={handleInputs}
           />
           <textarea
-            className="w-11/12 md:w-3/5 h-48 my-3 p-4"
+            className="w-11/12 md:w-3/5 h-48  placeholder-input my-3 p-4"
             placeholder="Mensaje..."
             name="Mensaje"
             onChange={handleInputs}

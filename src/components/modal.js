@@ -9,7 +9,7 @@ const Modal = ({ children, show, onClick, width, alignment }) => {
       } ${alignment ? alignment : "justify-center md:py-24"}`}
     >
       <div
-        className={`bg-white p-6 md:p-10 h-full md:h-auto ${
+        className={`bg-white p-6 md:p-10 h-full ${
           width ? `${width}` : "w-full m-auto"
         } md:w-3/4 overflow-y-scroll`}
       >
@@ -20,7 +20,7 @@ const Modal = ({ children, show, onClick, width, alignment }) => {
              justify-center
               w-8 h-8
                active:bg-lightBlue
-               t
+               
                "
             onClick={() => onClick()}
           >

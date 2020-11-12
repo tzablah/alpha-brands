@@ -1,24 +1,28 @@
 import { Link } from "gatsby";
 import React from "react";
-import Navbar from './navbar'
-
-import textLogo from "../assets/text-logo.png";
-import downloadIcon from '../assets/download-icon.svg'
+import Navbar from "./navbar";
 import PrimaryButton from "./primary-button";
 
-
 const Header = () => (
-    <div>
-      <header className='bg-white h-20'>
-        <div className='flex flex-row items-center justify-between w-full h-full'>
-          <Link className='ml-8' to="/#">
-            <img className='w-3/4 md:w-full' src={textLogo} alt="Alpha Brands Logo" />
-          </Link>
-          <Navbar />
-          <PrimaryButton title='Catálogo' icon={downloadIcon}/>
-        </div>
-      </header>
-    </div>
-  );
-  
-  export default Header;
+  <div>
+    <header className="bg-white h-20">
+      <div className="flex flex-row items-center justify-between w-full h-full">
+        <Link className="ml-8" to="/#">
+          <div className="w-32 ml-2 h-auto">
+            <Image
+              className=""
+              alt="Alpha-Brands Logo"
+              filename="textlogo"
+              objectFit="cover"
+              objectPosition="50% 50%"
+            />
+          </div>
+        </Link>
+        <Navbar />
+        <PrimaryButton title="Catálogo" icon={true} />
+      </div>
+    </header>
+  </div>
+);
+
+export default Header;

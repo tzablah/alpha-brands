@@ -30,7 +30,7 @@ export default function Home({ data }) {
       )}
       <Layout>
         <BackGroundImage
-          className="w-screen flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
+          className="w-screen m-0 flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
           fluid={data.heroImage.childImageSharp.fluid}
         >
           <h1 className="px-4 text-center text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-widest">
@@ -44,7 +44,7 @@ export default function Home({ data }) {
           />
         </BackGroundImage>
         <BrandsSection />
-        <section id="nosotros" className="container mx-auto w-full">
+        <section id="nosotros">
           <InfoSection
             title="NOSOTROS"
             id="#nosotros"
@@ -69,7 +69,7 @@ export default function Home({ data }) {
                   Honduras, Guatemala y Costa Rica.
                 </p>
                 <button
-                  className="mt-4 text-blue2"
+                  className="mt-4 text-blue2 hover:text-blue text-base"
                   onClick={() => setShowModal(true)}
                 >
                   Nuestros distribuidores

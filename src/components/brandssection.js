@@ -67,15 +67,16 @@ const BrandsSection = () => {
   const [showCatalog, setShowCatalog] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("resize", () => setWidth(window.innerWidth));
-  });
+    setWidth(window.innerWidth);
+  }, []);
+
   const brandClick = (element) => {
     setElement(element);
     setShowModal(true);
   };
 
   return (
-    <section className="px-4">
+    <section id="brand-section">
       {(showModal || showCatalog) && (
         <Modal
           show={showModal || showCatalog}
@@ -90,7 +91,7 @@ const BrandsSection = () => {
       )}
       <div className="container mx-auto md:py-16">
         <PrimaryButton
-          className="flex md:hidden my-10 w-full"
+          className="md:hidden my-10"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
@@ -101,7 +102,7 @@ const BrandsSection = () => {
               className="sm:my-6 text-blue2 text-xl"
               onClick={() => setToggle(!toggle)}
             >
-              <span className="hidden sm:block">
+              <span className="hidden hover:text-blue sm:block">
                 {toggle ? "Ver menos" : "Ver todas"}
               </span>
               <img className="sm:hidden ml-2" src={toggle ? upImg : downImg} />
@@ -109,21 +110,15 @@ const BrandsSection = () => {
           </div>
         </div>
         <div
-          className={`flex my-8 sm:mt-0 justify-between ${
-            toggle && "flex-wrap"
-          }`}
+          className={`flex my-8 sm:mt-0 justify-between -mx-4 ${toggle && "flex-wrap"
+            }`}
         >
           {array.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`p-4 w-24 md:w-40 lg:w-48 xl:w-64 card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
-              ${
-                !toggle &&
-                (i > slideIndex + (width > 640 ? 3 : 2) || i < slideIndex) &&
-                "hidden"
-              }`}
-            >
+              className={`mx-4 w-24 md:w-40 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
+              ${!toggle && (i > slideIndex + (width > 640 ? 3 : 2) || i < slideIndex) && "hidden"}`}>
               <p>{i} Hola!</p>
             </button>
           ))}
