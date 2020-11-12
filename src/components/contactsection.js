@@ -36,8 +36,9 @@ const ContactSection = () => {
           )}
         <ul className="flex justify-center items-center flex-col md:flex-row">
           <li className="flex items-center my-2 sm:my-0">
-            <img className="mr-3" src={phoneImg} />
-            <p>123-456-7890</p>
+            <a className='flex flex-row' href="tel:123-456-7890"><img className="mr-3" src={phoneImg} />
+            123-456-7890
+            </a>
           </li>
           <li className="flex items-center my-2 sm:my-0 md:ml-10">
             <img className="mr-3" src={mailImg} />
