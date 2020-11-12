@@ -1,31 +1,33 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import BackGroundImage from "gatsby-background-image";
-import BrandsSection from "../components/brandssection"
-import Catalog from "../components/catalog"
+import BrandsSection from "../components/brandssection";
+import Catalog from "../components/catalog";
 import ContactSection from "../components/contactsection";
-import Distributors from "../components/distributors"
+import Distributors from "../components/distributors";
 import InfoSection from "../components/infosection";
 import Layout from "../components/layout";
-import Modal from "../components/modal"
-import PrimaryButton from "../components/primary-button"
+import Modal from "../components/modal";
+import PrimaryButton from "../components/primary-button";
 
 export default function Home({ data }) {
-  const [showModal, setShowModal] = useState(false)
-  const [showCatalog, setShowCatalog] = useState(false)
+  const [showModal, setShowModal] = useState(false);
+  const [showCatalog, setShowCatalog] = useState(false);
 
   return (
     <div>
-      {(showModal || showCatalog) &&
+      {(showModal || showCatalog) && (
         <Modal
           show={showModal || showCatalog}
           onClick={() => {
-            setShowModal(false)
-            setShowCatalog(false)
+            setShowModal(false);
+            setShowCatalog(false);
           }}
-          children={showModal ? <Distributors /> : showCatalog ? <Catalog /> : ''}
+          children={
+            showModal ? <Distributors /> : showCatalog ? <Catalog /> : ""
+          }
         />
-      }
+      )}
       <Layout>
         <BackGroundImage
           className="w-screen flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
@@ -36,12 +38,13 @@ export default function Home({ data }) {
           </h1>
           <PrimaryButton
             className="hidden md:flex mt-12"
+            size="large"
             title="DESCARGAR CATÁLOGO"
             onClick={() => setShowCatalog(true)}
           />
         </BackGroundImage>
         <BrandsSection />
-        <section id='nosotros' className="container mx-auto w-full">
+        <section id="nosotros" className="container mx-auto w-full">
           <InfoSection
             title="NOSOTROS"
             id="#nosotros"
@@ -62,10 +65,13 @@ export default function Home({ data }) {
             text={
               <div>
                 <p>
-                  Actualmente vendemos a distribuidores en
-                  El Salvador, Honduras, Guatemala y Costa Rica.
+                  Actualmente vendemos a distribuidores en El Salvador,
+                  Honduras, Guatemala y Costa Rica.
                 </p>
-                <button className="mt-4 text-blue2" onClick={() => setShowModal(true)}>
+                <button
+                  className="mt-4 text-blue2"
+                  onClick={() => setShowModal(true)}
+                >
                   Nuestros distribuidores
                 </button>
               </div>
