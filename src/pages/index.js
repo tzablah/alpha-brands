@@ -41,7 +41,7 @@ export default function Home({ data }) {
           />
         </BackGroundImage>
         <BrandsSection />
-        <section id='nosotros' className="container mx-auto w-full">
+        <section id='nosotros' className="container w-full">
           <InfoSection
             title="NOSOTROS"
             id="#nosotros"
