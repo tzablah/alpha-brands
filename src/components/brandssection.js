@@ -117,7 +117,7 @@ const BrandsSection = () => {
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`p-4 w-24 md:w-40 lg:w-48 xl:w-64 card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
+              className={`mx-4 w-24 md:w-40 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
               ${
                 !toggle &&
                 (i > slideIndex + (width > 640 ? 3 : 2) || i < slideIndex) &&
