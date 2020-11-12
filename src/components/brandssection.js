@@ -90,7 +90,7 @@ const BrandsSection = () => {
       )}
       <div className="container mx-auto md:py-16">
         <PrimaryButton
-          className="flex md:hidden px-5 py-3 my-10 w-full"
+          className="flex md:hidden px-5 py-5 my-10 w-full"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
