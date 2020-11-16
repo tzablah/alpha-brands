@@ -38,11 +38,11 @@ const SEO = () => {
         },
         {
           property: `og:image:height`,
-          content: 564
+          content: 140
         },
         {
           property: `og:image:width`,
-          content: 714
+          content: 512
         },
         {
           name: `twitter:card`,
