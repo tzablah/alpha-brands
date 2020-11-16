@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+}
+input[type="range"]:focus {
+  border: none;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: #F2F2F3;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 100%;
+  width: 45px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  box-shadow: 0 0 0 #3380CC, -40px 0 0 #3380CC, -85px 0 0 #3380CC, -130px 0 0 #3380CC,
+     -175px 0 0 #3380CC, -220px 0 0 #3380CC, -265px 0 0 #3380CC, -310px 0 0 #3380CC,
+     -350px 0 0 #3380CC, -390px 0 0 #3380CC, -309px 0 0 #3380CC,
+     -435px 0 0 #3380CC, -480px 0 0 #3380CC, -525px 0 0 #3380CC, -570px 0 0 #3380CC, -615px 0 0 #3380CC,
+     -660px 0 0 #3380CC, -705px 0 0 #3380CC, -750px 0 0 #3380CC, -795px 0 0 #3380CC, -840px 0 0 #3380CC, 
+     -885px 0 0 #3380CC, -930px 0 0 #3380CC, -975px 0 0 #3380CC, -1020px 0 0 #3380CC, -1065px 0 0 #3380CC, -1100px 0 0 #3380CC, -1145px 0 0 #3380CC;
+  background: #3380CC;
+}
+
+
 @media only screen and (min-width:1024px) {
   #brand-section {
     margin-right:135px;
