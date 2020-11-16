@@ -33,17 +33,18 @@ const ContactSection = () => {
             pronto posible.
           </p>
         ) : (
-          <p className="text-base my-6">
-            Si te interesa saber más de nuestras marcas y sus productos,
-            <br className="hidden sm:block" />
+            <h4 className="text-base my-6">
+              Si te interesa saber más de nuestras marcas y sus productos,
+              <br className="hidden sm:block" />
             ¡no dudes en contactarnos!
-          </p>
-        )}
+            </h4>
+          )}
         <ul className="flex justify-center items-center flex-col md:flex-row">
           <li className="flex items-center my-2 sm:my-0">
             <a
               href="tel:5586824354"
               className="flex justify-center items-center"
+              title="Contacto Alpha Brands"
             >
               <PhoneImg className="mr-3" />
               <p>123-456-7890</p>
@@ -53,6 +54,7 @@ const ContactSection = () => {
             <a
               href="mailto:info@alphabrands.com"
               className="flex justify-center items-center"
+              title="Contacto Alpha Brands"
             >
               <MailImg className="mr-3" />
               <p>info@alphabrands.com</p>{" "}
@@ -60,9 +62,8 @@ const ContactSection = () => {
           </li>
         </ul>
         <div
-          className={`flex flex-col items-center mt-6 sm:mt-12 ${
-            send && "hidden"
-          }`}
+          className={`flex flex-col items-center mt-6 sm:mt-12 ${send && "hidden"
+            }`}
         >
           <input
             className="w-11/12 md:w-3/5 h-input placeholder-input my-3 p-4"

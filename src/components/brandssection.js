@@ -3,55 +3,55 @@ import Brand from "./brand";
 import Modal from "./modal";
 import PrimaryButton from "./primary-button";
 import Title from "./title";
-import downImg from "../images/svg/chevron-down.svg";
-import upImg from "../images/svg/chevron-up.svg";
+import DownImg from "../images/svg/chevron-down.svg";
+import UpImg from "../images/svg/chevron-up.svg";
 import Catalog from "./catalog";
 
 const array = [
   {
-    imgs: [downImg, upImg, downImg, upImg],
+    imgs: [DownImg, UpImg, DownImg, UpImg],
     title: "Terra Monte",
     description:
       "Decripción de la marca aquí. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500. ",
   },
   {
-    imgs: [downImg, upImg, downImg, upImg],
+    imgs: [DownImg, UpImg, DownImg, UpImg],
     title: "Terra Monte",
     description:
       "Decripción de la marca aquí. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500. ",
   },
   {
-    imgs: [downImg, upImg, downImg, upImg],
+    imgs: [DownImg, UpImg, DownImg, UpImg],
     title: "Terra Monte",
     description:
       "Decripción de la marca aquí. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500. ",
   },
   {
-    imgs: [downImg, upImg, downImg, upImg],
+    imgs: [DownImg, UpImg, DownImg, UpImg],
     title: "Terra Monte",
     description:
       "Decripción de la marca aquí. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500. ",
   },
   {
-    imgs: [downImg, upImg, downImg, upImg],
+    imgs: [DownImg, UpImg, DownImg, UpImg],
     title: "Terra Monte",
     description:
       "Decripción de la marca aquí. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500. ",
   },
   {
-    imgs: [downImg, upImg, downImg, upImg],
+    imgs: [DownImg, UpImg, DownImg, UpImg],
     title: "Terra Monte",
     description:
       "Decripción de la marca aquí. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500. ",
   },
   {
-    imgs: [downImg, upImg, downImg, upImg],
+    imgs: [DownImg, UpImg, DownImg, UpImg],
     title: "Terra Monte",
     description:
       "Decripción de la marca aquí. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500. ",
   },
   {
-    imgs: [downImg, upImg, downImg, upImg],
+    imgs: [DownImg, UpImg, DownImg, UpImg],
     title: "Terra Monte",
     description:
       "Decripción de la marca aquí. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500. ",
@@ -105,25 +105,27 @@ const BrandsSection = () => {
               <span className="hidden hover:text-blue sm:block">
                 {toggle ? "Ver menos" : "Ver todas"}
               </span>
-              <img className="sm:hidden ml-2" src={toggle ? upImg : downImg} />
+              {toggle ?
+                <UpImg className="sm:hidden ml-2" />
+                :
+                <DownImg className="sm:hidden ml-2" />
+              }
             </button>
           </div>
         </div>
         <div
-          className={`flex my-8 sm:mt-0 justify-center xl:justify-between sm:-mx-4 ${
-            toggle && "flex-wrap"
-          }`}
+          className={`flex my-8 sm:mt-0 justify-center xl:justify-between sm:-mx-4 ${toggle && "flex-wrap"
+            }`}
         >
           {array.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
               className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
-              ${
-                !toggle &&
+              ${!toggle &&
                 (i > slideIndex + (width > 640 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
-              }`}
+                }`}
             >
               <p>{i} Hola!</p>
             </button>

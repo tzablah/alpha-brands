@@ -61,11 +61,11 @@ const Navbar = () => {
       )}
       {open && mobileNav()}
       <div className="fixed text-sm uppercase top-0 z-40 bg-white md:h-24 md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow">
-        <Link className="ml-5 md:ml-0" to="/">
+        <Link className="ml-5 md:ml-0" title="Alpha Brands" to="/">
           <div className="w-32 md:h-10  ml-2 h-auto">
             <Image
-              className=""
               alt="Alpha-Brands Logo"
+              title="Alpha-Brands Logo"
               filename="textlogo"
               objectFit="cover"
               objectPosition="50% 50%"
@@ -76,18 +76,21 @@ const Navbar = () => {
           <AnchorLink
             className="text-navgray tracking-widest hover:text-blue"
             to="/#nuestras-marcas"
+            title="Marcas Alpha Brands"
           >
             Nuestras Marcas
           </AnchorLink>
           <AnchorLink
             className="text-navgray tracking-widest hover:text-blue"
             to="/#nosotros"
+            title="Qué es Alpha Brands"
           >
             Conózcanos
           </AnchorLink>
           <AnchorLink
             className="text-navgray tracking-widest hover:text-blue"
             to="/#contacto"
+            title="Contacto Alpha Brands"
           >
             Contacto
           </AnchorLink>
