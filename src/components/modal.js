@@ -1,5 +1,5 @@
 import React from "react";
-import CloseImg from "../images/close.svg";
+import CloseImg from "../images/svg/close.svg";
 
 const Modal = ({ children, show, onClick, width, alignment }) => {
   return (
@@ -20,7 +20,6 @@ const Modal = ({ children, show, onClick, width, alignment }) => {
              justify-center
               w-8 h-8
                active:bg-lightBlue
-               
                "
             onClick={() => onClick()}
           >

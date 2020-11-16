@@ -1,10 +1,10 @@
 import React from "react";
-import socialMediaImg from "../images/social-media.svg";
+import SocialMediaImg from "../images/svg/social-media.svg";
 
 const Footer = () => {
   return (
     <div className="py-8 flex flex-col items-center">
-      <img className="mb-3" src={socialMediaImg} />
+      <SocialMediaImg className="mb-3" />
       <p>© AlphaBrands 2020</p>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Title from "./title"
-import phoneImg from "../images/phone.svg";
-import mailImg from "../images/mail.svg";
+import Title from "./title";
+import PhoneImg from "../images/svg/phone.svg";
+import MailImg from "../images/svg/mail.svg";
 
 const ContactSection = () => {
   const [form, setForm] = useState({});
@@ -19,32 +19,51 @@ const ContactSection = () => {
   };
 
   return (
-    <section className={`bg-contacBackground px-4 ${send && "sm:py-56 lg:py-64"}`}>
+    <section
+      className={`bg-contacBackground px-4 ${send && "sm:py-56 lg:py-64"}`}
+    >
       <div className={`container mx-auto py-16 text-center`}>
-        <Title text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"} id="contacto" />
+        <Title
+          text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
+          id="contacto"
+        />
         {send ? (
           <p className="text-base my-6">
             Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
             pronto posible.
           </p>
         ) : (
-            <p className="text-base my-6">
-              Si te interesa saber más de nuestras marcas y sus productos,
-              <br className="hidden sm:block" />
+          <p className="text-base my-6">
+            Si te interesa saber más de nuestras marcas y sus productos,
+            <br className="hidden sm:block" />
             ¡no dudes en contactarnos!
-            </p>
-          )}
+          </p>
+        )}
         <ul className="flex justify-center items-center flex-col md:flex-row">
           <li className="flex items-center my-2 sm:my-0">
-            <img className="mr-3" src={phoneImg} />
-            <p>123-456-7890</p>
+            <a
+              href="tel:5586824354"
+              className="flex justify-center items-center"
+            >
+              <PhoneImg className="mr-3" />
+              <p>123-456-7890</p>
+            </a>
           </li>
           <li className="flex items-center my-2 sm:my-0 md:ml-10">
-            <img className="mr-3" src={mailImg} />
-            <p>info@alphabrands.com</p>
+            <a
+              href="mailto:info@alphabrands.com"
+              className="flex justify-center items-center"
+            >
+              <MailImg className="mr-3" />
+              <p>info@alphabrands.com</p>{" "}
+            </a>
           </li>
         </ul>
-        <div className={`flex flex-col items-center mt-6 sm:mt-12 ${send && "hidden"}`}>
+        <div
+          className={`flex flex-col items-center mt-6 sm:mt-12 ${
+            send && "hidden"
+          }`}
+        >
           <input
             className="w-11/12 md:w-3/5 h-input placeholder-input my-3 p-4"
             placeholder="Nombre"

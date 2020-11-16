@@ -1,5 +1,5 @@
 import React from "react";
-import DownIcon from "../images/download-icon.svg";
+import DownIcon from "../images/svg/download-icon.svg";
 const PrimaryButton = ({ title, icon, className, id, onClick = () => {} }) => (
   <button
     id={id && id}
