@@ -49,6 +49,7 @@ const Image = (props) => {
           <Img
             className={className}
             fluid={image.node.childImageSharp.fluid}
+            title={alt}
             alt={alt}
           />
         );

@@ -18,7 +18,7 @@ const Brand = ({ title, description, imgs }) => {
       }
       <div className="w-full md:w-1/2 flex flex-wrap justify-center">
         {imgs.map((img, i) => (
-          <img key={i} src={img} className="w-2/5 p-4" />
+          <img key={i} src={img} alt={title} title={title} className="w-2/5 p-4" />
         ))}
       </div>
       <div className="w-full md:w-1/2 pl-0 md:pl-8 mt-6">

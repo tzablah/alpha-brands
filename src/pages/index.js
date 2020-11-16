@@ -9,6 +9,7 @@ import InfoSection from "../components/infosection";
 import Layout from "../components/layout";
 import Modal from "../components/modal";
 import PrimaryButton from "../components/primary-button";
+import SEO from "../components/seo";
 
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
@@ -29,6 +30,7 @@ export default function Home({ data }) {
         />
       )}
       <Layout>
+        <SEO />
         <BackGroundImage
           className="m-0 flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
           fluid={data.heroImage.childImageSharp.fluid}
