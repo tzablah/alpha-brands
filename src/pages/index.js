@@ -46,7 +46,7 @@ export default function Home({ data }) {
           />
         </BackGroundImage>
         <BrandsSection />
-        <section id="nosotros" className="px-4 md:px-16 lg:px-0">
+        <section id="nosotros" className="px-4 md:px-16 xl:px-0">
           <InfoSection
             title="NOSOTROS"
             id="#nosotros"

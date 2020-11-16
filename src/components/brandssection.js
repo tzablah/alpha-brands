@@ -123,7 +123,7 @@ const BrandsSection = () => {
               onClick={() => brandClick(element)}
               className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
               ${!toggle &&
-                (i > slideIndex + (width > 640 ? 3 : 2) || i < slideIndex) &&
+                (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
                 }`}
             >

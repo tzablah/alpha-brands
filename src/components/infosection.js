@@ -14,7 +14,7 @@ const InfoSection = ({ image, position, text, title, id }) => {
             <h2 className="text-center sm:text-left text-xl">{text}</h2>
           </div>
         </div>
-        <div className="w-1/2 flex justify-center">
+        <div className={`w-1/2 flex justify-center ${position === "right" ? "sm:justify-end" : "sm:justify-start"}`}>
           <div className="img-size">
             <Image
               className="rounded-full z-0"
