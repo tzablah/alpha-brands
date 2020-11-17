@@ -6,8 +6,9 @@ import Title from "./title";
 import DownImg from "../images/svg/chevron-down.svg";
 import UpImg from "../images/svg/chevron-up.svg";
 import Catalog from "./catalog";
+import Img from "gatsby-image";
 
-const array = [
+/* const array = [
   {
     imgs: [DownImg, UpImg, DownImg, UpImg],
     title: "Terra Monte",
@@ -57,15 +58,14 @@ const array = [
       "Decripción de la marca aquí. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500. ",
   },
 ];
-
-const BrandsSection = () => {
+ */
+const BrandsSection = ({ brands }) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [toggle, setToggle] = useState(false);
   const [width, setWidth] = useState(0);
   const [element, setElement] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
-
   useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
@@ -105,29 +105,43 @@ const BrandsSection = () => {
               <span className="hidden hover:text-blue sm:block">
                 {toggle ? "Ver menos" : "Ver todas"}
               </span>
-              {toggle ?
+              {toggle ? (
                 <UpImg className="sm:hidden ml-2" />
-                :
+              ) : (
                 <DownImg className="sm:hidden ml-2" />
-              }
+              )}
+              {/*               <img className="sm:hidden ml-2" src={toggle ? upImg : downImg} />
+               */}{" "}
             </button>
           </div>
         </div>
         <div
-          className={`flex my-8 sm:mt-0 justify-center xl:justify-between sm:-mx-4 ${toggle && "flex-wrap"
-            }`}
+          className={`flex my-8 sm:mt-0 justify-center xl:justify-between sm:-mx-4 ${
+            toggle && "flex-wrap"
+          }`}
         >
-          {array.map((element, i) => (
+          {brands.edges.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
               className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
-              ${!toggle &&
+              ${
+                !toggle &&
                 (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
-                }`}
+              }`}
             >
-              <p>{i} Hola!</p>
+              <div className="flex justify-center items-center w-full h-full">
+                <Img
+                  fluid={element.node.imagen[0].fluid}
+                  style={{ height: "80%", width: "80%" }}
+                  imgStyle={{
+                    objectFit: "cover",
+                  }}
+                  alt={element.node.titulo}
+                />
+              </div>
+              {console.log(element)}
             </button>
           ))}
         </div>
@@ -138,7 +152,7 @@ const BrandsSection = () => {
             value={slideIndex}
             type="range"
             min={0}
-            max={array.length - 4}
+            max={brands.length - 4}
           />
         )}
       </div>

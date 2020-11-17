@@ -14,7 +14,7 @@ import SEO from "../components/seo";
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
-
+  const { brands } = data;
   return (
     <div>
       {(showModal || showCatalog) && (
@@ -45,8 +45,8 @@ export default function Home({ data }) {
             onClick={() => setShowCatalog(true)}
           />
         </BackGroundImage>
-        <BrandsSection />
-        <section id="nosotros" className="px-4 md:px-16 xl:px-0">
+        <BrandsSection brands={brands} />
+        <section id="nosotros" className="px-4 md:px-16 lg:px-0">
           <InfoSection
             title="NOSOTROS"
             id="#nosotros"
@@ -93,6 +93,21 @@ export const hero = graphql`
         fluid {
           ...GatsbyImageSharpFluid
           originalName
+        }
+      }
+    }
+    brands: allContentfulPostBrand {
+      edges {
+        node {
+          titulo
+          descripcion {
+            descripcion
+          }
+          imagen {
+            fluid {
+              src
+            }
+          }
         }
       }
     }
