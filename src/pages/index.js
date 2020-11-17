@@ -48,19 +48,19 @@ export default function Home({ data }) {
           <InfoSection
             title="NOSOTROS"
             id="#nosotros"
-            image="gatsby-astronaut.png"
+            image="nosotros.png"
             position="right"
             text="Sabemos que en la vida se aprecia una mano amiga y nosotros queremos brindártela. Nuestros productos son de alta calidad, sostenibles, innovadores y sobre todos accesibles para acompañarte a ti y a tu familia en el día a día."
           />
           <InfoSection
             title="NUESTRO OBJETIVO"
-            image="gatsby-astronaut.png"
+            image="objetivo.png"
             position="left"
             text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
           />
           <InfoSection
             title="DÓNDE ESTAMOS"
-            image="gatsby-astronaut.png"
+            image="mapa.png"
             position="right"
             text={
               <div>
