@@ -9,6 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
         allContentfulPostBrand {
           edges {
             node {
+              slug
               titulo
             }
           }

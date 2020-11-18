@@ -3,14 +3,18 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
-require("dotenv").config({
+const dotenv = require("dotenv").config({
   path: `.env`,
 });
+/* if (process.env.NODE_ENV !== "production") {
+  dotenv.config({ path: `.env` });
+} */
 module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
