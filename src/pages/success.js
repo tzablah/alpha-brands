@@ -12,7 +12,7 @@ const Success = () => (
       <PrimaryButton title="VOLVER AL INICIO" />
     </Link>
 
-    <a href={catalogo} target="_blank" rel="noreferrer">
+    <a href={catalogo} target="_blank" rel="noreferrer" className='flex justify-center mt-5'>
       <PrimaryButton title="CATÁLOGO" icon={true} className="py-3 px-3" />
     </a>
   </div>

@@ -106,6 +106,7 @@ export const hero = graphql`
           imagen {
             fluid {
               src
+              aspectRatio
             }
           }
         }

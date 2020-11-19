@@ -105,3 +105,31 @@ button {
 ::placeholder {
   color: rgba(0, 0, 0, 0.50);
 }
+
+.brand_image:first-child {
+  height: 157px;
+  width: 157px; 
+  margin-right: 62px;
+  margin-left: 62px;
+}
+
+
+@media only screen and (min-width:768px) {
+  .brand_image:first-child {
+ margin:0;
+  }
+}
+
+@media only screen and (min-width:1024px) {
+  .brand_image:first-child {
+  height: 220px;
+  width: 220px; 
+  }
+}
+
+@media only screen and (min-width: 1280px){
+  .brand_image:first-child {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  }
+}

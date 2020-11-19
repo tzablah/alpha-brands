@@ -7,7 +7,7 @@ import Img from "gatsby-image";
 const Brand = ({ node }) => {
   const { descripcion, imagen, titulo } = node;
   const [showModal, setShowModal] = useState(false);
-  console.log(titulo, descripcion, imagen);
+  console.log(titulo, descripcion, imagen,);
   return (
     <div className="container mx-auto py-8 flex flex-col md:flex-row">
       {showModal && (
@@ -17,23 +17,22 @@ const Brand = ({ node }) => {
           children={<Catalog />}
         />
       )}
-      <div className="w-full md:w-1/2 flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center lg:justify-space-around lg:w-2/5">
         {imagen.map((img, i) => (
-          <div className="w-2/5 p-4">
-            <Img
-              key={i}
-              fluid={img.fluid}
-              style={{ height: "100%", width: "100%" }}
-              imgStyle={{
-                objectFit: "cover",
-              }}
-              alt={titulo}
-              className="w-2/5 p-4"
-            />
-          </div>
+            <div className="brand_image h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd lg:h-brandProdcutLg lg:w-brandProdcutLg m-2 lg:m-5">
+              <Img
+                key={i}
+                fluid={img.fluid}
+                style={{ height: "100%", width: "100%" }}
+                imgStyle={{
+                  objectFit: "cover",
+                }}
+                alt={titulo}
+              />
+            </div>  
         ))}
       </div>
-      <div className="w-full md:w-1/2 pl-0 md:pl-8 mt-6">
+      <div className="w-full text-justify md:w-1/2 pl-0 md:pl-8 mt-6">
         <Title text={titulo} />
         <p className="text-sm my-4">{descripcion.descripcion}</p>
         <p className="font-semibold text-sm my-6">

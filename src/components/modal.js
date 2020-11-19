@@ -11,7 +11,7 @@ const Modal = ({ children, show, onClick, width, alignment }) => {
       <div
         className={`bg-white p-6 md:p-10 h-full ${
           width ? `${width}` : "w-full m-auto"
-        } md:w-3/4 overflow-y-scroll`}
+        } md:w-modalMd overflow-y-scroll`}
       >
         <div className="flex justify-end">
           <button
