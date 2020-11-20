@@ -61,8 +61,8 @@ const Navbar = () => {
       )}
       {open && mobileNav()}
       <div className="fixed text-sm uppercase top-0 z-40 bg-white md:h-24 md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow">
-        <Link className="ml-5 md:ml-0" title="Alpha Brands" to="/">
-          <div className="w-32 md:h-10  ml-2 h-auto">
+        <Link className="ml-5 md:ml-0 w-logoNav h-logoNav md:w-logoNavMd md:h-logoNavMd lg:h-logoNavLg lg:w-logoNavLg " title="Alpha Brands" to="/">
+          <div className="md:h-10  ml-2 h-auto">
             <Image
               alt="Alpha-Brands Logo"
               title="Alpha-Brands Logo"

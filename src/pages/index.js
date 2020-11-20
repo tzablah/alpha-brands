@@ -14,7 +14,7 @@ import SEO from "../components/seo";
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
-  const { brands } = data;
+  const { brands, contactImage } = data;
   return (
     <div>
       {(showModal || showCatalog) && (
@@ -34,6 +34,7 @@ export default function Home({ data }) {
         <BackGroundImage
           className="m-0 flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
           fluid={data.heroImage.childImageSharp.fluid}
+          alt={data.heroImage.childImageSharp.fluid.originalName}
         >
           <h1 className="px-4 text-center text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-widest">
             MARCAS INNOVADORAS DE LATINOÁMERICA
@@ -80,7 +81,7 @@ export default function Home({ data }) {
             }
           />
         </section>
-        <ContactSection />
+        <ContactSection data={contactImage}/>
       </Layout>
     </div>
   );
@@ -88,7 +89,15 @@ export default function Home({ data }) {
 
 export const hero = graphql`
   query {
-    heroImage: file(relativePath: { regex: "/background.png/" }) {
+    heroImage: file(relativePath: { regex: "/background.png/"}) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+          originalName
+        }
+      }
+    }
+    contactImage: file(relativePath: { regex: "/contactBackground.png/"}) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -106,7 +115,6 @@ export const hero = graphql`
           imagen {
             fluid {
               src
-              aspectRatio
             }
           }
         }

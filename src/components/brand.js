@@ -9,7 +9,7 @@ const Brand = ({ node }) => {
   const [showModal, setShowModal] = useState(false);
   console.log(titulo, descripcion, imagen,);
   return (
-    <div className="container mx-auto py-8 flex flex-col md:flex-row">
+    <div className="container mx-auto md:py-8 flex flex-col md:flex-row">
       {showModal && (
         <Modal
           show={showModal}
@@ -17,9 +17,9 @@ const Brand = ({ node }) => {
           children={<Catalog />}
         />
       )}
-      <div className="flex flex-wrap justify-center lg:justify-space-around xlg:w-2/5">
+      <div className="flex flex-wrap justify-center lg:justify-space-around lg:w-6/12 lg:px-5">
         {imagen.map((img, i) => (
-            <div className="brand_image h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd lg:h-brandProdcutLg lg:w-brandProdcutLg m-2 lg:m-5">
+            <div className="brand_image h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd lg:h-brandProductLg lg:w-brandProductLg m-2 lg:m-6">
               <Img
                 key={i}
                 fluid={img.fluid}

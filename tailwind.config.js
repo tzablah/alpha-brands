@@ -23,16 +23,29 @@ module.exports = {
       },
       height: {
         input : '52px',
-        brandProductSm: '85px',
-        brandProdcutMd: '143.72px',
-        brandProductLg: '150px'
+        brandProductSm: '90px',
+        brandProdcutMd: '147px',
+        brandProductLg: '150px',
+        logoNav: '34.65px',
+        logoNavMd: '38.91px',
+        logoNavLg: '53.25px'
       },
       width: {
         brandImage: '270px',
-        brandProductSm: '85px',
-        brandProdcutMd: '143.72px',
+        brandProductSm: '90px',
+        brandProdcutMd: '147px',
         brandProductLg: '150px',
-        modalMd: '95%'
+        modalMd: '95%',
+        logoNav: '124px',
+        logoNavMd: '141px',
+        logoNavLg: '198px'
+      },
+      backgroundSize: {
+        contactBackground: '105%'
+      },
+      backgroundPosition: {
+        top: '-25px 70px',
+        topxlg:'-25px 50px'
       },
 
       fontSize: {
