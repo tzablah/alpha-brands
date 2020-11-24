@@ -1,7 +1,15 @@
 import React from "react";
 import DownIcon from "../images/svg/download-icon.svg";
-const PrimaryButton = ({ title, icon, className, id, onClick = () => {} }) => (
+const PrimaryButton = ({
+  title,
+  icon,
+  submit,
+  className,
+  id,
+  onClick = () => {},
+}) => (
   <button
+    type={submit}
     id={id && id}
     className={`${className} bg-orange1 hover:bg-orange2 ${
       icon

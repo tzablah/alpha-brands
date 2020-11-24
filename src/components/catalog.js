@@ -29,7 +29,7 @@ const Catalog = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": formName.getAttribute("name"), ...form }),
     })
-      .then(() => <Redirect to="/success" />)
+      .then(() => console.log("done!"))
       .catch((error) => alert(error));
   };
   return (
@@ -41,14 +41,14 @@ const Catalog = () => {
       </p>
       <form
         action="/success"
-        name="download"
+        name="catalog"
         method="post"
         data-netlify-honeypot="bot-field"
         data-netlify="true"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col items-center mt-6 sm:mt-12">
-          <input type="hidden" name="form-name" value="download" />
+          <input type="hidden" name="form-name" value="catalog" />
           <input
             className="w-11/12 xl:w-1/2 h-12 my-3 p-4  placeholder-input bg-gray"
             placeholder="Nombre"
@@ -71,7 +71,7 @@ const Catalog = () => {
           />
 
           <PrimaryButton
-            type="submit"
+            submit="submit"
             className={`mt-8 w-72 ${!valid && "opacity-50 cursor-not-allowed"}`}
             title="DESCARGAR CATÁLOGO"
             // onClick={() => setShowModal(true)}
