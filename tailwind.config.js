@@ -18,11 +18,10 @@ module.exports = {
         content: "rgba(0, 0, 0, 0.65)",
         lightBlue: "rgba(51,128,204,0.07)",
         navgray: "rgba(0, 0, 0, 0.55)",
-        contacBackground: "rgba(231, 238, 249, 0.3)",
         input: "rgba(0, 0, 0, 0.50)"
       },
       height: {
-        input : '52px',
+        input: '52px',
         brandProductSm: '90px',
         brandProdcutMd: '147px',
         brandProductLg: '150px',
@@ -45,7 +44,7 @@ module.exports = {
       },
       backgroundPosition: {
         top: '-25px 70px',
-        topxlg:'-25px 50px'
+        topxlg: '-25px 50px'
       },
 
       fontSize: {

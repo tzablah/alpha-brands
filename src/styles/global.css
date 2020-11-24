@@ -120,6 +120,14 @@ button {
   height: 147px;
   width: 147px; 
   }
+  .bg-contacBackground {
+    background: url("../images/assets/contactBackground.png") no-repeat center;
+    background-size: contain;
+  }
+  .bg-contacBackground-send {
+    background: url("../images/assets/Ilustraciones.png") no-repeat center;
+    background-size: contain;
+  }
 }
 
 @media only screen and (min-width:1024px) {
@@ -136,4 +144,12 @@ button {
   height: 150px;
   width: 150px;
   }
+}
+
+.bg-contacBackground {
+  background-color: rgba(231, 238, 249, 0.3);
+}
+
+.bg-contacBackground-send {
+  background-color: rgba(231, 238, 249, 0.3);
 }
