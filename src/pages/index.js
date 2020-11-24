@@ -46,6 +46,26 @@ export default function Home({ data }) {
             onClick={() => setShowCatalog(true)}
           />
         </BackGroundImage>
+        <form
+          action="/success"
+          name="catalog"
+          method="post"
+          netlify-honeypot="bot-field"
+          netlify
+          hidden
+        >
+          <input placeholder="Nombre" name="Nombre" />
+          <input
+            placeholder="Correo electrónico"
+            name="Correo electrónico"
+            type="email"
+          />
+          <input
+            placeholder="Teléfono (opcional)"
+            name="Numero"
+            type="number"
+          />
+        </form>
         <BrandsSection brands={brands} />
         <section id="nosotros" className="px-4 md:px-16 lg:px-0">
           <InfoSection
@@ -81,7 +101,7 @@ export default function Home({ data }) {
             }
           />
         </section>
-        <ContactSection data={contactImage}/>
+        <ContactSection data={contactImage} />
       </Layout>
     </div>
   );
@@ -89,7 +109,7 @@ export default function Home({ data }) {
 
 export const hero = graphql`
   query {
-    heroImage: file(relativePath: { regex: "/background.png/"}) {
+    heroImage: file(relativePath: { regex: "/background.png/" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -97,7 +117,7 @@ export const hero = graphql`
         }
       }
     }
-    contactImage: file(relativePath: { regex: "/contactBackground.png/"}) {
+    contactImage: file(relativePath: { regex: "/contactBackground.png/" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
