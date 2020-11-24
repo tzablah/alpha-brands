@@ -6,7 +6,7 @@ const PrimaryButton = ({ title, icon, className, id, onClick = () => {} }) => (
     className={`${className} bg-orange1 hover:bg-orange2 ${
       icon
         ? "flex justify-center lg:justify-between w-full md:w-40"
-        : "justify-center py-5 w-72"
+        : "justify-center py-5"
     }`}
     onClick={() => onClick()}
   >

@@ -22,7 +22,7 @@ const ContactSection = ({data}) => {
 
   return (
     <BackGroundImage
-    className='hidden md:block bg-contactBackground bg-top lg:bg-topxlg'
+    className='hidden md:block bg-contactBackgroundSize bg-top lg:bg-toplg xlg:bg-topxlg'
     fluid={data.childImageSharp.fluid}
     alt={data.childImageSharp.fluid.originalName}>
       <section
