@@ -29,7 +29,7 @@ const Catalog = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": formName.getAttribute("name"), ...form }),
     })
-      .then(() => console.log("done!"))
+      .then(() => <Redirect to="/" />)
       .catch((error) => alert(error));
   };
   return (
@@ -45,6 +45,24 @@ const Catalog = () => {
         method="post"
         data-netlify-honeypot="bot-field"
         data-netlify="true"
+        hidden
+      >
+        <input type="hidden" name="form-name" value="catalog" />
+        <input placeholder="Nombre" name="Nombre" />
+        <input
+          placeholder="Correo electrónico"
+          name="Correo electrónico"
+          type="email"
+        />
+        <input placeholder="Teléfono (opcional)" name="Numero" type="number" />
+      </form>
+
+      <form
+        action="/success"
+        name="catalog"
+        method="post"
+        data-netlify-honeypot="bot-field"
+        data-netlify="true"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col items-center mt-6 sm:mt-12">
@@ -52,7 +70,7 @@ const Catalog = () => {
           <input
             className="w-11/12 xl:w-1/2 h-12 my-3 p-4  placeholder-input bg-gray"
             placeholder="Nombre"
-            name="nombre"
+            name="Nombre"
             onChange={handleInputs}
           />
           <input
@@ -65,14 +83,16 @@ const Catalog = () => {
           <input
             className="w-11/12 xl:w-1/2 h-12 my-3 p-4 placeholder-input bg-gray"
             placeholder="Teléfono (opcional)"
-            name="numero"
+            name="Numero"
             type="number"
             onChange={handleInputs}
           />
 
           <PrimaryButton
-            submit="submit"
-            className={`mt-8 w-72 ${!valid && "opacity-50 cursor-not-allowed"}`}
+            type="submit"
+            className={` mt-8 w-72 ${
+              !valid && "opacity-50 cursor-not-allowed"
+            }`}
             title="DESCARGAR CATÁLOGO"
             // onClick={() => setShowModal(true)}
           />
