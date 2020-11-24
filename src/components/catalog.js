@@ -23,11 +23,11 @@ const Catalog = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
+    const formName = e.target;
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": form.getAttribute("name"), ...form }),
+      body: encode({ "form-name": formName.getAttribute("name"), ...form }),
     })
       .then(() => <Redirect to="/success" />)
       .catch((error) => alert(error));
@@ -40,8 +40,8 @@ const Catalog = () => {
         <br className="hidden sm:block" /> de productos completo.
       </p>
       <form
-        name="download"
         action="/success"
+        name="download"
         method="post"
         data-netlify-honeypot="bot-field"
         data-netlify="true"

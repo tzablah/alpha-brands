@@ -141,7 +141,6 @@ const BrandsSection = ({ brands }) => {
                   alt={element.node.titulo}
                 />
               </div>
-              {console.log(element)}
             </button>
           ))}
         </div>

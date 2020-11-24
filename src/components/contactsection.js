@@ -8,7 +8,6 @@ const ContactSection = ({ data }) => {
   const [form, setForm] = useState({});
   const [send, setSend] = useState(false);
   const valid = Object.values(form).length === 3;
-  console.log(data, "contactSection");
   const encode = (data) => {
     return Object.keys(data)
       .map(
@@ -27,11 +26,11 @@ const ContactSection = ({ data }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
+    const formName = e.target;
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": form.getAttribute("name"), ...form }),
+      body: encode({ "form-name": formName.getAttribute("name"), ...form }),
     })
       .then(() => setSend(true))
       .catch((error) => alert(error));
