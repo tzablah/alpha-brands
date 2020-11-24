@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import PrimaryButton from "./primary-button";
 import Title from "./title";
+import { Redirect } from "@reach/router";
 const Catalog = () => {
   const [form, setForm] = useState({});
   const valid = Object.values(form).length === 3;
-
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
   const handleInputs = (e) => {
     e.persist();
     setForm((prevState) => {
@@ -14,7 +21,17 @@ const Catalog = () => {
       };
     });
   };
+  const handleSubmit = (e) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "download", ...form }),
+    })
+      .then(() => <Redirect to="/success" />)
+      .catch((error) => alert(error));
 
+    e.preventDefault();
+  };
   return (
     <div className="container mx-auto text-center py-8">
       <Title text="Catálogo de AlphaBrands" />
@@ -23,11 +40,12 @@ const Catalog = () => {
         <br className="hidden sm:block" /> de productos completo.
       </p>
       <form
-        name="download"
+        /*name="download"
         action="/success"
         method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        netlify-honeypot="bot-field"
+        netlify */
+        onSubmit={handleSubmit}
       >
         <div className="flex flex-col items-center mt-6 sm:mt-12">
           <input type="hidden" name="form-name" value="download" />
