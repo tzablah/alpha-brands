@@ -91,7 +91,7 @@ const BrandsSection = ({ brands }) => {
       )}
       <div className="md:py-16">
         <PrimaryButton
-          className="md:hidden my-10"
+          className="md:hidden w-full my-10"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />

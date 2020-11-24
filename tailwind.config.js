@@ -41,10 +41,11 @@ module.exports = {
         logoNavLg: '198px'
       },
       backgroundSize: {
-        contactBackground: '105%'
+        contactBackgroundSize: '105%'
       },
       backgroundPosition: {
         top: '-25px 70px',
+        toplg:'-25px 0px',
         topxlg:'-25px 50px'
       },
 

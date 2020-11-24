@@ -7,7 +7,7 @@ const NotFoundPage = () => (
     <h1 className="text-blue2 font-bold text-3xl">ERROR 404</h1>
     <p className="text-2xl mb-12">Página no encontrada</p>
     <Link to="/">
-      <PrimaryButton title="VOLVER AL INICIO" />
+      <PrimaryButton title="VOLVER AL INICIO" className='w-72' />
     </Link>
   </div>
 );
