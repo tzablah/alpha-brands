@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Title from "./title";
 import PhoneImg from "../images/svg/phone.svg";
 import MailImg from "../images/svg/mail.svg";
-import BackGroundImage from "gatsby-background-image";
 
 const ContactSection = ({ data }) => {
   const [form, setForm] = useState({});
