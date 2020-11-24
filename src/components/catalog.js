@@ -39,23 +39,6 @@ const Catalog = () => {
         Compártanos tu información para poder descargar nuestro catálogo
         <br className="hidden sm:block" /> de productos completo.
       </p>
-      <form
-        action="/success"
-        name="catalog"
-        method="post"
-        data-netlify-honeypot="bot-field"
-        data-netlify="true"
-        hidden
-      >
-        <input type="hidden" name="form-name" value="catalog" />
-        <input placeholder="Nombre" name="Nombre" />
-        <input
-          placeholder="Correo electrónico"
-          name="Correo electrónico"
-          type="email"
-        />
-        <input placeholder="Teléfono (opcional)" name="Numero" type="number" />
-      </form>
 
       <form
         action="/success"
