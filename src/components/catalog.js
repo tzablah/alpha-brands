@@ -22,15 +22,15 @@ const Catalog = () => {
     });
   };
   const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "download", ...form }),
+      body: encode({ "form-name": form.getAttribute("name"), ...form }),
     })
       .then(() => <Redirect to="/success" />)
       .catch((error) => alert(error));
-
-    e.preventDefault();
   };
   return (
     <div className="container mx-auto text-center py-8">
@@ -40,11 +40,11 @@ const Catalog = () => {
         <br className="hidden sm:block" /> de productos completo.
       </p>
       <form
-        /*name="download"
+        name="download"
         action="/success"
         method="post"
-        netlify-honeypot="bot-field"
-        netlify */
+        data-netlify-honeypot="bot-field"
+        data-netlify="true"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-col items-center mt-6 sm:mt-12">

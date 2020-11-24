@@ -26,15 +26,15 @@ const ContactSection = ({ data }) => {
     });
   };
   const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...form }),
+      body: encode({ "form-name": form.getAttribute("name"), ...form }),
     })
       .then(() => setSend(true))
       .catch((error) => alert(error));
-
-    e.preventDefault();
   };
   return (
     <BackGroundImage
@@ -85,11 +85,11 @@ const ContactSection = ({ data }) => {
             </li>
           </ul>
           <form
-            /* action=""
+            action={() => setSend(true)}
             name="contact"
             method="post"
-            netlify-honeypot="bot-field"
-            netlify */
+            data-netlify-honeypot="bot-field"
+            data-netlify="true"
             onSubmit={handleSubmit}
           >
             <div
