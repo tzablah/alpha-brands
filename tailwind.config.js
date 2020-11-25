@@ -18,11 +18,11 @@ module.exports = {
         content: "rgba(0, 0, 0, 0.65)",
         lightBlue: "rgba(51,128,204,0.07)",
         navgray: "rgba(0, 0, 0, 0.55)",
-        contacBackground: "rgba(231, 238, 249, 0.3)",
         input: "rgba(0, 0, 0, 0.50)"
       },
       height: {
-        input : '52px',
+        input: '52px',
+        brandImage: '270px',
         brandProductSm: '90px',
         brandProdcutMd: '147px',
         brandProductLg: '150px',
@@ -38,7 +38,9 @@ module.exports = {
         modalMd: '95%',
         logoNav: '124px',
         logoNavMd: '141px',
-        logoNavLg: '198px'
+        logoNavLg: '198px',
+        desktopsize: '1170px',
+        aboutSection: '970px'
       },
       backgroundSize: {
         contactBackgroundSize: '105%'
@@ -50,7 +52,11 @@ module.exports = {
       },
 
       fontSize: {
-        brand: '26px'
+        brand: '26px',
+        catalog: '14.5px'
+      },
+      letterSpacing: {
+        catalog: '.06em'
       },
     },
   },

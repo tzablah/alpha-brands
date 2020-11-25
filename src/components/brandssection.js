@@ -76,7 +76,7 @@ const BrandsSection = ({ brands }) => {
   };
 
   return (
-    <section id="brand-section" className="px-2">
+    <section id="brand-section" className="px-2 flex justify-center">
       {(showModal || showCatalog) && (
         <Modal
           show={showModal || showCatalog}
@@ -89,7 +89,7 @@ const BrandsSection = ({ brands }) => {
           }
         />
       )}
-      <div className="md:py-16">
+      <div className="md:py-16 w-full xl:w-desktopsize flex-col">
         <PrimaryButton
           className="md:hidden w-full my-10"
           title="DESCARGAR CATÁLOGO"
@@ -124,7 +124,7 @@ const BrandsSection = ({ brands }) => {
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-64 bg-white
+              className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-brandImage bg-white
               ${
                 !toggle &&
                 (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
@@ -134,7 +134,7 @@ const BrandsSection = ({ brands }) => {
               <div className="flex justify-center items-center w-full h-full">
                 <Img
                   fluid={element.node.imagen[0].fluid}
-                  style={{ height: "80%", width: "80%" }}
+                  style={{ height: "100%", width: "100%" }}
                   imgStyle={{
                     objectFit: "cover",
                   }}

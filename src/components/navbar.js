@@ -61,52 +61,54 @@ const Navbar = () => {
       )}
       {open && mobileNav()}
       <div className="fixed text-sm uppercase top-0 z-40 bg-white md:h-24 md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow">
-        <Link className="ml-5 md:ml-0 w-logoNav h-logoNav md:w-logoNavMd md:h-logoNavMd lg:h-logoNavLg lg:w-logoNavLg " title="Alpha Brands" to="/">
-          <div className="md:h-10  ml-2 h-auto">
-            <Image
-              alt="Alpha-Brands Logo"
-              title="Alpha-Brands Logo"
-              filename="textlogo"
-              objectFit="cover"
-              objectPosition="50% 50%"
-            />
+        <div className='flex justify-between items-center w-full xl:w-desktopsize'>
+          <Link className="ml-5 md:ml-0 w-logoNav h-logoNav md:w-logoNavMd md:h-logoNavMd lg:h-logoNavLg lg:w-logoNavLg " title="Alpha Brands" to="/">
+            <div className="md:h-10  ml-2 h-auto">
+              <Image
+                alt="Alpha-Brands Logo"
+                title="Alpha-Brands Logo"
+                filename="textlogo"
+                objectFit="cover"
+                objectPosition="50% 50%"
+              />
+            </div>
+          </Link>
+          <div className="hidden lg:flex items-center w-2/4 md:justify-between lg:justify-around">
+            <AnchorLink
+              className="text-navgray tracking-widest hover:text-blue"
+              to="/#nuestras-marcas"
+              title="Marcas Alpha Brands"
+            >
+              Nuestras Marcas
+            </AnchorLink>
+            <AnchorLink
+              className="text-navgray tracking-widest hover:text-blue"
+              to="/#nosotros"
+              title="Qué es Alpha Brands"
+            >
+              Conózcanos
+            </AnchorLink>
+            <AnchorLink
+              className="text-navgray tracking-widest hover:text-blue"
+              to="/#contacto"
+              title="Contacto Alpha Brands"
+            >
+              Contacto
+            </AnchorLink>
           </div>
-        </Link>
-        <div className="hidden lg:flex items-center w-2/4 md:justify-between lg:justify-around">
-          <AnchorLink
-            className="text-navgray tracking-widest hover:text-blue"
-            to="/#nuestras-marcas"
-            title="Marcas Alpha Brands"
+          <PrimaryButton
+            className="hidden px-5 py-3 lg:flex"
+            title="CATÁLOGO"
+            icon={true}
+            onClick={() => setShowModal(true)}
+          />
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden mr-5 md:mr-8 absolute z-20 right-0 pr-3"
           >
-            Nuestras Marcas
-          </AnchorLink>
-          <AnchorLink
-            className="text-navgray tracking-widest hover:text-blue"
-            to="/#nosotros"
-            title="Qué es Alpha Brands"
-          >
-            Conózcanos
-          </AnchorLink>
-          <AnchorLink
-            className="text-navgray tracking-widest hover:text-blue"
-            to="/#contacto"
-            title="Contacto Alpha Brands"
-          >
-            Contacto
-          </AnchorLink>
+            <MenuImg />
+          </button>
         </div>
-        <PrimaryButton
-          className="hidden px-5 py-3 lg:flex"
-          title="CATÁLOGO"
-          icon={true}
-          onClick={() => setShowModal(true)}
-        />
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden mr-5 md:mr-8 absolute z-20 right-0 pr-3"
-        >
-          <MenuImg />
-        </button>
       </div>
     </>
   );

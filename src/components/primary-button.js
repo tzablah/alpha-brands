@@ -10,7 +10,7 @@ const PrimaryButton = ({ title, icon, className, id, onClick = () => {} }) => (
     }`}
     onClick={() => onClick()}
   >
-    <span className="text-sm tracking-widest text-white">{title}</span>{" "}
+    <span className="text-catalog font-semibold tracking-catalog text-white">{title}</span>{" "}
     <figure className={`${icon ? "block ml-3" : "hidden"}`}>
       <DownIcon />
     </figure>

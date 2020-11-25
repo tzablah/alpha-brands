@@ -30,7 +30,7 @@ const SEO = () => {
         },
         {
           property: `og:url`,
-          //content: `https://konfio.mx${canonical}`
+          content: `https://alphabrands.com`
         },
         {
           property: `og:image`,
@@ -75,7 +75,7 @@ const SEO = () => {
         },
       ]}
     >
-      <link rel="canonical" href={"/"} />
+      <link rel="canonical" href={"https://alphabrands.com"} />
     </Helmet>
   );
 }
