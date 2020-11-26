@@ -36,7 +36,7 @@ const Navbar = () => {
           </li>
           <li className="my-8">
             <PrimaryButton
-              className="py-3"
+              className="py-3 w-full"
               title="CATÁLOGO"
               icon={true}
               onClick={() => {
