@@ -5,7 +5,6 @@ import Catalog from "./catalog";
 import Modal from "./modal";
 import PrimaryButton from "./primary-button";
 import MenuImg from "../images/svg/menu.svg";
-import Image from "./image";
 import AlphaLogo from '../images/svg/textlogo.svg'
 
 const Navbar = () => {
@@ -65,7 +64,7 @@ const Navbar = () => {
         <div className='flex justify-between items-center w-full xl:w-desktopsize'>
           <Link className="ml-5 md:ml-0 w-logoNav h-logoNav md:w-logoNavMd md:h-logoNavMd lg:h-logoNavLg lg:w-logoNavLg " title="Alpha Brands" to="/">
             <div className="md:h-10  ml-2 h-auto">
-              <AlphaLogo/>
+              <AlphaLogo />
             </div>
           </Link>
           <div className="hidden lg:flex items-center w-2/4 md:justify-between lg:justify-around">
