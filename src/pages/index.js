@@ -67,39 +67,41 @@ export default function Home({ data }) {
           />
         </form>
         <BrandsSection brands={brands} />
-        <section id="nosotros" className="px-4 md:px-16 lg:px-0">
-          <InfoSection
-            title="NOSOTROS"
-            id="#nosotros"
-            image="nosotros.png"
-            position="right"
-            text="Sabemos que en la vida se aprecia una mano amiga y nosotros queremos brindártela. Nuestros productos son de alta calidad, sostenibles, innovadores y sobre todos accesibles para acompañarte a ti y a tu familia en el día a día."
-          />
-          <InfoSection
-            title="NUESTRO OBJETIVO"
-            image="objetivo.png"
-            position="left"
-            text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
-          />
-          <InfoSection
-            title="DÓNDE ESTAMOS"
-            image="mapa.png"
-            position="right"
-            text={
-              <div>
-                <p>
-                  Actualmente vendemos a distribuidores en El Salvador,
-                  Honduras, Guatemala y Costa Rica.
-                </p>
-                <button
-                  className="mt-4 text-blue2 hover:text-blue text-base"
-                  onClick={() => setShowModal(true)}
-                >
-                  Nuestros distribuidores
-                </button>
-              </div>
-            }
-          />
+        <section id="nosotros" className="px-8 md:px-16 ">
+          <div className='flex flex-col items-center w-full'>
+            <InfoSection
+              title="NOSOTROS"
+              id="#nosotros"
+              image="nosotros.png"
+              position="right"
+              text="Sabemos que en la vida se aprecia una mano amiga y nosotros queremos brindártela. Nuestros productos son de alta calidad, sostenibles, innovadores y sobre todos accesibles para acompañarte a ti y a tu familia en el día a día."
+            />
+            <InfoSection
+              title="NUESTRO OBJETIVO"
+              image="objetivo.png"
+              position="left"
+              text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
+            />
+            <InfoSection
+              title="DÓNDE ESTAMOS"
+              image="mapa.png"
+              position="right"
+              text={
+                <div>
+                  <p>
+                    Actualmente vendemos a distribuidores en El Salvador,
+                    Honduras, Guatemala y Costa Rica.
+                  </p>
+                  <button
+                    className="mt-4 text-blue2 hover:text-blue text-base"
+                    onClick={() => setShowModal(true)}
+                  >
+                    Nuestros distribuidores
+                  </button>
+                </div>
+              }
+            />
+          </div>
         </section>
         <ContactSection data={contactImage} />
       </Layout>

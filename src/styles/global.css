@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  width: 100vw !important;
+  width: 100vw;
 }
 
 input[type="range"] {
@@ -72,7 +72,7 @@ button {
 }
 
 .shadow {
-  box-shadow: 10px 10px 10px rgba(49, 74, 90, 0.16);
+  box-shadow: 0px 0px 10px rgba(49, 74, 90, 0.16);
 }
 
 .card-shadow {
@@ -86,6 +86,12 @@ button {
 .img-size {
   width: 23rem;
   height: 23rem;
+}
+@media only screen and (min-width:1280px){
+  .img-size {
+    width: 370px;
+    height: 370px;
+  }
 }
 
 .w-72 {
@@ -120,6 +126,13 @@ button {
   height: 147px;
   width: 147px; 
   }
+  .bg-contacBackground {
+    background: url("../images/assets/contactBackground.png") no-repeat center;
+    background-size: contain;
+  }
+  .bg-contacBackground-send {
+    background: url("../images/assets/Ilustraciones.png") no-repeat center;
+  }
 }
 
 @media only screen and (min-width:1024px) {
@@ -136,4 +149,12 @@ button {
   height: 150px;
   width: 150px;
   }
+}
+
+.bg-contacBackground {
+  background-color: rgba(231, 238, 249, 0.3);
+}
+
+.bg-contacBackground-send {
+  background-color: rgba(231, 238, 249, 0.3);
 }

@@ -17,7 +17,7 @@ const Brand = ({ node }) => {
           children={<Catalog />}
         />
       )}
-      <div className="flex flex-wrap justify-center lg:justify-space-around lg:w-6/12 lg:px-5">
+      <div className="flex flex-wrap justify-center lg:justify-space-around lg:w-6/12 lg:px-5 xl:px-6">
         {imagen.map((img, i) => (
             <div className="brand_image h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd lg:h-brandProductLg lg:w-brandProductLg m-2 lg:m-6">
               <Img
