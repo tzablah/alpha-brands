@@ -46,29 +46,10 @@ export default function Home({ data }) {
             onClick={() => setShowCatalog(true)}
           />
         </BackGroundImage>
-        <form
-          action="/success"
-          name="catalog"
-          method="post"
-          netlify-honeypot="bot-field"
-          netlify
-          hidden
-        >
-          <input placeholder="Nombre" name="Nombre" />
-          <input
-            placeholder="Correo electrónico"
-            name="Correo electrónico"
-            type="email"
-          />
-          <input
-            placeholder="Teléfono (opcional)"
-            name="Numero"
-            type="number"
-          />
-        </form>
+
         <BrandsSection brands={brands} />
         <section id="nosotros" className="px-8 md:px-16 ">
-          <div className='flex flex-col items-center w-full'>
+          <div className="flex flex-col items-center w-full">
             <InfoSection
               title="NOSOTROS"
               id="#nosotros"

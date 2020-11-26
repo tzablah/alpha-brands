@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import PrimaryButton from "./primary-button";
 import Title from "./title";
-import { Redirect } from "@reach/router";
+import { Link } from "gatsby";
 const Catalog = () => {
   const [form, setForm] = useState({});
   const valid = Object.values(form).length === 3;
-  const encode = (data) => {
+  /*   const encode = (data) => {
     return Object.keys(data)
       .map(
         (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
       )
       .join("&");
-  };
+  }; */
   const handleInputs = (e) => {
     e.persist();
     setForm((prevState) => {
@@ -21,7 +21,7 @@ const Catalog = () => {
       };
     });
   };
-  const handleSubmit = (e) => {
+  /*  const handleSubmit = (e) => {
     e.preventDefault();
     const formName = e.target;
     fetch("/", {
@@ -31,6 +31,9 @@ const Catalog = () => {
     })
       .then(() => <Redirect to="/" />)
       .catch((error) => alert(error));
+  }; */
+  const handleDownloadCatalog = () => {
+    localStorage.setItem("form", JSON.stringify(form));
   };
   return (
     <div className="container mx-auto text-center py-8">
@@ -43,57 +46,40 @@ const Catalog = () => {
         action="/success"
         name="catalog"
         method="post"
-        netlify-honeypot="bot-field"
-        netlify
-        hidden
-      >
-        <input placeholder="Nombre" name="Nombre" />
-        <input
-          placeholder="Correo electrónico"
-          name="Correo electrónico"
-          type="email"
-        />
-        <input placeholder="Teléfono (opcional)" name="Numero" type="number" />
-      </form>
-      <form
-        action="/success"
-        name="catalog"
-        method="post"
         data-netlify-honeypot="bot-field"
         data-netlify="true"
-        onSubmit={handleSubmit}
       >
         <div className="flex flex-col items-center mt-6 sm:mt-12">
           <input type="hidden" name="form-name" value="catalog" />
           <input
             className="w-11/12 xl:w-1/2 h-12 my-3 p-4  placeholder-input bg-gray"
             placeholder="Nombre"
-            name="Nombre"
+            name="name"
             onChange={handleInputs}
           />
           <input
             className="w-11/12 xl:w-1/2 h-12 my-3 p-4 placeholder-input bg-gray"
             placeholder="Correo electrónico"
-            name="Correo electrónico"
+            name="email"
             type="email"
             onChange={handleInputs}
           />
           <input
             className="w-11/12 xl:w-1/2 h-12 my-3 p-4 placeholder-input bg-gray"
             placeholder="Teléfono (opcional)"
-            name="Numero"
+            name="phone"
             type="number"
             onChange={handleInputs}
           />
-
-          <PrimaryButton
-            type="submit"
-            className={` mt-8 w-72 ${
-              !valid && "opacity-50 cursor-not-allowed"
-            }`}
-            title="DESCARGAR CATÁLOGO"
-            // onClick={() => setShowModal(true)}
-          />
+          <Link to="/success">
+            <PrimaryButton
+              className={` mt-8 w-72 ${
+                !valid && "opacity-50 cursor-not-allowed"
+              }`}
+              title="DESCARGAR CATÁLOGO"
+              onClick={() => handleDownloadCatalog()}
+            />
+          </Link>
         </div>
       </form>
     </div>
