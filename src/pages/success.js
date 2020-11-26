@@ -9,11 +9,11 @@ const Success = () => (
     </h1>
     <p className="text-2xl mb-12">Gracias por tu informacion</p>
     <Link to="/">
-      <PrimaryButton title="VOLVER AL INICIO" />
+      <PrimaryButton title="VOLVER AL INICIO" className='w-72' />
     </Link>
 
-    <a href={catalogo} target="_blank" rel="noreferrer" className='flex justify-center mt-5'>
-      <PrimaryButton title="CATÁLOGO" icon={true} className="py-3 px-3" />
+    <a href={catalogo} target="_blank" rel="noreferrer" className='flex justify-center h-10 mt-5'>
+      <PrimaryButton title="CATÁLOGO" icon={true} className="flex  w-40 xl:w-72 items-center px-5 py-3" />
     </a>
   </div>
 );
