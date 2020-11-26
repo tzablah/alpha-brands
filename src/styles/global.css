@@ -132,7 +132,6 @@ button {
   }
   .bg-contacBackground-send {
     background: url("../images/assets/Ilustraciones.png") no-repeat center;
-    background-size: contain;
   }
 }
 

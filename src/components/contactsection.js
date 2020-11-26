@@ -21,9 +21,9 @@ const ContactSection = ({ data }) => {
 
   return (
     <section
-      className={`px-4 ${send ? "sm:py-56 lg:py-64 bg-contacBackground-send" : "bg-contacBackground"}`}
+      className={`px-4 ${send ? "sm:py-56 lg:py-64 bg-contacBackground-send" : "xl:h-contactSection bg-contacBackground"}`}
     >
-      <div className={`container mx-auto py-16 text-center`}>
+      <div className={`lg:container xl:max-w-contactSection xl:h-full mx-auto py-16 text-center`}>
         <Title
           text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
           id="contacto"
@@ -86,7 +86,7 @@ const ContactSection = ({ data }) => {
             onChange={handleInputs}
           />
           <button
-            className={`mt-6 sm:mt-12 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold hover:bg-blue
+            className={`md:flex w-72 mt-12 justify-center bg-blue2 py-5 rounded-full text-catalog font-semibold tracking-catalog text-white hover:bg-blue
               ${!valid && "opacity-50 cursor-not-allowed"}`}
             disabled={!valid}
             onClick={() => setSend(true)}

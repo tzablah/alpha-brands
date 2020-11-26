@@ -28,7 +28,8 @@ module.exports = {
         brandProductLg: '150px',
         logoNav: '34.65px',
         logoNavMd: '38.91px',
-        logoNavLg: '53.25px'
+        logoNavLg: '53.25px',
+        contactSection: '765px'
       },
       width: {
         brandImage: '270px',
@@ -40,7 +41,10 @@ module.exports = {
         logoNavMd: '141px',
         logoNavLg: '198px',
         desktopsize: '1170px',
-        aboutSection: '970px'
+        aboutSection: '970px',
+      },
+      maxWidth: {
+        contactSection: '1440px'
       },
       backgroundSize: {
         contactBackgroundSize: '105%'
