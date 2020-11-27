@@ -1,33 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import PrimaryButton from "../components/primary-button";
 import catalogo from "../images/docs/sheet.pdf";
 const Success = () => {
   const [form, setForm] = useState({});
-  const buttonRef = useRef();
+  // const buttonRef = useRef();
   useEffect(() => {
     setForm(JSON.parse(localStorage.getItem("form")));
   }, []);
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
-  const handleSubmit = (e) => {
-    console.log(buttonRef.current);
-    e.preventDefault();
-    const formName = e.target;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": formName.getAttribute("name"), ...form }),
-    })
-      .then(() => console.log("done!!!"))
-      .catch((error) => alert(error));
-    console.log("echoooo");
-  };
   return (
     <div className="w-full h-full text-center mt-40 md:mt-64 p-6">
       <h1 className="text-blue2 font-bold text-3xl">
@@ -40,25 +20,11 @@ const Success = () => {
         data-netlify-honeypot="bot-field"
         data-netlify="true"
         hidden
-        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="catalog" />
-        <input placeholder="Nombre" name="Nombre" value={form.name} />
-        <input
-          placeholder="Correo electrónico"
-          name="Correo electrónico"
-          type="email"
-          value={form.email}
-        />
-        <input
-          placeholder="Teléfono (opcional)"
-          name="Numero"
-          type="number"
-          value={form.phone}
-        />
-        <button ref={buttonRef} type="submit">
-          send
-        </button>
+        <input placeholder="Nombre" name="name" value={form.name} />
+        <input placeholder="Correo electrónico" name="email" type="email" />
+        <input placeholder="Teléfono (opcional)" name="phone" type="number" />
       </form>
       <p className="text-2xl mb-12">Gracias por tu informacion</p>
       <Link to="/">
@@ -72,11 +38,7 @@ const Success = () => {
         className="flex justify-center h-10 mt-5"
       >
         <PrimaryButton
-          onClick={handleSubmit}
-          form="download"
-          value="submit"
           title="CATÁLOGO"
-          type="submit"
           icon={true}
           className="flex  w-40 xl:w-72 items-center px-5 py-3"
         />

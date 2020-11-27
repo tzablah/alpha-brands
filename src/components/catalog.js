@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import PrimaryButton from "./primary-button";
 import Title from "./title";
-import { Link } from "gatsby";
-import { Redirect } from "@reach/router";
+
 const Catalog = () => {
   const [form, setForm] = useState({});
   const valid = Object.values(form).length === 3;
