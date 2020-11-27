@@ -17,7 +17,7 @@ const Success = () => {
   };
   const handleSubmit = (e) => {
     console.log(buttonRef.current);
-    /*  e.preventDefault();
+    e.preventDefault();
     const formName = e.target;
     fetch("/", {
       method: "POST",
@@ -25,7 +25,7 @@ const Success = () => {
       body: encode({ "form-name": formName.getAttribute("name"), ...form }),
     })
       .then(() => console.log("done!!!"))
-      .catch((error) => alert(error)); */
+      .catch((error) => alert(error));
     console.log("echoooo");
   };
   return (
@@ -72,6 +72,7 @@ const Success = () => {
         className="flex justify-center h-10 mt-5"
       >
         <PrimaryButton
+          onClick={handleSubmit}
           form="download"
           value="submit"
           title="CATÁLOGO"

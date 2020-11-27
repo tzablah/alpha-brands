@@ -30,7 +30,7 @@ const Catalog = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": formName.getAttribute("name"), ...form }),
     })
-      .then(() => <Redirect to="/success" />)
+      .then((resp) => console.log("si llegamos", resp))
       .catch((error) => alert(error));
   };
   const handleDownloadCatalog = () => {
