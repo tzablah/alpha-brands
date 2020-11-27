@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import PrimaryButton from "./primary-button";
 import Title from "./title";
 import { Link } from "gatsby";
+import Redirect from "@reach/router";
 const Catalog = () => {
   const [form, setForm] = useState({});
   const valid = Object.values(form).length === 3;
-  /*   const encode = (data) => {
+  const encode = (data) => {
     return Object.keys(data)
       .map(
         (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
       )
       .join("&");
-  }; */
+  };
   const handleInputs = (e) => {
     e.persist();
     setForm((prevState) => {
@@ -21,7 +22,7 @@ const Catalog = () => {
       };
     });
   };
-  /*  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const formName = e.target;
     fetch("/", {
@@ -29,9 +30,9 @@ const Catalog = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": formName.getAttribute("name"), ...form }),
     })
-      .then(() => <Redirect to="/" />)
+      .then(() => <Redirect to="/success" />)
       .catch((error) => alert(error));
-  }; */
+  };
   const handleDownloadCatalog = () => {
     localStorage.setItem("form", JSON.stringify(form));
   };
@@ -48,6 +49,7 @@ const Catalog = () => {
         method="post"
         data-netlify-honeypot="bot-field"
         data-netlify="true"
+        onSubmit={handleSubmit}
       >
         <div className="flex flex-col items-center mt-6 sm:mt-12">
           <input type="hidden" name="form-name" value="catalog" />
@@ -73,6 +75,7 @@ const Catalog = () => {
           />
           <Link to="/success">
             <PrimaryButton
+              type="submit"
               className={` mt-8 w-72 ${
                 !valid && "opacity-50 cursor-not-allowed"
               }`}

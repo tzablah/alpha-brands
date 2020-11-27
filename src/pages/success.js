@@ -7,7 +7,7 @@ const Success = () => {
   const buttonRef = useRef();
   useEffect(() => {
     setForm(JSON.parse(localStorage.getItem("form")));
-  }, [form]);
+  }, []);
   const encode = (data) => {
     return Object.keys(data)
       .map(
@@ -16,7 +16,7 @@ const Success = () => {
       .join("&");
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
+    console.log(buttonRef.current);
     /*  e.preventDefault();
     const formName = e.target;
     fetch("/", {
@@ -34,7 +34,6 @@ const Success = () => {
         Los datos han sido enviados con exito
       </h1>
       <form
-        ref={buttonRef}
         id="download"
         name="catalog"
         method="post"
@@ -57,28 +56,30 @@ const Success = () => {
           type="number"
           value={form.phone}
         />
-        {/* <button type="submit">send</button> */}
+        <button ref={buttonRef} type="submit">
+          send
+        </button>
       </form>
       <p className="text-2xl mb-12">Gracias por tu informacion</p>
       <Link to="/">
         <PrimaryButton title="VOLVER AL INICIO" className="w-72" />
       </Link>
 
-      {/*   <a
+      <a
         href={catalogo}
         target="_blank"
         rel="noreferrer"
         className="flex justify-center h-10 mt-5"
-      > */}
-      <PrimaryButton
-        form="download"
-        value="submit"
-        title="CATÁLOGO"
-        type="submit"
-        icon={true}
-        className="flex  w-40 xl:w-72 items-center px-5 py-3"
-      />
-      {/* </a> */}
+      >
+        <PrimaryButton
+          form="download"
+          value="submit"
+          title="CATÁLOGO"
+          type="submit"
+          icon={true}
+          className="flex  w-40 xl:w-72 items-center px-5 py-3"
+        />
+      </a>
     </div>
   );
 };
