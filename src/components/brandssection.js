@@ -56,28 +56,24 @@ const BrandsSection = ({ brands }) => {
               {toggle ? (
                 <UpImg className="sm:hidden ml-2" />
               ) : (
-                <DownImg className="sm:hidden ml-2" />
-              )}
-              {/*               <img className="sm:hidden ml-2" src={toggle ? upImg : downImg} />
-               */}{" "}
+                  <DownImg className="sm:hidden ml-2" />
+                )}
             </button>
           </div>
         </div>
         <div
-          className={`flex my-8 sm:mt-0 justify-center xl:justify-between sm:-mx-4 ${
-            toggle && "flex-wrap"
-          }`}
+          className={`flex my-8 sm:mt-0 justify-center xl:justify-between sm:-mx-4 ${toggle && "flex-wrap"
+            }`}
         >
           {brands.edges.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
               className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-brandImage bg-white
-              ${
-                !toggle &&
+              ${!toggle &&
                 (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
-              }`}
+                }`}
             >
               <div className="flex justify-center items-center w-full h-full">
                 <Img
@@ -91,6 +87,7 @@ const BrandsSection = ({ brands }) => {
               </div>
             </button>
           ))}
+          {console.log(brands.edges.length, slideIndex)}
         </div>
         {!toggle && (
           <input
@@ -99,7 +96,7 @@ const BrandsSection = ({ brands }) => {
             value={slideIndex}
             type="range"
             min={0}
-            max={brands.length - 4}
+            max={brands.edges.length - 4}
           />
         )}
       </div>
