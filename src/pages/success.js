@@ -13,7 +13,13 @@ const Success = () => {
       <h1 className="text-blue2 font-bold text-3xl">
         Los datos han sido enviados con exito
       </h1>
-      <form name="catalog" netlify-honeypot="bot-field" netlify hidden>
+      <form
+        name="catalog"
+        method="post"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+        hidden
+      >
         <input type="hidden" name="form-name" value="catalog" />
         <input placeholder="Nombre" name="name" />
         <input placeholder="Correo electrónico" name="email" type="email" />
