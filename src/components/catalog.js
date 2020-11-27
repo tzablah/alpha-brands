@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PrimaryButton from "./primary-button";
 import Title from "./title";
 import { Link } from "gatsby";
-import Redirect from "@reach/router";
+import { Redirect } from "@reach/router";
 const Catalog = () => {
   const [form, setForm] = useState({});
   const valid = Object.values(form).length === 3;
@@ -30,7 +30,12 @@ const Catalog = () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": formName.getAttribute("name"), ...form }),
     })
-      .then((resp) => console.log("si llegamos", resp))
+      .then((resp) => {
+        console.log("si llegamos", resp);
+        if (resp.status === 200) {
+          return window.location.replace(`/success`);
+        }
+      })
       .catch((error) => alert(error));
   };
   const handleDownloadCatalog = () => {
@@ -73,16 +78,16 @@ const Catalog = () => {
             type="number"
             onChange={handleInputs}
           />
-          <Link to="/success">
-            <PrimaryButton
-              type="submit"
-              className={` mt-8 w-72 ${
-                !valid && "opacity-50 cursor-not-allowed"
-              }`}
-              title="DESCARGAR CATÁLOGO"
-              onClick={() => handleDownloadCatalog()}
-            />
-          </Link>
+          {/* <Link to="/success"> */}
+          <PrimaryButton
+            type="submit"
+            className={` mt-8 w-72 ${
+              !valid && "opacity-50 cursor-not-allowed"
+            }`}
+            title="DESCARGAR CATÁLOGO"
+            // onClick={() => handleDownloadCatalog()}
+          />
+          {/*  </Link> */}
         </div>
       </form>
     </div>
