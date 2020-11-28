@@ -36,10 +36,10 @@ const ContactSection = ({ data }) => {
   };
   return (
     <section
-      className={`px-4 ${
+      className={`px-4 mb-footerMargin xl:h-contactSection ${
         send
-          ? "sm:py-56 lg:py-64 bg-contacBackground-send"
-          : "xl:h-contactSection bg-contacBackground"
+          ? "bg-contacBackground-send"
+          : "bg-contacBackground"
       }`}
     >
       <div
@@ -48,9 +48,10 @@ const ContactSection = ({ data }) => {
         <Title
           text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
           id="contacto"
+          className={send ? "mt:0 sm:mt-56 lg:mt-64" : "mt-contactMargin"}
         />
         {send ? (
-          <p className="text-base my-6">
+          <p className="text-base my-2">
             Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
             pronto posible.
           </p>
@@ -112,14 +113,14 @@ const ContactSection = ({ data }) => {
               onChange={handleInputs}
             />
             <textarea
-              className="w-11/12 md:w-5/12 h-48  placeholder-input my-3 p-4"
+              className="w-11/12 md:w-5/12 h-48 xl:h-32  placeholder-input mt-3 p-4"
               placeholder="Mensaje..."
               name="Mensaje"
               onChange={handleInputs}
             />
             <button
               type="submit"
-              className={`mt-6 sm:mt-12 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold hover:bg-blue
+              className={`mt-6 sm:mt-11 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold hover:bg-blue
               ${!valid && "opacity-50 cursor-not-allowed"}`}
               disabled={!valid}
             >

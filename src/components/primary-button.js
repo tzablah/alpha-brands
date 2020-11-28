@@ -13,7 +13,7 @@ const PrimaryButton = ({
     id={id && id}
     className={`${className} bg-orange1 hover:bg-orange2 ${
       icon
-        ? "flex justify-center lg:justify-between  md:w-40"
+        ? "flex justify-center lg:justify-between md:w-40"
         : "justify-center py-5"
     }`}
     onClick={() => onClick()}
