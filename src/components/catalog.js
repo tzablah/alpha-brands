@@ -51,6 +51,7 @@ const Catalog = () => {
         action="/success"
         name="catalog"
         method="post"
+        data-netlify-honeypot="bot-field"
         data-netlify="true"
         onSubmit={handleSubmit}
       >

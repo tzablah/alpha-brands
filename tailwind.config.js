@@ -6,6 +6,10 @@ module.exports = {
   purge: ["./src/**/*.js"],
   target: "relaxed",
   theme: {
+    fontFamily: {
+      Poppins: ["400", "600", "700"],
+      OpenSans: ["OpenSans400", "OpenSans700"],
+    },
     extend: {
       colors: {
         white: "#FEFEFD",
@@ -18,49 +22,49 @@ module.exports = {
         content: "rgba(0, 0, 0, 0.65)",
         lightBlue: "rgba(51,128,204,0.07)",
         navgray: "rgba(0, 0, 0, 0.55)",
-        input: "rgba(0, 0, 0, 0.50)"
+        input: "rgba(0, 0, 0, 0.50)",
       },
       height: {
-        input: '52px',
-        brandImage: '270px',
-        brandProductSm: '90px',
-        brandProdcutMd: '147px',
-        brandProductLg: '150px',
-        logoNav: '34.65px',
-        logoNavMd: '38.91px',
-        logoNavLg: '53.25px',
-        contactSection: '765px'
+        input: "52px",
+        brandImage: "270px",
+        brandProductSm: "90px",
+        brandProdcutMd: "147px",
+        brandProductLg: "150px",
+        logoNav: "34.65px",
+        logoNavMd: "38.91px",
+        logoNavLg: "53.25px",
+        contactSection: "765px",
       },
       width: {
-        brandImage: '270px',
-        brandProductSm: '90px',
-        brandProdcutMd: '147px',
-        brandProductLg: '150px',
-        modalMd: '95%',
-        logoNav: '124px',
-        logoNavMd: '141px',
-        logoNavLg: '198px',
-        desktopsize: '1170px',
-        aboutSection: '970px',
+        brandImage: "270px",
+        brandProductSm: "90px",
+        brandProdcutMd: "147px",
+        brandProductLg: "150px",
+        modalMd: "95%",
+        logoNav: "124px",
+        logoNavMd: "141px",
+        logoNavLg: "198px",
+        desktopsize: "1170px",
+        aboutSection: "970px",
       },
       maxWidth: {
-        contactSection: '1440px'
+        contactSection: "1440px",
       },
       backgroundSize: {
-        contactBackgroundSize: '105%'
+        contactBackgroundSize: "105%",
       },
       backgroundPosition: {
-        top: '-25px 70px',
-        toplg:'-25px 0px',
-        topxlg:'-25px 50px'
+        top: "-25px 70px",
+        toplg: "-25px 0px",
+        topxlg: "-25px 50px",
       },
 
       fontSize: {
-        brand: '26px',
-        catalog: '14.5px'
+        brand: "26px",
+        catalog: "14.5px",
       },
       letterSpacing: {
-        catalog: '.06em'
+        catalog: ".06em",
       },
     },
   },
