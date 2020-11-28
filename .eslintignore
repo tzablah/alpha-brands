@@ -1,0 +1,11 @@
+.cache
+package.json
+package-lock.json
+yarn.lock
+/node_modules/
+/public/
+/src/
+/templates/
+gatsby-config.js
+tailwind.config.js
+gatsby-node.js

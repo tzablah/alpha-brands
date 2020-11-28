@@ -32,7 +32,7 @@ const Brand = ({ node }) => {
             </div>  
         ))}
       </div>
-      <div className="w-full text-justify md:w-1/2 pl-0 md:pl-8 mt-6">
+      <div className="w-full text-justify md:w-1/2 pl-0 md:pl-8 xl:pl-0 xl:pr-12  mt-6">
         <Title text={titulo} />
         <p className="text-sm my-4">{descripcion.descripcion}</p>
         <p className="font-semibold text-sm my-6">

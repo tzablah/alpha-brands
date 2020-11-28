@@ -1,8 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
-  font-family: Open Sans 400;
+  font-family: OpenSans 400;
   src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
   font-display: swap;
 }
@@ -173,4 +174,8 @@ button {
 
 .bg-contacBackground-send {
   background-color: rgba(231, 238, 249, 0.3);
+}
+
+.location {
+  color: rgba(0, 0, 0, 0.65);
 }

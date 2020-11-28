@@ -45,9 +45,9 @@ const BrandsSection = ({ brands }) => {
         />
         <div className="flex items-center sm:block">
           <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
-          <div className="flex justify-end">
+          <div className="my-7 flex justify-end">
             <button
-              className="sm:my-6 text-blue2 text-xl"
+              className="text-blue2 text-xl"
               onClick={() => setToggle(!toggle)}
             >
               <span className="hidden hover:text-blue sm:block">
@@ -62,14 +62,14 @@ const BrandsSection = ({ brands }) => {
           </div>
         </div>
         <div
-          className={`flex my-8 sm:mt-0 justify-center xl:justify-between sm:-mx-4 ${toggle && "flex-wrap"
+          className={`flex mb-14 sm:mt-0 justify-center xl:justify-between sm:-mx-4 ${toggle && "flex-wrap"
             }`}
         >
           {brands.edges.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-brandImage bg-white
+              className={`mx-2 lg:mx-brandMargin w-24 md:w-40 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-brandImage bg-white
               ${!toggle &&
                 (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
@@ -78,7 +78,7 @@ const BrandsSection = ({ brands }) => {
               <div className="flex justify-center items-center w-full h-full">
                 <Img
                   fluid={element.node.imagen[0].fluid}
-                  style={{ height: "100%", width: "100%" }}
+                  style={{ height: "80%", width: "80%" }}
                   imgStyle={{
                     objectFit: "cover",
                   }}

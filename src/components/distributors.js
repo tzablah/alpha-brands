@@ -36,14 +36,14 @@ const data = [{
 const Distributors = () => {
   return (
     <div className="container mx-auto py-8 lg:mx-16 xl:mx-48">
-      <Title text="NUESTROS DISTRIBUIDORES" />
+      <Title text="NUESTROS DISTRIBUIDORES"/>
       {data.map((country, i) => (
-        <div key={i}>
-          <Title text={country.title} className="pt-8" />
+        <div className='mt-17' key={i}>
+          <Title text={country.title} className="mb-4" />
           {country.distributors.map((element, idx) => (
-            <div key={idx} className="py-2 my-6">
+            <div key={idx} className="mb-9">
               <p className="text-blue2 pb-2">{element.name}</p>
-              <p>{element.description}</p>
+              <p className='location'>{element.description}</p>
             </div>
           ))}
         </div>

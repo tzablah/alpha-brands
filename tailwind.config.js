@@ -6,10 +6,7 @@ module.exports = {
   purge: ["./src/**/*.js"],
   target: "relaxed",
   theme: {
-    fontFamily: {
-      Poppins: ["400", "600", "700"],
-      OpenSans: ["OpenSans400", "OpenSans700"],
-    },
+   
     extend: {
       colors: {
         white: "#FEFEFD",
@@ -24,6 +21,15 @@ module.exports = {
         navgray: "rgba(0, 0, 0, 0.55)",
         input: "rgba(0, 0, 0, 0.50)",
       },
+      margin: {
+        7: "1.75rem",
+        14: "3.56rem",
+        brandMargin: "15px",
+        contactMargin: "30px",
+        footerMargin: "75px",
+        9: "2.25rem",
+        17: "68px",
+      },
       height: {
         input: "52px",
         brandImage: "270px",
@@ -34,6 +40,7 @@ module.exports = {
         logoNavMd: "38.91px",
         logoNavLg: "53.25px",
         contactSection: "765px",
+        catalogInput: "52px",
       },
       width: {
         brandImage: "270px",
@@ -46,6 +53,7 @@ module.exports = {
         logoNavLg: "198px",
         desktopsize: "1170px",
         aboutSection: "970px",
+        catalogInput: "571px",
       },
       maxWidth: {
         contactSection: "1440px",
@@ -58,7 +66,10 @@ module.exports = {
         toplg: "-25px 0px",
         topxlg: "-25px 50px",
       },
-
+      fontFamily: {
+        'poppins': ['"Poppins 400"'],
+        'OpenSans': ["OpenSans400", "OpenSans700"],
+      },
       fontSize: {
         brand: "26px",
         catalog: "14.5px",
