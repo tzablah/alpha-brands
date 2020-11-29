@@ -11,6 +11,10 @@ import Modal from "../components/modal";
 import PrimaryButton from "../components/primary-button";
 import SEO from "../components/seo";
 
+import NosotrosImg from '../images/svg/nosotros.svg'
+import ObjetivoImg from '../images/svg/objetivo.svg'
+import MapaImg from '../images/svg/donde.svg'
+
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
@@ -27,6 +31,9 @@ export default function Home({ data }) {
           children={
             showModal ? <Distributors /> : showCatalog ? <Catalog /> : ""
           }
+          className={
+            showModal ? "h-full" : showCatalog ? "h-full lg:h-auto" : ""
+          }
         />
       )}
       <Layout>
@@ -36,11 +43,11 @@ export default function Home({ data }) {
           fluid={data.heroImage.childImageSharp.fluid}
           alt={data.heroImage.childImageSharp.fluid.originalName}
         >
-          <h1 className="px-4 text-center text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-widest">
+          <h1 className="font-poppins px-4 text-center text-2xl md:text-brandmd lg:text-brandlg font-extrabold text-white tracking-widest">
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton
-            className="hidden md:flex w-72 mt-12"
+            className="hidden md:flex w-full md:w-72 mt-12"
             size="large"
             title="DESCARGAR CATÁLOGO"
             onClick={() => setShowCatalog(true)}
@@ -53,19 +60,19 @@ export default function Home({ data }) {
             <InfoSection
               title="NOSOTROS"
               id="#nosotros"
-              image="nosotros.png"
+              image={<NosotrosImg className="img-size" />}
               position="right"
               text="Sabemos que en la vida se aprecia una mano amiga y nosotros queremos brindártela. Nuestros productos son de alta calidad, sostenibles, innovadores y sobre todos accesibles para acompañarte a ti y a tu familia en el día a día."
             />
             <InfoSection
               title="NUESTRO OBJETIVO"
-              image="objetivo.png"
+              image={<ObjetivoImg className="img-size" />}
               position="left"
               text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
             />
             <InfoSection
               title="DÓNDE ESTAMOS"
-              image="mapa.png"
+              image={<MapaImg className="img-size" />}
               position="right"
               text={
                 <div>
@@ -74,7 +81,7 @@ export default function Home({ data }) {
                     Honduras, Guatemala y Costa Rica.
                   </p>
                   <button
-                    className="mt-4 text-blue2 hover:text-blue text-base"
+                    className="font-opensans mt-4 text-blueBright hover:text-blue text-sm md:text-base"
                     onClick={() => setShowModal(true)}
                   >
                     Nuestros distribuidores

@@ -47,29 +47,29 @@ const BrandsSection = ({ brands }) => {
           <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
           <div className="flex justify-end">
             <button
-              className="sm:my-6 text-blue2 text-xl"
+              className="my-7 text-blueBright text-xl"
               onClick={() => setToggle(!toggle)}
             >
-              <span className="hidden hover:text-blue sm:block">
+              <span className="font-opensans hidden hover:text-blue sm:block">
                 {toggle ? "Ver menos" : "Ver todas"}
               </span>
               {toggle ? (
-                <UpImg className="sm:hidden ml-2" />
+                <UpImg className="sm:hidden ml-2 text-content" />
               ) : (
-                  <DownImg className="sm:hidden ml-2" />
+                  <DownImg className="sm:hidden ml-2 text-content" />
                 )}
             </button>
           </div>
         </div>
         <div
-          className={`flex my-8 sm:mt-0 justify-center xl:justify-between sm:-mx-4 ${toggle && "flex-wrap"
+          className={`flex my-8 sm:mt-0 justify-center lg:justify-start sm:-mx-4 ${toggle && "flex-wrap flex-brands"
             }`}
         >
           {brands.edges.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage card-shadow h-24 md:h-40 lg:h-48 xl:h-brandImage bg-white
+              className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage shadow-main hover:shadow-hov h-24 md:h-40 lg:h-48 xl:h-brandImage bg-white
               ${!toggle &&
                 (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
@@ -87,7 +87,6 @@ const BrandsSection = ({ brands }) => {
               </div>
             </button>
           ))}
-          {console.log(brands.edges.length, slideIndex)}
         </div>
         {!toggle && (
           <input
