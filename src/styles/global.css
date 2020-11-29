@@ -1,54 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: Open Sans 400;
-  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
-  font-display: swap;
-}
-@font-face {
-  font-family: Open Sans 700;
-  src: url("../fonts/Open_Sans/OpenSans-Bold.ttf");
-  font-display: swap;
-}
-@font-face {
-  font-family: Poppins 700;
-  src: url("../fonts/Poppins/Poppins-Bold.ttf");
-  font-display: swap;
-}
-@font-face {
-  font-family: Poppins 600;
-  src: url("../fonts/Poppins/Poppins-SemiBold.ttf");
-  font-display: swap;
-}
-@font-face {
-  font-family: Poppins 400;
-  src: url("../fonts/Poppins/Poppins-Regular.ttf");
-  font-display: swap;
-}
-body {
-  width: 100vw;
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+} button {
+  outline: none !important;
 }
 
 input[type="range"] {
   -webkit-appearance: none;
   width: 100%;
-}
-input[type="range"]:focus {
+} input[type="range"]:focus {
   border: none;
   outline: none;
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
+} input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 10px;
   cursor: pointer;
   background: #f2f2f3;
   overflow: hidden;
   border-radius: 5px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
+} input[type="range"]::-webkit-slider-thumb {
   height: 100%;
   width: 45px;
   cursor: pointer;
@@ -57,76 +32,18 @@ input[type="range"]::-webkit-slider-thumb {
   background: #3380cc;
 }
 
-@media only screen and (min-width: 1025px) {
-  #brand-section {
-    margin-right: 135px;
-    margin-left: 135px;
-  }
-}
-@media (min-width: 640px) and (max-width: 1024px) {
-  #brand-section {
-    margin-right: 60px;
-    margin-left: 60px;
-  }
-}
-@media only screen and (max-width: 639px) {
-  #brand-section {
-    margin: 0px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (min-width: 1025px) {
-  #nosotros {
-    margin-right: 235px;
-    margin-left: 235px;
-  }
-}
-
-button {
-  outline: none !important;
-}
-
-.shadow {
-  box-shadow: 0px 0px 10px rgba(49, 74, 90, 0.16);
-}
-
-.card-shadow {
-  box-shadow: 0px 0px 10px rgba(49, 74, 90, 0.16);
-}
-
-.card-shadow:hover {
-  box-shadow: 0px 0px 20px rgba(49, 74, 90, 0.16);
-}
-
-.img-size {
-  width: 23rem;
-  height: 23rem;
-}
-@media only screen and (min-width: 1280px) {
-  .img-size {
-    width: 370px;
-    height: 370px;
-  }
-}
-
-.w-72 {
-  width: 18rem;
-}
-
-@media (max-width: 639px) {
-  .img-size {
-    width: 14rem;
-    height: 14rem;
-  }
-  .w-72 {
-    width: 100%;
-  }
-}
-
-::placeholder {
-  color: rgba(0, 0, 0, 0.5);
+.brand-modal:first-child {
+  padding-right: 15px;
+  padding-bottom: 15px;
+} .brand-modal:nth-child(2) {
+  padding-left: 15px;
+  padding-bottom: 15px;
+} .brand-modal:nth-child(3) {
+  padding-right: 15px;
+  padding-top: 15px;
+} .brand-modal:last-child {
+  padding-left: 15px;
+  padding-top: 15px;
 }
 
 .brand_image:first-child {
@@ -136,21 +53,90 @@ button {
   margin-left: 62px;
 }
 
+.bg-contactBackground {
+  background-color: rgba(231, 238, 249, 0.3);
+} .bg-contactBackground-send {
+  background-color: rgba(231, 238, 249, 0.3);
+}
+
+.flex-brands>button {
+  flex: 0 0 28.5%;
+}
+
+@media only screen and (max-width: 639px) {
+  #brand-section {
+    margin: 0px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .flex-brand {
+    flex: 1 0 33%;
+  }
+  .brand-modal:first-child {
+    width: 157px;
+    height: 157px;
+    padding: 0 32px;
+    flex: 0 1 70%;
+  } .brand-modal:nth-child(2), .brand-modal:nth-child(3), .brand-modal:last-child {
+    width: 135px;
+    height: 120px;
+    padding: 16px 5px 0 5px;
+  }
+  .img-size {
+    width: 235px !important;
+    height: 200px !important;
+  }
+}
+@media only screen and (min-width: 640px) {
+  .img-size {
+    width: 370px !important;
+    height: 370px !important;
+  }
+  .flex-brand {
+    flex: 0 50%;
+  }
+}
+@media (min-width: 640px) and (max-width: 768px) {
+  .flex-brand {
+    flex: 1 0 20%;
+  }
+  .brand-modal:first-child {
+    width: 175px;
+    height: 175px;
+    padding: 0 217px;
+    flex: 0 1 100%;
+  }.brand-modal:nth-child(2), .brand-modal:nth-child(3), .brand-modal:last-child {
+    width: 150px;
+    height: 190px;
+    padding: 40px 26px 0 26px;
+  }
+}
 @media only screen and (min-width: 768px) {
   .brand_image:first-child {
     margin: 0.5rem;
     height: 147px;
     width: 147px;
   }
-  .bg-contacBackground {
+  .bg-contactBackground {
     background: url("../images/assets/contactBackground.png") no-repeat center;
     background-size: contain;
-  }
-  .bg-contacBackground-send {
+    background-color: rgba(231, 238, 249, 0.3);
+  } .bg-contactBackground-send {
     background: url("../images/assets/Ilustraciones.png") no-repeat center;
+    background-color: rgba(231, 238, 249, 0.3);
   }
 }
-
+@media (min-width: 640px) and (max-width: 1024px) {
+  #brand-section {
+    margin-right: 60px;
+    margin-left: 60px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .flex-brands>button {
+    flex: 0 0 24%;
+  }
+}
 @media only screen and (min-width: 1024px) {
   .brand_image:first-child {
     height: 150px;
@@ -158,19 +144,28 @@ button {
     margin: 1.25rem;
   }
 }
-
+@media only screen and (min-width: 1025px) {
+  #brand-section {
+    margin-right: 135px;
+    margin-left: 135px;
+  }
+  #nosotros {
+    margin-right: 235px;
+    margin-left: 235px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .flex-brands>button {
+    flex: 0 0 21%;
+  }
+}
 @media only screen and (min-width: 1280px) {
   .brand_image:first-child {
     margin: 1.5rem;
     height: 150px;
     width: 150px;
   }
-}
-
-.bg-contacBackground {
-  background-color: rgba(231, 238, 249, 0.3);
-}
-
-.bg-contacBackground-send {
-  background-color: rgba(231, 238, 249, 0.3);
+  .flex-brands>button {
+    flex: 0 0 22.3%;
+  }
 }

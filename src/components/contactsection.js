@@ -3,7 +3,7 @@ import Title from "./title";
 import PhoneImg from "../images/svg/phone.svg";
 import MailImg from "../images/svg/mail.svg";
 
-const ContactSection = ({ data }) => {
+const ContactSection = () => {
   const [form, setForm] = useState({});
   const [send, setSend] = useState(false);
   const valid = Object.values(form).length === 3;
@@ -36,32 +36,31 @@ const ContactSection = ({ data }) => {
   };
   return (
     <section
-      className={`px-4 ${
-        send
-          ? "sm:py-56 lg:py-64 bg-contacBackground-send"
-          : "xl:h-contactSection bg-contacBackground"
-      }`}
+      className={`px-4 pt-24 pb-20 lg:h-contactSection ${send
+        ? "sm:py-56 lg:py-64 bg-contactBackground-send"
+        : "bg-contactBackground"
+        }`}
     >
       <div
-        className={`lg:container xl:max-w-contactSection xl:h-full mx-auto py-16 text-center`}
+        className={`${send && "pt-16"} lg:container xl:max-w-contactSection xl:h-full mx-auto text-center`}
       >
         <Title
           text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
           id="contacto"
         />
         {send ? (
-          <p className="text-base my-6">
+          <p className="font-opensans text-base mt-3 mb-6">
             Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
             pronto posible.
           </p>
         ) : (
-          <h4 className="text-base my-6">
-            Si te interesa saber más de nuestras marcas y sus productos,
-            <br className="hidden sm:block" />
+            <h4 className="text-base my-6 font-opensans">
+              Si te interesa saber más de nuestras marcas y sus productos,
+              <br className="hidden sm:block" />
             ¡no dudes en contactarnos!
-          </h4>
-        )}
-        <ul className="flex justify-center items-center flex-col md:flex-row">
+            </h4>
+          )}
+        <ul className="font-opensans text-base flex justify-center items-center flex-col md:flex-row">
           <li className="flex items-center my-2 sm:my-0">
             <a
               href="tel:5586824354"
@@ -92,9 +91,8 @@ const ContactSection = ({ data }) => {
           onSubmit={handleSubmit}
         >
           <div
-            className={`flex flex-col items-center mt-6 sm:mt-12 ${
-              send && "hidden"
-            }`}
+            className={`flex flex-col items-center mt-6 sm:mt-12 ${send && "hidden"
+              }`}
           >
             <input type="hidden" name="form-name" value="contact" />
 
@@ -112,15 +110,15 @@ const ContactSection = ({ data }) => {
               onChange={handleInputs}
             />
             <textarea
-              className="w-11/12 md:w-5/12 h-48  placeholder-input my-3 p-4"
+              className="w-11/12 md:w-5/12 h-32 placeholder-input my-3 p-4"
               placeholder="Mensaje..."
               name="Mensaje"
               onChange={handleInputs}
             />
             <button
               type="submit"
-              className={`mt-6 sm:mt-12 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold hover:bg-blue
-              ${!valid && "opacity-50 cursor-not-allowed"}`}
+              className={`mt-6 sm:mt-8 bg-blueBright w-64 py-5 rounded-full text-white tracking-widest font-semibold
+              ${!valid ? "opacity-50 cursor-not-allowed" : "hover:bg-blue"}`}
               disabled={!valid}
             >
               MANDAR MENSAJE
