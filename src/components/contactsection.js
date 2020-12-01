@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Title from "./title";
 import PhoneImg from "../images/svg/phone.svg";
 import MailImg from "../images/svg/mail.svg";
+import BgContact from "../images/svg/bg-contact.svg";
+import BgContactSend from "../images/svg/bg-contact-send.svg";
 
-const ContactSection = ({ data }) => {
+const ContactSection = () => {
   const [form, setForm] = useState({});
   const [send, setSend] = useState(false);
   const valid = Object.values(form).length === 3;
@@ -35,15 +37,16 @@ const ContactSection = ({ data }) => {
       .catch((error) => alert(error));
   };
   return (
-    <section
-      className={`px-4 mb-footerMargin xl:h-contactSection ${
-        send
-          ? "bg-contacBackground-send"
-          : "bg-contacBackground"
-      }`}
-    >
+    <section className="flex justify-center bg-contact px-4 py-20 lg:h-contactSection relative">
+      {send ? (
+        <BgContactSend className="absolute hidden lg:block" />
+      ) : (
+        <BgContact className="absolute xl:ml-8 xl:w-full hidden lg:block" />
+      )}
       <div
-        className={`lg:container xl:max-w-contactSection xl:h-full mx-auto py-16 text-center`}
+        className={`${
+          send && "sm:py-56 lg:py-60"
+        } lg:container xl:max-w-contactSection xl:h-full mx-auto text-center`}
       >
         <Title
           text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
@@ -51,18 +54,18 @@ const ContactSection = ({ data }) => {
           className={send ? "mt:0 sm:mt-56 lg:mt-64" : "mt-contactMargin"}
         />
         {send ? (
-          <p className="text-base my-2">
+          <p className="font-opensans text-base mt-3 mb-6">
             Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
             pronto posible.
           </p>
         ) : (
-          <h4 className="text-base my-6">
+          <h4 className="text-base my-6 font-opensans">
             Si te interesa saber más de nuestras marcas y sus productos,
             <br className="hidden sm:block" />
             ¡no dudes en contactarnos!
           </h4>
         )}
-        <ul className="flex justify-center items-center flex-col md:flex-row">
+        <ul className="font-opensans text-base flex justify-center items-center flex-col md:flex-row">
           <li className="flex items-center my-2 sm:my-0">
             <a
               href="tel:5586824354"
@@ -100,28 +103,28 @@ const ContactSection = ({ data }) => {
             <input type="hidden" name="form-name" value="contact" />
 
             <input
-              className="w-11/12 md:w-5/12 h-input placeholder-input my-3 p-4"
+              className="z-20 w-11/12 lg:w-5/12 h-input placeholder-input my-3 p-4"
               placeholder="Nombre"
               name="Nombre"
               onChange={handleInputs}
             />
             <input
-              className="w-11/12 md:w-5/12 h-input  placeholder-input my-3 p-4"
+              className="z-20 w-11/12 lg:w-5/12 h-input  placeholder-input my-3 p-4"
               placeholder="Correo electrónico"
               name="Correo electrónico"
               type="email"
               onChange={handleInputs}
             />
             <textarea
-              className="w-11/12 md:w-5/12 h-48 xl:h-32  placeholder-input mt-3 p-4"
+              className="z-20 w-11/12 lg:w-5/12 h-32 placeholder-input my-3 p-4"
               placeholder="Mensaje..."
               name="Mensaje"
               onChange={handleInputs}
             />
             <button
               type="submit"
-              className={`mt-6 sm:mt-11 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold hover:bg-blue
-              ${!valid && "opacity-50 cursor-not-allowed"}`}
+              className={`z-20 mt-6 sm:mt-8 bg-blueBright w-64 py-5 rounded-full text-white tracking-widest font-semibold
+              ${!valid ? "opacity-50 cursor-not-allowed" : "hover:bg-blue"}`}
               disabled={!valid}
             >
               MANDAR MENSAJE
