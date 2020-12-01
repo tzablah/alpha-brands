@@ -4,9 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 ::placeholder, textarea, input {
   color: rgba(0, 0, 0, 0.65);
 } button, textarea, input {
+=======
+::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+} button {
+>>>>>>> 88d92494a4c8c9207b606d8613903e408359d9ea
   outline: none !important;
 }
 
@@ -117,6 +123,17 @@ input[type="range"] {
     height: 147px;
     width: 147px;
   }
+<<<<<<< HEAD
+=======
+  .bg-contactBackground {
+    background: url("../images/assets/contactBackground.png") no-repeat center;
+    background-size: contain;
+    background-color: rgba(231, 238, 249, 0.3);
+  } .bg-contactBackground-send {
+    background: url("../images/assets/Ilustraciones.png") no-repeat center;
+    background-color: rgba(231, 238, 249, 0.3);
+  }
+>>>>>>> 88d92494a4c8c9207b606d8613903e408359d9ea
 }
 @media (min-width: 640px) and (max-width: 1024px) {
   #brand-section {
@@ -148,7 +165,11 @@ input[type="range"] {
 }
 @media (min-width: 1024px) and (max-width: 1279px) {
   .flex-brands>button {
+<<<<<<< HEAD
     flex: 0 0 20.875%;
+=======
+    flex: 0 0 21%;
+>>>>>>> 88d92494a4c8c9207b606d8613903e408359d9ea
   }
 }
 @media only screen and (min-width: 1280px) {

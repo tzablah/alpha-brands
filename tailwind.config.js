@@ -18,8 +18,8 @@ module.exports = {
         black: "rgba(0, 0, 0, 0.77)",
         content: "rgba(0, 0, 0, 0.65)",
         navgray: "rgba(0, 0, 0, 0.55)",
-        input: "rgba(0, 0, 0, 0.50)",
-        contact: "rgba(231, 238, 249, 0.3)"
+        input: "rgba(0, 0, 0, 0.50)"
+
       },
       height: {
         input: "52px",
