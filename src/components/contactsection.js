@@ -88,7 +88,7 @@ const ContactSection = () => {
           </li>
         </ul>
         <form
-          action={() => setSend(true)}
+          action="" //{() => setSend(true)}
           name="contact"
           method="post"
           data-netlify-honeypot="bot-field"

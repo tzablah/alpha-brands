@@ -20,7 +20,10 @@ const Brand = ({ node }) => {
       )}
       <div className="flex flex-wrap justify-center">
         {imagen.map((img, i) => (
-          <div className="flex-brand brand-modal h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd xl:h-brandProductLg xl:w-brandProductLg">
+          <div
+            key={i}
+            className="flex-brand brand-modal h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd xl:h-brandProductLg xl:w-brandProductLg"
+          >
             <Img
               key={i}
               fluid={img.fluid}

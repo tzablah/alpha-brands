@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import PrimaryButton from "./primary-button";
 import Title from "./title";
-
+import documento from "../images/docs/sheet.pdf";
 const Catalog = () => {
   const [form, setForm] = useState({});
+  const docuref = useRef();
   const valid = Object.values(form).length >= 2;
   const encode = (data) => {
     return Object.keys(data)
@@ -31,13 +32,14 @@ const Catalog = () => {
     })
       .then((resp) => {
         if (resp.status === 200) {
-          return window.location.replace(`/success`);
+          return docuref.current.click();
+          //window.location.replace(`/success`);
         }
       })
       .catch((error) => alert(error));
   };
   const handleDownloadCatalog = () => {
-    localStorage.setItem("form", JSON.stringify(form));
+    return;
   };
   return (
     <div className="container mx-auto text-center py-8">
@@ -76,18 +78,24 @@ const Catalog = () => {
             type="text"
             onChange={handleInputs}
           />
-          {/* <Link to="/success"> */}
+
           <PrimaryButton
             type="submit"
             className={` mt-8 w-full md:w-72 ${
-              !valid && "opacity-50 cursor-not-allowed"
+              !valid && "opacity-50 cursor-not-allowed disabled"
             }`}
             title="DESCARGAR CATÁLOGO"
             // onClick={() => handleDownloadCatalog()}
           />
-          {/*  </Link> */}
         </div>
       </form>
+      <a
+        ref={docuref}
+        href={documento}
+        className={`hidden`}
+        target="_blank"
+        rel="noreferrer"
+      ></a>
     </div>
   );
 };
