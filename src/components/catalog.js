@@ -32,10 +32,12 @@ const Catalog = () => {
     })
       .then((resp) => {
         if (resp.status === 200) {
+          console.log(resp);
           return docuref.current.click();
           //window.location.replace(`/success`);
         }
       })
+      .then(() => window.location.replace(`/`))
       .catch((error) => alert(error));
   };
   const handleDownloadCatalog = () => {
