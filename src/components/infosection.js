@@ -5,13 +5,15 @@ const InfoSection = ({ image, position, text, title, id }) => {
   return (
     <article className="my-3 sm:my-24">
       <div
-        className={`flex flex-col items-center sm:justify-around w-full xl:w-aboutSection ${
+        className={`flex flex-col items-center sm:justify-around w-full lg:w-aboutSectionMd xl:w-aboutSection ${
           position === "right" ? "sm:flex-row" : "sm:flex-row-reverse"
         }`}
       >
         <div
           className={`sm:w-1/2 sm:flex sm:flex-wrap sm:flex-row sm:items-center ${
-            position === "right" ? "md:mr-8" : "md:ml-8"
+            position === "right"
+              ? "xl:mr-brandMargin md:mr-4"
+              : "md:ml-4 xl:ml-brandMargin"
           }`}
         >
           <div className="flex justify-center items-center sm:justify-start sm:w-full">
@@ -25,10 +27,23 @@ const InfoSection = ({ image, position, text, title, id }) => {
         </div>
         <div
           className={`w-1/2 flex justify-center ${
-            position === "right" ? "sm:justify-end" : "sm:justify-start"
+            position === "right"
+              ? "sm:justify-end md:ml-4 xl:ml-brandMargin"
+              : "sm:justify-start md:mr-4 xl:mr-brandMargin"
           }`}
         >
-          {image}
+          <div className="img-size">
+            <Image
+              className="rounded-full z-0"
+              //fluid={image.childImageSharp.fluid}
+              alt={`${title} Alpha Brands`}
+              style={{ height: "100%", width: "100%" }}
+              filename={image}
+              imgStyle={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
         </div>
       </div>
     </article>

@@ -59,17 +59,17 @@ const ContactSection = () => {
             pronto posible.
           </p>
         ) : (
-          <h4 className="text-base my-6 font-opensans">
+          <h4 className="text-base mt-1 mb-12 md:my-6">
             Si te interesa saber más de nuestras marcas y sus productos,
             <br className="hidden sm:block" />
             ¡no dudes en contactarnos!
           </h4>
         )}
-        <ul className="font-opensans text-base flex justify-center items-center flex-col md:flex-row">
+        <ul className="flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row">
           <li className="flex items-center my-2 sm:my-0">
             <a
               href="tel:5586824354"
-              className="flex justify-center items-center"
+              className="flex flex-col md:flex-row justify-center items-center"
               title="Contacto Alpha Brands"
             >
               <PhoneImg className="mr-3" />
@@ -79,7 +79,7 @@ const ContactSection = () => {
           <li className="flex items-center my-2 sm:my-0 md:ml-10">
             <a
               href="mailto:info@alphabrands.com"
-              className="flex justify-center items-center"
+              className="flex flex-col md:flex-row justify-center items-center"
               title="Contacto Alpha Brands"
             >
               <MailImg className="mr-3" />
@@ -103,28 +103,28 @@ const ContactSection = () => {
             <input type="hidden" name="form-name" value="contact" />
 
             <input
-              className="z-20 w-11/12 lg:w-5/12 h-input placeholder-input my-3 p-4"
+              className="w-inputSm h-inputSm md:w-inputMd md:h-inputMd  xl:w-inputLg lg:h-input placeholder-input my-3 p-4"
               placeholder="Nombre"
               name="Nombre"
               onChange={handleInputs}
             />
             <input
-              className="z-20 w-11/12 lg:w-5/12 h-input  placeholder-input my-3 p-4"
+              className="w-inputSm h-inputSm md:w-inputMd md:h-inputMd xl:w-inputLg placeholder-input lg:h-input my-3 p-4"
               placeholder="Correo electrónico"
               name="Correo electrónico"
               type="email"
               onChange={handleInputs}
             />
             <textarea
-              className="z-20 w-11/12 lg:w-5/12 h-32 placeholder-input my-3 p-4"
+              className="w-inputSm h-textAreaSm md:w-inputMd md:h-textAreaMd xl:w-inputLg lg:h-48 xl:h-32  placeholder-input mt-3 p-4"
               placeholder="Mensaje..."
               name="Mensaje"
               onChange={handleInputs}
             />
             <button
               type="submit"
-              className={`z-20 mt-6 sm:mt-8 bg-blueBright w-64 py-5 rounded-full text-white tracking-widest font-semibold
-              ${!valid ? "opacity-50 cursor-not-allowed" : "hover:bg-blue"}`}
+              className={`mt-11 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold hover:bg-blue
+              ${!valid && "opacity-50 cursor-not-allowed"}`}
               disabled={!valid}
             >
               MANDAR MENSAJE

@@ -37,15 +37,15 @@ const BrandsSection = ({ brands }) => {
           }
         />
       )}
-      <div className="md:py-16 w-full xl:w-desktopsize flex-col">
+      <div className="md:py-16 w-full xl:w-desktopsize flex-col flex items-center md:block">
         <PrimaryButton
-          className="md:hidden w-full my-10"
+          className="md:hidden w-buttonBrandMobile h-buttonBrandMobile my-10"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
-        <div className="flex items-center sm:block">
+        <div className="flex items-center sm:block my-9">
           <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
-          <div className="my-7 flex justify-end">
+          <div className="flex justify-end">
             <button
               className="my-7 text-blueBright text-xl"
               onClick={() => setToggle(!toggle)}
@@ -70,7 +70,7 @@ const BrandsSection = ({ brands }) => {
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`mx-2 sm:mx-4 w-24 md:w-40 my-2 sm:my-8 lg:w-48 xl:w-brandImage shadow-main hover:shadow-hov h-24 md:h-40 lg:h-48 xl:h-brandImage bg-white
+              className={`mx-1.5 lg:mx-brandMargin w-brandIcon md:w-brandIconTablet xl:w-brandImage card-shadow h-brandIcon md:h-brandIconTablet  xl:h-brandImage bg-white
               ${
                 !toggle &&
                 (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
