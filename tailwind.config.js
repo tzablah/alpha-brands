@@ -18,7 +18,8 @@ module.exports = {
         content: "rgba(0, 0, 0, 0.65)",
         lightBlue: "rgba(51,128,204,0.07)",
         navgray: "rgba(0, 0, 0, 0.55)",
-        input: "rgba(0, 0, 0, 0.50)"
+        input: "rgba(0, 0, 0, 0.50)",
+        contactColor: 'rgba(231, 238, 249, 0.3)'
       },
       margin: {
         7: '1.75rem',
@@ -27,10 +28,14 @@ module.exports = {
         contactMargin: '30px',
         footerMargin: '75px',
         9: '2.25rem',
-        17: '68px'
+        17: '68px',
+        1.5: '5.5px',
+        11:'44px'
       },
       height: {
         input: '52px',
+        inputSm:'48px',
+        inputMd: '44px',
         brandImage: '270px',
         brandProductSm: '90px',
         brandProdcutMd: '147px',
@@ -39,7 +44,12 @@ module.exports = {
         logoNavMd: '38.91px',
         logoNavLg: '53.25px',
         contactSection: '765px',
-        catalogInput: '52px'
+        catalogInput: '52px',
+        buttonBrandMobile: '60px',
+        brandIcon: '104px',
+        brandIconTablet:'203px',
+        textAreaSm:'204px',
+        textAreaMd:'144px'
       },
       width: {
         brandImage: '270px',
@@ -52,7 +62,14 @@ module.exports = {
         logoNavLg: '198px',
         desktopsize: '1170px',
         aboutSection: '970px',
-        catalogInput: '571px'
+        catalogInput: '571px',
+        buttonBrandMobile: '334px',
+        brandIcon: '104px',
+        brandIconTablet:'203px',
+        inputSm: '334px',
+        inputMd:'437px',
+        inputLg:'571px',
+        aboutSectionMd:'902px'
       },
       maxWidth: {
         contactSection: '1440px'
