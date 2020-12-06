@@ -19,7 +19,7 @@ const InfoSection = ({ image, position, text, title, id }) => {
           <div className="img-size">
             <Image
               className="rounded-full z-0"
-              //fluid={image.childImageSharp.fluid}
+              // fluid={image.childImageSharp.fluid}
               alt={`${title} Alpha Brands`}
               style={{ height: "100%", width: "100%" }}
               filename={image}

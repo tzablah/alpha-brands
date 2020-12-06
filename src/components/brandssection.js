@@ -43,7 +43,7 @@ const BrandsSection = ({ brands }) => {
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
-        <div className="flex items-center sm:block my-9">
+        <div className="flex items-center sm:block mt-9">
           <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
           <div className="flex justify-end">
             <button

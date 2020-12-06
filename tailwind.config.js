@@ -69,7 +69,8 @@ module.exports = {
         inputSm: '334px',
         inputMd:'437px',
         inputLg:'571px',
-        aboutSectionMd:'902px'
+        aboutSectionMd:'902px',
+        72: '18rem'
       },
       maxWidth: {
         contactSection: "1440px",
