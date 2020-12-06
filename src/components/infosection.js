@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "./image"
 import Title from "./title";
 
 const InfoSection = ({ image, position, text, title, id }) => {
@@ -11,7 +10,9 @@ const InfoSection = ({ image, position, text, title, id }) => {
             <Title text={title} id={id} />
           </div>
           <div className="flex justify-center items-center py-4">
-            <h2 className="text-center sm:text-left text-xl">{text}</h2>
+            <h2 className="font-opensans text-center sm:text-left lg:text-xl">
+              {text}
+            </h2>
           </div>
         </div>
         <div className={`w-1/2 flex justify-center ${position === "right" ? "sm:justify-end md:ml-4 xl:ml-brandMargin" : "sm:justify-start md:mr-4 xl:mr-brandMargin"}`}>

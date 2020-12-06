@@ -19,17 +19,17 @@ const Navbar = () => {
       alignment="justify-end"
       children={
         <ul className="h-full w-full flex flex-col mt-8 pt-4">
-          <li className="my-3 text-navgray focus:bg-lightBlue focus:text-blue active:bg-lightBlue p-3 w-full tracking-widest text-base">
+          <li className="my-3 text-navgray focus:bg-blueLight focus:text-blue active:bg-blueLight p-3 w-full tracking-widest text-base">
             <Link to="#nuestras-marcas" onClick={() => setOpen(false)}>
               NUESTRAS MARCAS
             </Link>
           </li>
-          <li className="my-5 text-navgray focus:bg-lightBlue focus:text-blue active:bg-lightBlue  p-3 w-full tracking-widest text-base">
+          <li className="my-5 text-navgray focus:bg-blueLight focus:text-blue active:bg-blueLight  p-3 w-full tracking-widest text-base">
             <Link to="#nosotros" onClick={() => setOpen(false)}>
               CONÓZCANOS
             </Link>
           </li>
-          <li className="my-8 text-navgray focus:bg-lightBlue focus:text-blue active:bg-lightBlue p-3 w-full tracking-widest text-base">
+          <li className="my-8 text-navgray focus:bg-blueLight focus:text-blue active:bg-blueLight p-3 w-full tracking-widest text-base">
             <Link to="#contacto" onClick={() => setOpen(false)}>
               CONTACTO
             </Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
         />
       )}
       {open && mobileNav()}
-      <div className="fixed text-sm uppercase top-0 z-40 bg-white md:h-24 md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow">
+      <div className="fixed text-sm uppercase top-0 z-40 bg-white md:h-24 md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow-main">
         <div className="flex justify-between items-center w-full xl:w-desktopsize">
           <Link
             className="ml-5 md:ml-0 w-logoNav h-logoNav md:w-logoNavMd md:h-logoNavMd lg:h-logoNavLg lg:w-logoNavLg "
@@ -71,7 +71,7 @@ const Navbar = () => {
               <AlphaLogo />
             </div>
           </Link>
-          <div className="hidden lg:flex items-center w-2/4 md:justify-between lg:justify-around">
+          <div className="font-poppins hidden lg:flex items-center w-2/4 md:justify-between lg:justify-around">
             <AnchorLink
               className="text-navgray tracking-widest hover:text-blue"
               to="/#nuestras-marcas"

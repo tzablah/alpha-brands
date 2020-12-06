@@ -22,7 +22,6 @@ exports.createPages = ({ graphql, actions }) => {
         console.log("Error con data de contenful", result.errors);
       }
       const blogTemplate = path.resolve("./src/templates/brandTemplate.js");
-      console.log(result.data.allContentfulPostBrand.edges);
       result.data.allContentfulPostBrand.edges.forEach((blog) => {
         createPage({
           path: `/${blog.node.title}`,

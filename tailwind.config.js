@@ -10,13 +10,13 @@ module.exports = {
       colors: {
         white: "#FEFEFD",
         blue: "#00538B",
-        blue2: "#3380CC",
-        orange1: "#F49725",
-        orange2: "#EC8A13",
+        blueBright: "#3380CC",
+        blueLight: "rgba(51,128,204,0.07)",
+        orange: "#EC8A13",
+        orangeLight: "#F49725",
         gray: "#F6F7F9",
-        title: "rgba(0, 0, 0, 0.77)",
+        black: "rgba(0, 0, 0, 0.77)",
         content: "rgba(0, 0, 0, 0.65)",
-        lightBlue: "rgba(51,128,204,0.07)",
         navgray: "rgba(0, 0, 0, 0.55)",
         input: "rgba(0, 0, 0, 0.50)",
         contactColor: 'rgba(231, 238, 249, 0.3)'
@@ -72,28 +72,38 @@ module.exports = {
         aboutSectionMd:'902px'
       },
       maxWidth: {
-        contactSection: '1440px'
+        contactSection: "1440px",
       },
       backgroundSize: {
-        contactBackgroundSize: '105%'
+        contactBackgroundSize: "105%",
       },
       backgroundPosition: {
-        top: '-25px 70px',
-        toplg:'-25px 0px',
-        topxlg:'-25px 50px'
+        top: "-25px 70px",
+        toplg: "-25px 0px",
+        topxlg: "-25px 50px",
       },
-
       fontSize: {
-        brand: '26px',
-        catalog: '14.5px'
+        brandmd: "28px",
+        catalog: "14.5px",
+        brandlg: "32px",
+        distributors: "26px"
       },
       letterSpacing: {
-        catalog: '.06em'
+        catalog: ".06em",
+        download: "0.145em"
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif']
+      },
+      boxShadow: {
+        main: "0px 0px 10px rgba(49, 74, 90, 0.16)",
+        hov: "0px 0px 25px rgba(49, 74, 90, 0.16)"
+      }
     },
   },
   variants: {
-    backgroundColor: ["responsive", "hover", "focus", "active"],
+    backgroundColor: ["responsive", "hover", "focus", "active"]
   },
   plugins: [],
 };

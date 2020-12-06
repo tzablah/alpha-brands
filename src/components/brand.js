@@ -7,42 +7,46 @@ import Img from "gatsby-image";
 const Brand = ({ node }) => {
   const { descripcion, imagen, titulo } = node;
   const [showModal, setShowModal] = useState(false);
-  console.log(titulo, descripcion, imagen,);
+
   return (
-    <div className="container mx-auto md:py-8 flex flex-col md:flex-row">
+    <div className="container pt-12 md:py-4 lg:py-6 flex flex-col lg:flex-row md:px-3 xl:px-12">
       {showModal && (
         <Modal
           show={showModal}
           onClick={() => setShowModal(false)}
           children={<Catalog />}
+          className="h-full lg:h-auto"
         />
       )}
-      <div className="flex flex-wrap justify-center lg:justify-space-around lg:w-6/12 lg:px-5 xl:px-6">
+      <div className="flex flex-wrap justify-center">
         {imagen.map((img, i) => (
-            <div className="brand_image h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd lg:h-brandProductLg lg:w-brandProductLg m-2 lg:m-6">
-              <Img
-                key={i}
-                fluid={img.fluid}
-                style={{ height: "100%", width: "100%" }}
-                imgStyle={{
-                  objectFit: "cover",
-                }}
-                alt={titulo}
-              />
-            </div>  
+          <div
+            key={i}
+            className="flex-brand brand-modal h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd xl:h-brandProductLg xl:w-brandProductLg"
+          >
+            <Img
+              key={i}
+              fluid={img.fluid}
+              style={{ height: "100%", width: "100%" }}
+              imgStyle={{
+                objectFit: "cover",
+              }}
+              alt={titulo}
+            />
+          </div>
         ))}
       </div>
-      <div className="w-full text-justify md:w-1/2 pl-0 md:pl-8 xl:pl-0 xl:pr-12  mt-6">
-        <Title text={titulo} />
-        <p className="text-sm my-4">{descripcion.descripcion}</p>
-        <p className="font-semibold text-sm my-6">
+      <div className="text-justify mt-6 lg:mt-0 lg:ml-8 xl:ml-16 lg:w-infoBrandLg xl:w-infoBrandXl">
+        <Title text={titulo} sans />
+        <p className="text-sm my-4 font-opensans">{descripcion.descripcion}</p>
+        <p className="font-semibold text-sm my-6 font-opensans">
           Para ver todos los productos disponibles de esta marca, descarga
           nuestro catálogo completo.
         </p>
         <PrimaryButton
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowModal(true)}
-          className= 'w-72'
+          className="w-full md:w-72"
         />
       </div>
     </div>
