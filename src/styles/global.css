@@ -128,21 +128,32 @@ input[type="range"]::-webkit-slider-thumb {
     height: 147px;
     width: 147px;
   }
-  .bg-contacBackground-send {
-    background: url("../images/assets/Ilustraciones.png") no-repeat center;
-  }
+  /* .bg-contacBackground-send {
+    background-image: url("../images/svg/bg-contact-send.svg") no-repeat center;
+  } */
 }
 
+@media (min-width: 640px) and (max-width: 1024px) {
+  #brand-section {
+    margin-right: 60px;
+    margin-left: 60px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .flex-brands > button {
+    flex: 0 0 24%;
+  }
+}
 @media only screen and (min-width: 1024px) {
   .brand_image:first-child {
     height: 150px;
     width: 150px;
     margin: 1.25rem;
   }
-  .bg-contacBackground {
-    background: url("../images/assets/contactBackground.png") no-repeat center;
+  /* .bg-contacBackground {
+    background-image: url("../images/svg/bg-contact.svg") no-repeat center;
     background-size: contain;
-  }
+  } */
 }
 @media only screen and (min-width: 1025px) {
   #brand-section {

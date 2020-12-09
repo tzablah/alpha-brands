@@ -11,10 +11,6 @@ import Modal from "../components/modal";
 import PrimaryButton from "../components/primary-button";
 import SEO from "../components/seo";
 
-import NosotrosImg from '../images/svg/nosotros.svg'
-import ObjetivoImg from '../images/svg/objetivo.svg'
-import MapaImg from '../images/svg/donde.svg'
-
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
@@ -60,19 +56,19 @@ export default function Home({ data }) {
             <InfoSection
               title="NOSOTROS"
               id="#nosotros"
-              image={<NosotrosImg className="img-size" />}
+              image="nosotros.svg"
               position="right"
               text="Sabemos que en la vida se aprecia una mano amiga y nosotros queremos brindártela. Nuestros productos son de alta calidad, sostenibles, innovadores y sobre todos accesibles para acompañarte a ti y a tu familia en el día a día."
             />
             <InfoSection
               title="NUESTRO OBJETIVO"
-              image={<ObjetivoImg className="img-size" />}
+              image="objetivo.svg"
               position="left"
               text="Queremos facilitarte la vida. Cada uno de nuestros productos está pensado con funcionalidad, dedicación y pasión porque sabemos que tu familia sólo se merece lo mejor."
             />
             <InfoSection
               title="DÓNDE ESTAMOS"
-              image={<MapaImg className="img-size" />}
+              image="donde.svg"
               position="right"
               text={
                 <div>
@@ -81,7 +77,7 @@ export default function Home({ data }) {
                     Honduras, Guatemala y Costa Rica.
                   </p>
                   <button
-                    className="font-opensans mt-4 text-blueBright hover:text-blue text-sm md:text-base"
+                    className="mt-4 text-blue2 hover:text-blue text-base"
                     onClick={() => setShowModal(true)}
                   >
                     Nuestros distribuidores

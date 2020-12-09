@@ -65,24 +65,24 @@ const ContactSection = () => {
             ¡no dudes en contactarnos!
           </h4>
         )}
-        <ul className="flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row">
+        <ul className="font-opensans text-base flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row">
           <li className="flex items-center my-2 sm:my-0">
             <a
               href="tel:5586824354"
               className="flex flex-col md:flex-row justify-center items-center"
               title="Contacto Alpha Brands"
             >
-              <PhoneImg className="mr-3" />
+              <PhoneImg className="mr-3 mb-2" />
               <p>123-456-7890</p>
             </a>
           </li>
           <li className="flex items-center my-2 sm:my-0 md:ml-10">
             <a
               href="mailto:info@alphabrands.com"
-              className="flex flex-col md:flex-row justify-center items-center"
+              className="flex flex-col  md:flex-row justify-center items-center"
               title="Contacto Alpha Brands"
             >
-              <MailImg className="mr-3" />
+              <MailImg className="mr-3 mb-2" />
               <p>info@alphabrands.com</p>{" "}
             </a>
           </li>
@@ -103,27 +103,27 @@ const ContactSection = () => {
             <input type="hidden" name="form-name" value="contact" />
 
             <input
-              className="w-inputSm h-inputSm md:w-inputMd md:h-inputMd  xl:w-inputLg lg:h-input placeholder-input my-3 p-4"
+              className="z-20 w-inputSm h-inputSm md:w-inputMd md:h-inputMd  xl:w-inputLg lg:h-input placeholder-input my-3 p-4"
               placeholder="Nombre"
               name="Nombre"
               onChange={handleInputs}
             />
             <input
-              className="w-inputSm h-inputSm md:w-inputMd md:h-inputMd xl:w-inputLg placeholder-input lg:h-input my-3 p-4"
+              className="z-20 w-inputSm h-inputSm md:w-inputMd md:h-inputMd xl:w-inputLg placeholder-input lg:h-input my-3 p-4"
               placeholder="Correo electrónico"
               name="Correo electrónico"
               type="email"
               onChange={handleInputs}
             />
             <textarea
-              className="w-inputSm h-textAreaSm md:w-inputMd md:h-textAreaMd xl:w-inputLg lg:h-48 xl:h-32  placeholder-input mt-3 p-4"
+              className="z-20 w-inputSm h-textAreaSm md:w-inputMd md:h-textAreaMd xl:w-inputLg lg:h-48 xl:h-32  placeholder-input mt-3 p-4"
               placeholder="Mensaje..."
               name="Mensaje"
               onChange={handleInputs}
             />
             <button
               type="submit"
-              className={`mt-11 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold hover:bg-blue
+              className={` z-20 mt-11 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold hover:bg-blue
               ${!valid && "opacity-50 cursor-not-allowed"}`}
               disabled={!valid}
             >

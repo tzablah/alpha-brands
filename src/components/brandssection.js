@@ -37,13 +37,13 @@ const BrandsSection = ({ brands }) => {
           }
         />
       )}
-      <div className="md:py-16 w-full xl:w-desktopsize flex-col flex items-center md:block">
+      <div className=" md:py-16 w-full xl:w-desktopsize flex-col flex items-center md:block">
         <PrimaryButton
           className="md:hidden w-buttonBrandMobile h-buttonBrandMobile my-10"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
-        <div className="flex items-center sm:block my-9">
+        <div className="flex items-center sm:block -mt-2">
           <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
           <div className="flex justify-end">
             <button
@@ -54,7 +54,7 @@ const BrandsSection = ({ brands }) => {
                 {toggle ? "Ver menos" : "Ver todas"}
               </span>
               {toggle ? (
-                <UpImg className="sm:hidden ml-2 text-content" />
+                <UpImg className="sm:hidden  ml-2 text-content" />
               ) : (
                 <DownImg className="sm:hidden ml-2 text-content" />
               )}
@@ -62,7 +62,7 @@ const BrandsSection = ({ brands }) => {
           </div>
         </div>
         <div
-          className={`flex my-8 sm:mt-0 justify-center lg:justify-start sm:-mx-4 ${
+          className={`flex mt-2 mb-8 sm:mt-0 justify-center lg:justify-start sm:-mx-4 ${
             toggle && "flex-wrap flex-brands"
           }`}
         >
@@ -70,14 +70,14 @@ const BrandsSection = ({ brands }) => {
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`mx-1.5 lg:mx-brandMargin w-brandIcon md:w-brandIconTablet xl:w-brandImage card-shadow h-brandIcon md:h-brandIconTablet  xl:h-brandImage bg-white
+              className={`mb-16 mx-1.5 lg:mx-brandMargin w-brandIcon md:w-brandIconTablet xl:w-brandImage card-shadow h-brandIcon md:h-brandIconTablet  xl:h-brandImage bg-white
               ${
                 !toggle &&
                 (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
               }`}
             >
-              <div className="flex justify-center items-center w-full h-full">
+              <div className="flex justify-center items-center w-full h-full ">
                 <Img
                   fluid={element.node.imagen[0].fluid}
                   style={{ height: "80%", width: "80%" }}
@@ -87,6 +87,9 @@ const BrandsSection = ({ brands }) => {
                   alt={element.node.titulo}
                 />
               </div>
+              <p className="font-opensans font-medium text-xs text-center text-black">
+                {element.node.titulo}
+              </p>
             </button>
           ))}
         </div>

@@ -1,16 +1,20 @@
 import React from "react";
 import Title from "./title";
-
+import Image from "./image";
+import Nosotros from "../images/svg/nosotros.svg";
+import Objetivo from "../images/svg/objetivo.svg";
+import Donde from "../images/svg/donde.svg";
 const InfoSection = ({ image, position, text, title, id }) => {
+  console.log(image);
   return (
-    <article className="my-3 sm:my-24">
+    <article className="my-12 sm:my-24">
       <div
         className={`flex flex-col items-center sm:justify-around w-full lg:w-aboutSectionMd xl:w-aboutSection ${
           position === "right" ? "sm:flex-row" : "sm:flex-row-reverse"
         }`}
       >
         <div
-          className={`sm:w-1/2 sm:flex sm:flex-wrap sm:flex-row sm:items-center ${
+          className={`sm:w-1/2  sm:flex sm:flex-wrap sm:flex-row sm:items-center ${
             position === "right"
               ? "xl:mr-brandMargin md:mr-4"
               : "md:ml-4 xl:ml-brandMargin"
@@ -26,23 +30,20 @@ const InfoSection = ({ image, position, text, title, id }) => {
           </div>
         </div>
         <div
-          className={`w-1/2 flex justify-center ${
+          className={`w-8/12 sm:w-8/12  flex justify-center ${
             position === "right"
               ? "sm:justify-end md:ml-4 xl:ml-brandMargin"
               : "sm:justify-start md:mr-4 xl:mr-brandMargin"
           }`}
         >
           <div className="img-size">
-            <Image
-              className="rounded-full z-0"
-              //fluid={image.childImageSharp.fluid}
-              alt={`${title} Alpha Brands`}
-              style={{ height: "100%", width: "100%" }}
-              filename={image}
-              imgStyle={{
-                objectFit: "cover",
-              }}
-            />
+            {image === "nosotros.svg" ? (
+              <Nosotros />
+            ) : image === "objetivo.svg" ? (
+              <Objetivo />
+            ) : image === "donde.svg" ? (
+              <Donde />
+            ) : null}
           </div>
         </div>
       </div>
