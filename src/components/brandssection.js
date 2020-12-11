@@ -39,11 +39,11 @@ const BrandsSection = ({ brands }) => {
       )}
       <div className=" md:py-16 w-full xl:w-desktopsize flex-col flex items-center md:block">
         <PrimaryButton
-          className="md:hidden w-buttonBrandMobile h-buttonBrandMobile my-10"
+          className="md:hidden w-buttonBrandMobile h-buttonBrandMobile mt-9 mb-12"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
-        <div className="flex items-center sm:block -mt-2">
+        <div className="flex items-center sm:block mt-3.5 mb-nuestrasMarcas">
           <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
           <div className="flex justify-end">
             <button
@@ -62,7 +62,7 @@ const BrandsSection = ({ brands }) => {
           </div>
         </div>
         <div
-          className={`flex mt-2 mb-8 sm:mt-0 justify-center lg:justify-start sm:-mx-4 ${
+          className={`flex sm:mb-0 lg:mb-8 justify-center lg:justify-start sm:-mx-4 ${
             toggle && "flex-wrap flex-brands"
           }`}
         >

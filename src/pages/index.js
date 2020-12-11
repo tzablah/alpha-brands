@@ -77,7 +77,7 @@ export default function Home({ data }) {
                     Honduras, Guatemala y Costa Rica.
                   </p>
                   <button
-                    className="mt-4 text-blue2 hover:text-blue text-base"
+                    className="mt-4 text-blueBright hover:text-blue text-base"
                     onClick={() => setShowModal(true)}
                   >
                     Nuestros distribuidores

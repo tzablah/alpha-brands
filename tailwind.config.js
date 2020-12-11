@@ -30,7 +30,9 @@ module.exports = {
         9: '2.25rem',
         17: '68px',
         1.5: '5.5px',
-        11:'44px'
+        11:'44px',
+        3.5:'.875rem',
+        nuestrasMarcas: '1.625rem'
       },
       height: {
         input: '52px',
@@ -68,7 +70,7 @@ module.exports = {
         brandIconTablet:'203px',
         inputSm: '334px',
         inputMd:'437px',
-        inputLg:'571px',
+        inputLg:'570px',
         aboutSectionMd:'902px',
         72: '18rem'
       },
@@ -87,11 +89,12 @@ module.exports = {
         brandmd: "28px",
         catalog: "14.5px",
         brandlg: "32px",
-        distributors: "26px"
+        distributors: "26px",
       },
       letterSpacing: {
         catalog: ".06em",
-        download: "0.145em"
+        download: "0.145em",
+        title: "0.045em;"
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

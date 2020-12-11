@@ -30,7 +30,7 @@ const InfoSection = ({ image, position, text, title, id }) => {
           </div>
         </div>
         <div
-          className={`w-8/12 sm:w-8/12  flex justify-center ${
+          className={`w-8/12 sm:w-8/12 lg:mb-24 flex justify-center ${
             position === "right"
               ? "sm:justify-end md:ml-4 xl:ml-brandMargin"
               : "sm:justify-start md:mr-4 xl:mr-brandMargin"

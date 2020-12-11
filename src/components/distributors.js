@@ -1,5 +1,4 @@
 import React from "react";
-import Title from "./title";
 
 const data = [
   {
@@ -51,15 +50,15 @@ const data = [
 const Distributors = () => {
   return (
     <div className="container mx-auto py-8 lg:px-32">
-      <Title text="NUESTROS DISTRIBUIDORES" />
+      <h3 className="text-brandmd lg:text-distributors font-bold leading-9 tracking-title text-black font-poppins">NUESTROS DISTRIBUIDORES</h3>
       {data.map((country, i) => (
-        <div key={i} className="pt-12">
-          <p className="font-opensans font-bold text-distributors text-black">
+        <div key={i} className="pt-8 md:pt-12">
+          <p className="font-opensans font-bold text-xl md:text-2xl lg:text-distributors text-black">
             {country.title}
           </p>
           {country.distributors.map((element, idx) => (
-            <div key={idx} className="my-4">
-              <a href="/" className="text-blueBright hover:text-blue pb-2">
+            <div key={idx} className="mt-1.5 mb-2">
+              <a href="/" className="text-blueBright text-sm hover:text-blue pb-2">
                 {element.name}
               </a>
               <p className="text-content">{element.description}</p>
