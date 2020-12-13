@@ -37,24 +37,24 @@ const BrandsSection = ({ brands }) => {
           }
         />
       )}
-      <div className=" md:py-16 w-full xl:w-desktopsize flex-col flex items-center md:block">
+      <div className=" md:pt-16 w-full xl:w-desktopsize flex-col flex items-center md:block">
         <PrimaryButton
-          className="md:hidden w-buttonBrandMobile h-buttonBrandMobile my-10"
+          className="md:hidden w-buttonBrandMobile h-buttonBrandMobile mt-8 mb-12"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
-        <div className="flex items-center sm:block -mt-2">
+        <div className="flex items-center sm:block mt-3.5 mb-9">
           <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
           <div className="flex justify-end">
             <button
-              className="my-7 text-blueBright text-xl"
+              className="md:mt-7 text-blueBright text-xl"
               onClick={() => setToggle(!toggle)}
             >
               <span className="font-opensans hidden hover:text-blue sm:block">
                 {toggle ? "Ver menos" : "Ver todas"}
               </span>
               {toggle ? (
-                <UpImg className="sm:hidden  ml-2 text-content" />
+                <UpImg className="sm:hidden ml-2 text-content" />
               ) : (
                 <DownImg className="sm:hidden ml-2 text-content" />
               )}
@@ -62,7 +62,7 @@ const BrandsSection = ({ brands }) => {
           </div>
         </div>
         <div
-          className={`flex mt-2 mb-8 sm:mt-0 justify-center lg:justify-start sm:-mx-4 ${
+          className={`flex md:mb-8 sm:mt-0 justify-center lg:justify-start sm:-mx-4  ${
             toggle && "flex-wrap flex-brands"
           }`}
         >

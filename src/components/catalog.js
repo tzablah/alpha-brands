@@ -46,7 +46,7 @@ const Catalog = () => {
   return (
     <div className="container mx-auto text-center py-8">
       <Title text="Catálogo de AlphaBrands" sans />
-      <p className="text-base my-6 font-opensans text-content text-sm">
+      <p className="mt-2 md:mt-1.5 font-opensans text-content text-sm md:text-sm lg:text-base">
         Compártenos tu información para poder descargar nuestro catálogo
         <br className="hidden sm:block" /> de productos completo.
       </p>
@@ -61,20 +61,20 @@ const Catalog = () => {
         <div className="flex flex-col items-center mt-12 xl:mt-9">
           <input type="hidden" name="form-name" value="catalog" />
           <input
-            className="w-full md:w-11/12 xl:w-1/2 h-12 my-3 p-4  placeholder-input bg-gray"
+            className="w-inputSm md:w-inputMd md:h-inputMd xl:inputLg h-12 my-3 p-4  placeholder-input bg-gray text-xs"
             placeholder="Nombre"
             name="name"
             onChange={handleInputs}
           />
           <input
-            className="w-full md:w-11/12 xl:w-1/2 h-12 my-3 p-4 placeholder-input bg-gray"
+            className="w-inputSm md:w-inputMd md:h-inputMd xl:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-xs"
             placeholder="Correo electrónico"
             name="email"
             type="email"
             onChange={handleInputs}
           />
           <input
-            className="w-full md:w-11/12 xl:w-1/2 h-12 my-3 p-4 placeholder-input bg-gray"
+            className="w-inputSm md:w-inputMd md:h-inputMd xl:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-xs"
             placeholder="Teléfono (opcional)"
             name="phone"
             type="text"

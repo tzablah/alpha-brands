@@ -51,18 +51,18 @@ const data = [
 const Distributors = () => {
   return (
     <div className="container mx-auto py-8 lg:px-32">
-      <Title text="NUESTROS DISTRIBUIDORES" />
+      <h3 className='text-2xl md:text-3xl lg:text-brandlg font-bold leading-9 tracking-widest text-black`'>NUESTROS DISTRIBUIDORES</h3>
       {data.map((country, i) => (
-        <div key={i} className="pt-12">
-          <p className="font-opensans font-bold text-distributors text-black">
+        <div key={i} className="mt-8">
+          <p className="font-opensans font-bold text-xl md:text-2xl text-black">
             {country.title}
           </p>
           {country.distributors.map((element, idx) => (
-            <div key={idx} className="my-4">
-              <a href="/" className="text-blueBright hover:text-blue pb-2">
+            <div key={idx} className="mt-1.5 mb-2">
+              <a href="/" className="text-blueBright hover:text-blue pb-2 text-sm">
                 {element.name}
               </a>
-              <p className="text-content">{element.description}</p>
+              <p className="text-content text-sm">{element.description}</p>
             </div>
           ))}
         </div>

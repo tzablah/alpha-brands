@@ -60,7 +60,7 @@ const Navbar = () => {
         />
       )}
       {open && mobileNav()}
-      <div className="fixed text-sm uppercase top-0 z-40 bg-white md:h-24 md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow-main">
+      <div className="fixed text-sm uppercase top-0 z-40 bg-white md:h-16 md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow-main">
         <div className="flex justify-between items-center w-full xl:w-desktopsize">
           <Link
             className="ml-5 md:ml-0 w-logoNav h-logoNav md:w-logoNavMd md:h-logoNavMd lg:h-logoNavLg lg:w-logoNavLg "

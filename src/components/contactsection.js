@@ -37,7 +37,7 @@ const ContactSection = () => {
       .catch((error) => alert(error));
   };
   return (
-    <section className="flex justify-center bg-contact px-4 py-20 lg:h-contactSection relative">
+    <section className="flex justify-center bg-contact px-4 py-20 lg:h-contactSection relative contactBackground">
       {send ? (
         <BgContactSend className="absolute hidden lg:block" />
       ) : (
@@ -51,10 +51,10 @@ const ContactSection = () => {
         <Title
           text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
           id="contacto"
-          className={send ? "mt:0 sm:mt-56 lg:mt-64" : "mt-contactMargin"}
+          className={send ? "mt:0 sm:mt-56 lg:mt-64 lg:tracking-tighter" : "mt-contactMargin"}
         />
         {send ? (
-          <p className="font-opensans text-base mt-3 mb-6">
+          <p className="font-opensans text-base md:text-sm lg:text-base mt-3 mb-6">
             Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
             pronto posible.
           </p>
@@ -65,7 +65,7 @@ const ContactSection = () => {
             ¡no dudes en contactarnos!
           </h4>
         )}
-        <ul className="font-opensans text-base flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row">
+        <ul className="font-opensans text-base md:text-sm lg:text-base flex justify-center items-center flex-col-reverse md:flex-row lg:flex-row">
           <li className="flex items-center my-2 sm:my-0">
             <a
               href="tel:5586824354"
@@ -123,7 +123,7 @@ const ContactSection = () => {
             />
             <button
               type="submit"
-              className={` z-20 mt-11 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold hover:bg-blue
+              className={` z-20 mt-11 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold bg-blueBright hover:bg-blue
               ${!valid && "opacity-50 cursor-not-allowed"}`}
               disabled={!valid}
             >

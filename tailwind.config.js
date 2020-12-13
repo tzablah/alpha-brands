@@ -30,7 +30,8 @@ module.exports = {
         9: '2.25rem',
         17: '68px',
         1.5: '5.5px',
-        11:'44px'
+        11:'44px',
+        3.5: '.875rem',
       },
       height: {
         input: '52px',
@@ -68,7 +69,7 @@ module.exports = {
         brandIconTablet:'203px',
         inputSm: '334px',
         inputMd:'437px',
-        inputLg:'571px',
+        inputLg:'570px',
         aboutSectionMd:'902px',
         72: '18rem'
       },
@@ -84,7 +85,7 @@ module.exports = {
         topxlg: "-25px 50px",
       },
       fontSize: {
-        brandmd: "28px",
+        brandmd: "24px",
         catalog: "14.5px",
         brandlg: "32px",
         distributors: "26px"
