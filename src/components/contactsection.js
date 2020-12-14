@@ -123,7 +123,7 @@ const ContactSection = () => {
             />
             <button
               type="submit"
-              className={` z-20 mt-11 bg-blue2 w-64 py-5 rounded-full text-white tracking-widest font-semibold bg-blueBright hover:bg-blue
+              className={` z-20 mt-11 bg-bg-blueBright w-64 py-5 rounded-full text-white tracking-widest font-semibold bg-blueBright hover:bg-blue
               ${!valid && "opacity-50 cursor-not-allowed"}`}
               disabled={!valid}
             >

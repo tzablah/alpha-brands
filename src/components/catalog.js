@@ -61,20 +61,20 @@ const Catalog = () => {
         <div className="flex flex-col items-center mt-12 xl:mt-9">
           <input type="hidden" name="form-name" value="catalog" />
           <input
-            className="w-inputSm md:w-inputMd md:h-inputMd xl:inputLg h-12 my-3 p-4  placeholder-input bg-gray text-xs"
+            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4  placeholder-input bg-gray text-xs"
             placeholder="Nombre"
             name="name"
             onChange={handleInputs}
           />
           <input
-            className="w-inputSm md:w-inputMd md:h-inputMd xl:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-xs"
+            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-xs"
             placeholder="Correo electrónico"
             name="email"
             type="email"
             onChange={handleInputs}
           />
           <input
-            className="w-inputSm md:w-inputMd md:h-inputMd xl:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-xs"
+            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-xs"
             placeholder="Teléfono (opcional)"
             name="phone"
             type="text"
