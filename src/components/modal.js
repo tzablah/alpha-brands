@@ -9,7 +9,7 @@ const Modal = ({ children, show, onClick, width, alignment, className }) => {
       } ${alignment ? alignment : "justify-center md:py-24"}`}
     >
       <div
-        className={`${className} bg-white h-full p-4 md:py-10 md:px-12 ${
+        className={`${className} bg-white h-full p-4 md:py-10 md:px-12 max-w-full overflow-y-auto${
           width ? `${width}` : "w-full m-auto"
         } md:w-2/5 xl:w-desktopsize overflow-y-scroll`}
       >

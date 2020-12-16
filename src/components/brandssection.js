@@ -70,12 +70,11 @@ const BrandsSection = ({ brands }) => {
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`mb-16 mx-1.5 lg:mx-brandMargin w-brandIcon md:w-brandIconTablet xl:w-brandImage card-shadow h-brandIcon md:h-brandIconTablet  xl:h-brandImage bg-white
-              ${
-                !toggle &&
+             className={`${toggle && 'mb-12'} sm:mb-14 mx-1.5 lg:mx-brandMargin w-brandIcon sm:w-brandIconMobV sm:h-brandIconMobV lg:w-brandIconTablet xl:w-brandImage shadow-main hover:shadow-hov h-brandIcon md:w-brandIconTabletV md:h-brandIconTabletV lg:h-brandIconTablet  xl:h-brandImage bg-white
+              ${!toggle &&
                 (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
-              }`}
+                }`}
             >
               <div className="flex justify-center items-center w-full h-full ">
                 <Img
