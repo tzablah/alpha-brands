@@ -24,7 +24,7 @@ const BrandsSection = ({ brands }) => {
   };
 
   return (
-    <section id="brand-section" className="px-2 flex justify-center">
+    <section id="brand-section" className="lg:px-2 flex justify-center">
       {(showModal || showCatalog) && (
         <Modal
           show={showModal || showCatalog}
@@ -35,15 +35,16 @@ const BrandsSection = ({ brands }) => {
           children={
             showModal ? <Brand {...element} /> : showCatalog ? <Catalog /> : ""
           }
+          className="md:h-auto md:w-11/12"
         />
       )}
-      <div className=" md:pt-16 w-full xl:w-desktopsize flex-col flex items-center md:block">
+      <div className="md:pt-16 w-full xl:w-desktopsize flex-col flex items-center md:block">
         <PrimaryButton
-          className="md:hidden w-buttonBrandMobile h-buttonBrandMobile mt-9 mb-12"
+          className="sm:hidden w-buttonBrandMobile h-buttonBrandMobile mt-9 mb-12"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
-        <div className="flex items-center sm:block mt-3.5 mb-nuestrasMarcas">
+        <div className="flex items-center sm:block mb-nuestrasMarcas w-full">
           <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
           <div className="flex justify-end">
             <button
@@ -56,38 +57,36 @@ const BrandsSection = ({ brands }) => {
               {toggle ? (
                 <UpImg className="sm:hidden ml-2 text-content" />
               ) : (
-                <DownImg className="sm:hidden ml-2 text-content" />
-              )}
+                  <DownImg className="sm:hidden ml-2 text-content" />
+                )}
             </button>
           </div>
         </div>
         <div
-          className={`flex sm:mb-0 lg:mb-8 justify-center lg:justify-start sm:-mx-4 ${
-            toggle && "flex-wrap flex-brands"
-          }`}
+          className={`mb-16 flex sm:mb-0 lg:justify-start sm:-mx-4 ${toggle && "flex-wrap flex-brands"
+            }`}
         >
           {brands.edges.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`mb-16 mx-1.5 lg:mx-brandMargin w-brandIcon md:w-brandIconTablet xl:w-brandImage card-shadow h-brandIcon md:h-brandIconTablet  xl:h-brandImage bg-white
-              ${
-                !toggle &&
+              className={`${toggle && 'mb-12'} sm:mb-14 mx-1.5 lg:mx-brandMargin w-brandIcon sm:w-brandIconMobV sm:h-brandIconMobV lg:w-brandIconTablet xl:w-brandImage shadow-main hover:shadow-hov h-brandIcon md:w-brandIconTabletV md:h-brandIconTabletV lg:h-brandIconTablet  xl:h-brandImage bg-white
+              ${!toggle &&
                 (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
-              }`}
+                }`}
             >
-              <div className="flex justify-center items-center w-full h-full ">
+              <div className="flex justify-center items-center w-full h-full">
                 <Img
                   fluid={element.node.imagen[0].fluid}
-                  style={{ height: "80%", width: "80%" }}
+                  style={{ height: "100%", width: "100%" }}
                   imgStyle={{
                     objectFit: "cover",
                   }}
                   alt={element.node.titulo}
                 />
               </div>
-              <p className="font-opensans font-medium text-xs text-center text-black">
+              <p className="sm:hidden font-opensans font-bold text-xs text-center text-black">
                 {element.node.titulo}
               </p>
             </button>
@@ -95,7 +94,7 @@ const BrandsSection = ({ brands }) => {
         </div>
         {!toggle && (
           <input
-            className="hidden sm:block w-full"
+            className="hidden sm:block w-full sm:mb-20 xl:mb-12"
             onChange={(e) => setSlideIndex(Number(e.target.value))}
             value={slideIndex}
             type="range"

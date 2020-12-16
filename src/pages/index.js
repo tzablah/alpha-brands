@@ -28,9 +28,7 @@ export default function Home({ data }) {
           children={
             showModal ? <Distributors /> : showCatalog ? <Catalog /> : ""
           }
-          className={
-            showModal ? "h-full" : showCatalog ? "h-full lg:h-auto" : ""
-          }
+          className="h-screen md:h-auto md:w-11/12"
         />
       )}
       <Layout>
@@ -55,7 +53,7 @@ export default function Home({ data }) {
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton
-            className="hidden md:flex w-full md:w-72 mt-12"
+            className="hidden sm:flex w-full sm:w-72 mt-12"
             size="large"
             title="DESCARGAR CATÁLOGO"
             onClick={() => setShowCatalog(true)}
@@ -70,7 +68,7 @@ export default function Home({ data }) {
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton
-            className="hidden md:flex w-full md:w-72 mt-12"
+            className="hidden sm:flex w-full sm:w-72 mt-12"
             size="large"
             title="DESCARGAR CATÁLOGO"
             onClick={() => setShowCatalog(true)}
@@ -78,7 +76,7 @@ export default function Home({ data }) {
         </BackGroundImage> */}
 
         <BrandsSection brands={brands} />
-        <section id="nosotros" className="px-5 md:px-14 xl:px-16">
+        <section id="nosotros" className="px-8 xl:px-16">
           <div className="flex flex-col items-center w-full">
             <InfoSection
               title="NOSOTROS"
