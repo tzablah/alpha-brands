@@ -24,6 +24,7 @@ const Catalog = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(form, "no tenemos form ??");
     const formName = e.target;
     fetch("/", {
       method: "POST",
@@ -31,6 +32,7 @@ const Catalog = () => {
       body: encode({ "form-name": formName.getAttribute("name"), ...form }),
     })
       .then((resp) => {
+        console.log("si llegamos", resp, form);
         if (resp.status === 200) {
           console.log(resp);
           return docuref.current.click();
