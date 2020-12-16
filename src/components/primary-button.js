@@ -6,29 +6,27 @@ const PrimaryButton = ({
   submit,
   className,
   id,
-  onClick = () => {},
+  onClick = () => { },
 }) => (
-  <button
-    type={submit}
-    id={id && id}
-    className={`${className} bg-orangeLight hover:bg-orange ${
-      icon
-        ? "flex justify-center lg:justify-between  md:w-40"
-        : "justify-center py-5"
-    }`}
-    onClick={() => onClick()}
-  >
-    <p
-      className={`font-poppins ${
-        icon ? "text-catalog tracking-catalog" : "text-base tracking-download"
-      } font-semibold text-white`}
+    <button
+      type={submit}
+      id={id && id}
+      className={`${className} bg-orangeLight hover:bg-orange ${icon
+          ? "flex justify-center lg:justify-between lg:w-40"
+          : "justify-center py-5"
+        }`}
+      onClick={() => onClick()}
     >
-      {title}
-    </p>
-    <figure className={`${icon ? "block ml-3" : "hidden"}`}>
-      <DownIcon />
-    </figure>
-  </button>
-);
+      <p
+        className={`font-poppins ${icon ? "text-catalog tracking-catalog" : "text-base tracking-download"
+          } font-semibold text-white`}
+      >
+        {title}
+      </p>
+      <figure className={`${icon ? "block ml-3" : "hidden"}`}>
+        <DownIcon />
+      </figure>
+    </button>
+  );
 
 export default PrimaryButton;

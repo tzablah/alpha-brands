@@ -24,6 +24,7 @@ const Catalog = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(form, "no tenemos form ??");
     const formName = e.target;
     fetch("/", {
       method: "POST",
@@ -31,6 +32,7 @@ const Catalog = () => {
       body: encode({ "form-name": formName.getAttribute("name"), ...form }),
     })
       .then((resp) => {
+        console.log("si llegamos", resp, form);
         if (resp.status === 200) {
           console.log(resp);
           return docuref.current.click();
@@ -46,7 +48,7 @@ const Catalog = () => {
   return (
     <div className="container mx-auto text-center py-8">
       <Title text="Catálogo de AlphaBrands" sans />
-      <p className="mt-2 md:mt-1.5 font-opensans text-content text-sm md:text-sm lg:text-base">
+      <p className="mt-4 font-opensans text-content text-sm md:text-sm lg:text-base">
         Compártenos tu información para poder descargar nuestro catálogo
         <br className="hidden sm:block" /> de productos completo.
       </p>
@@ -61,20 +63,20 @@ const Catalog = () => {
         <div className="flex flex-col items-center mt-12 xl:mt-9">
           <input type="hidden" name="form-name" value="catalog" />
           <input
-            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4  placeholder-input bg-gray text-xs"
+            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4  placeholder-input bg-gray text-sm"
             placeholder="Nombre"
             name="name"
             onChange={handleInputs}
           />
           <input
-            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-xs"
+            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-sm"
             placeholder="Correo electrónico"
             name="email"
             type="email"
             onChange={handleInputs}
           />
           <input
-            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-xs"
+            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-sm"
             placeholder="Teléfono (opcional)"
             name="phone"
             type="text"
@@ -83,11 +85,10 @@ const Catalog = () => {
 
           <PrimaryButton
             type="submit"
-            className={` mt-8 w-full md:w-72 ${
-              !valid && "opacity-50 cursor-not-allowed disabled"
-            }`}
+            className={` mt-8 w-full sm:w-72 ${!valid && "opacity-50 cursor-not-allowed disabled"
+              }`}
             title="DESCARGAR CATÁLOGO"
-            // onClick={() => handleDownloadCatalog()}
+          // onClick={() => handleDownloadCatalog()}
           />
         </div>
       </form>

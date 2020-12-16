@@ -27,15 +27,13 @@ export default function Home({ data }) {
           children={
             showModal ? <Distributors /> : showCatalog ? <Catalog /> : ""
           }
-          className={
-            showModal ? "h-full" : showCatalog ? "h-full lg:h-auto" : ""
-          }
+          className="h-screen md:h-auto md:w-11/12"
         />
       )}
       <Layout>
         <SEO />
         <BackGroundImage
-          className="m-0 flex flex-col justify-center items-center py-24 sm:py-40 lg:py-64"
+          className="m-0 flex flex-col justify-center items-center py-24 md:py-40 lg:py-64"
           fluid={data.heroImage.childImageSharp.fluid}
           alt={data.heroImage.childImageSharp.fluid.originalName}
         >
@@ -43,7 +41,7 @@ export default function Home({ data }) {
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton
-            className="hidden md:flex w-full md:w-72 mt-12"
+            className="hidden sm:flex w-full sm:w-72 mt-12"
             size="large"
             title="DESCARGAR CATÁLOGO"
             onClick={() => setShowCatalog(true)}
@@ -51,7 +49,7 @@ export default function Home({ data }) {
         </BackGroundImage>
 
         <BrandsSection brands={brands} />
-        <section id="nosotros" className="px-5 md:px-14 xl:px-16">
+        <section id="nosotros" className="px-8 xl:px-16">
           <div className="flex flex-col items-center w-full">
             <InfoSection
               title="NOSOTROS"

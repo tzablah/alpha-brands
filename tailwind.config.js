@@ -30,18 +30,18 @@ module.exports = {
         9: '2.25rem',
         17: '68px',
         1.5: '5.5px',
-        11:'44px',
-        3.5:'.875rem',
+        11: '44px',
+        3.5: '.875rem',
         nuestrasMarcas: '1.625rem'
       },
       height: {
         input: '52px',
-        inputSm:'48px',
+        inputSm: '48px',
         inputMd: '44px',
         brandImage: '270px',
         brandProductSm: '90px',
         brandProdcutMd: '147px',
-        brandProductLg: '150px',
+        brandProductLg: '220px',
         logoNav: '34.65px',
         logoNavMd: '38.91px',
         logoNavLg: '53.25px',
@@ -49,15 +49,17 @@ module.exports = {
         catalogInput: '52px',
         buttonBrandMobile: '60px',
         brandIcon: '104px',
-        brandIconTablet:'203px',
-        textAreaSm:'204px',
-        textAreaMd:'144px'
+        brandIconMobV: '127px',
+        brandIconTabletV: '160px',
+        brandIconTablet: '203px',
+        textAreaSm: '204px',
+        textAreaMd: '144px'
       },
       width: {
         brandImage: '270px',
         brandProductSm: '90px',
         brandProdcutMd: '147px',
-        brandProductLg: '150px',
+        brandProductLg: '305px',
         modalMd: '95%',
         logoNav: '124px',
         logoNavMd: '141px',
@@ -67,11 +69,13 @@ module.exports = {
         catalogInput: '571px',
         buttonBrandMobile: '334px',
         brandIcon: '104px',
-        brandIconTablet:'203px',
+        brandIconMobV: '127px',
+        brandIconTabletV: '160px',
+        brandIconTablet: '203px',
         inputSm: '334px',
-        inputMd:'437px',
-        inputLg:'570px',
-        aboutSectionMd:'902px',
+        inputMd: '437px',
+        inputLg: '570px',
+        aboutSectionMd: '902px',
         72: '18rem'
       },
       maxWidth: {
@@ -107,7 +111,8 @@ module.exports = {
     },
   },
   variants: {
-    backgroundColor: ["responsive", "hover", "focus", "active"]
+    backgroundColor: ["responsive", "hover", "focus", "active"],
+    color: ["responsive", "hover", "focus", "active"]
   },
   plugins: [],
 };

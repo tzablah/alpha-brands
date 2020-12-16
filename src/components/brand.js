@@ -15,14 +15,14 @@ const Brand = ({ node }) => {
           show={showModal}
           onClick={() => setShowModal(false)}
           children={<Catalog />}
-          className="h-full lg:h-auto"
+          className="h-full md:h-auto md:w-11/12"
         />
       )}
       <div className="flex flex-wrap justify-center">
         {imagen.map((img, i) => (
           <div
             key={i}
-            className="flex-brand brand-modal h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd xl:h-brandProductLg xl:w-brandProductLg"
+            className="flex justify-center items-center w-full h-full flex-brand brand-modal h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd xl:h-brandProductLg xl:w-brandProductLg"
           >
             <Img
               key={i}
