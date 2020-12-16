@@ -51,7 +51,8 @@ module.exports = {
         brandIcon: '104px',
         brandIconTablet:'203px',
         textAreaSm:'204px',
-        textAreaMd:'144px'
+        textAreaMd:'144px',
+        heroContainer:'60vh',
       },
       width: {
         brandImage: '270px',
