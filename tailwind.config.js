@@ -49,19 +49,12 @@ module.exports = {
         catalogInput: '52px',
         buttonBrandMobile: '60px',
         brandIcon: '104px',
-<<<<<<< HEAD
-        brandIconTablet:'203px',
-        textAreaSm:'204px',
-        textAreaMd:'144px',
-        heroContainer:'60vh',
-=======
         brandIconTablet: '203px',
         textAreaSm: '204px',
         textAreaMd: '144px',
         heroContainer: '60vh',
         brandIconMobV: '127px',
         brandIconTabletV: '160px'
->>>>>>> 9201e80a0dfd7abb5f94f7da09e73c23bda3de48
       },
       width: {
         brandImage: '270px',
