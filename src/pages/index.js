@@ -51,7 +51,7 @@ export default function Home({ data }) {
         </BackGroundImage>
 
         <BrandsSection brands={brands} />
-        <section id="nosotros" className="px-5 md:px-14 xl:px-16">
+        <section id="nosotros" className="px-5 mt-16 sm:mt-0 md:px-14 xl:px-16">
           <div className="flex flex-col items-center w-full">
             <InfoSection
               title="NOSOTROS"
