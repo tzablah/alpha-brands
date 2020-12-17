@@ -8,16 +8,14 @@ const InfoSection = ({ image, position, text, title, id }) => {
   return (
     <article className="my-9 md:my-12 lg:my-14 xl:my-20">
       <div
-        className={`flex flex-col items-center sm:justify-around w-full lg:w-aboutSectionMd xl:w-aboutSection ${
-          position === "right" ? "md:flex-row" : "md:flex-row-reverse"
-        }`}
+        className={`flex flex-col items-center sm:justify-around sm:w-aboutSectionSm lg:w-aboutSectionMd xl:w-aboutSection ${position === "right" ? "sm:flex-row" : "sm:flex-row-reverse"
+          }`}
       >
         <div
-          className={`md:w-1/2  sm:flex sm:flex-wrap sm:flex-row sm:items-center ${
-            position === "right"
-              ? "xl:mr-brandMargin md:mr-4"
-              : "md:ml-4 xl:ml-brandMargin"
-          }`}
+          className={`sm:w-1/2 md:w-inputMd lg:w-infoSectionLg sm:flex sm:flex-wrap sm:flex-row sm:items-center ${position === "right"
+              ? "xl:mr-brandMargin md:mr-3.5"
+              : "md:ml-3.5 xl:ml-brandMargin"
+            }`}
         >
           <div className="flex justify-center items-center md:justify-start sm:w-full">
             <h3 id={id} className="header text-black font-bold">{title}</h3>
@@ -29,11 +27,10 @@ const InfoSection = ({ image, position, text, title, id }) => {
           </div>
         </div>
         <div
-          className={`w-8/12 sm:w-8/12 flex justify-center ${
-            position === "right"
-              ? "sm:justify-end md:ml-4 xl:ml-brandMargin"
-              : "sm:justify-start md:mr-4 xl:mr-brandMargin"
-          }`}
+          className={`mt-7 sm:mt:0 w-8/12 sm:w-8/12 md:w-inputMd lg:w-infoSectionLg xl:mb-24 flex justify-center ${position === "right"
+              ? "sm:justify-end md:ml-3.5 xl:ml-brandMargin"
+              : "sm:justify-start md:mr-3.5 xl:mr-brandMargin"
+            }`}
         >
           <div className="">
             {image === "nosotros.svg" ? (

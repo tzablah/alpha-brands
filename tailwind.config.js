@@ -72,6 +72,8 @@ module.exports = {
         brandIconTabletV: '160px',
         brandIconTablet: '203px',
         aboutSectionMd: '902px',
+        infoSectionLg: '470px',
+        aboutSectionSm: '697px',
         72: '18rem'
       },
       maxWidth: {
