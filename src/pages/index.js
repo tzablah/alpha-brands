@@ -42,7 +42,7 @@ export default function Home({ data }) {
           className="w-full relative flex flex-col justify-center items-center hero-container">
           <h1
             id="mainTitle"
-            className="font-poppins px-4 text-center mt-14 text-2xl md:text-brandmd lg:text-brandlg font-extrabold text-white tracking-widest"
+            className="font-poppins max-w-xs sm:max-w-full px-4 text-center mt-14 text-2xl md:text-brandmd lg:text-brandlg font-extrabold text-white tracking-widest"
           >
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>

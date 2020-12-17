@@ -14,9 +14,15 @@ const BrandsSection = ({ brands }) => {
   const [element, setElement] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
+
   useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, [width]);
 
   const brandClick = (element) => {
     setElement(element);
@@ -24,7 +30,7 @@ const BrandsSection = ({ brands }) => {
   };
 
   return (
-    <section id="brand-section" className="lg:px-2 flex justify-center">
+    <section id="brand-section" className="px-2 flex justify-center">
       {(showModal || showCatalog) && (
         <Modal
           show={showModal || showCatalog}

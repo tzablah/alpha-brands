@@ -37,9 +37,6 @@ module.exports = {
         nuestrasMarcas: '1.625rem'
       },
       height: {
-        input: '52px',
-        inputSm: '48px',
-        inputMd: '44px',
         brandImage: '270px',
         brandProductSm: '90px',
         brandProdcutMd: '147px',
@@ -52,8 +49,6 @@ module.exports = {
         buttonBrandMobile: '60px',
         brandIcon: '104px',
         brandIconTablet: '203px',
-        textAreaSm: '204px',
-        textAreaMd: '144px',
         heroContainer: '60vh',
         brandIconMobV: '127px',
         brandIconTabletV: '160px'
@@ -75,9 +70,6 @@ module.exports = {
         brandIconMobV: '127px',
         brandIconTabletV: '160px',
         brandIconTablet: '203px',
-        inputSm: '334px',
-        inputMd: '437px',
-        inputLg: '570px',
         aboutSectionMd: '902px',
         72: '18rem'
       },
@@ -120,5 +112,6 @@ module.exports = {
     plugin(require('./src/tailwind-plugins/typography')),
     plugin(require('./src/tailwind-plugins/containers')),
     plugin(require('./src/tailwind-plugins/buttons')),
+    plugin(require('./src/tailwind-plugins/inputs')),
   ],
 };

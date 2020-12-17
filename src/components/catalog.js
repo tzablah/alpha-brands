@@ -63,20 +63,20 @@ const Catalog = () => {
         <div className="flex flex-col items-center mt-12 xl:mt-9">
           <input type="hidden" name="form-name" value="catalog" />
           <input
-            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4  placeholder-input bg-gray text-sm"
+            className="input-size my-3 p-4  placeholder-input bg-gray text-sm"
             placeholder="Nombre"
             name="name"
             onChange={handleInputs}
           />
           <input
-            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-sm"
+            className="input-size my-3 p-4 placeholder-input bg-gray text-sm"
             placeholder="Correo electrónico"
             name="email"
             type="email"
             onChange={handleInputs}
           />
           <input
-            className="w-inputSm md:w-inputMd md:h-inputMd lg:inputLg h-12 my-3 p-4 placeholder-input bg-gray text-sm"
+            className="input-size my-3 p-4 placeholder-input bg-gray text-sm"
             placeholder="Teléfono (opcional)"
             name="phone"
             type="text"
@@ -85,7 +85,7 @@ const Catalog = () => {
 
           <PrimaryButton
             type="submit"
-            className={` mt-8 btn-modal ${!valid && "opacity-50 cursor-not-allowed disabled"
+            className={`mt-8 btn-modal ${!valid && "opacity-50 cursor-not-allowed disabled"
               }`}
             title="DESCARGAR CATÁLOGO"
           // onClick={() => handleDownloadCatalog()}
