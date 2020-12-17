@@ -10,7 +10,8 @@ import Layout from "../components/layout";
 import Modal from "../components/modal";
 import PrimaryButton from "../components/primary-button";
 import SEO from "../components/seo";
-
+//media video
+const alphaIntro = require("../images/media/1.mp4");
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
@@ -32,12 +33,17 @@ export default function Home({ data }) {
       )}
       <Layout>
         <SEO />
-        <BackGroundImage
-          className="m-0 flex flex-col justify-center items-center py-24 md:py-40 lg:py-64"
-          fluid={data.heroImage.childImageSharp.fluid}
-          alt={data.heroImage.childImageSharp.fluid.originalName}
-        >
-          <h1 className="text-center text-white header font-extrabold">
+
+        <video className="absolute hero-container" preload="auto" loop autoPlay muted>
+          <source src={alphaIntro} type="video/mp4" />
+          Your browser does not support HTML5 video
+        </video>
+        <div
+          className="w-full relative flex flex-col justify-center items-center hero-container">
+          <h1
+            id="mainTitle"
+            className="font-poppins px-4 text-center mt-14 text-2xl md:text-brandmd lg:text-brandlg font-extrabold text-white tracking-widest"
+          >
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton
@@ -46,8 +52,7 @@ export default function Home({ data }) {
             title="DESCARGAR CATÁLOGO"
             onClick={() => setShowCatalog(true)}
           />
-        </BackGroundImage>
-
+        </div>
         <BrandsSection brands={brands} />
         <section id="nosotros" className="px-8 xl:px-16">
           <div className="flex flex-col items-center w-full">

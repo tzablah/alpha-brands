@@ -39,7 +39,7 @@ const ContactSection = () => {
   return (
     <section className="mt-10 xl:mt-24 flex justify-center bg-contact px-4 py-20 xl:py-24 lg:h-contactSection relative contactBackground">
       {send ? (
-        <BgContactSend className="absolute hidden lg:block" />
+        <BgContactSend className="absolute hidden lg:block mt-4" />
       ) : (
           <BgContact className="absolute xl:ml-8 xl:w-full hidden lg:block" />
         )}

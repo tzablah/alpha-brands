@@ -51,11 +51,12 @@ module.exports = {
         catalogInput: '52px',
         buttonBrandMobile: '60px',
         brandIcon: '104px',
-        brandIconMobV: '127px',
-        brandIconTabletV: '160px',
         brandIconTablet: '203px',
         textAreaSm: '204px',
-        textAreaMd: '144px'
+        textAreaMd: '144px',
+        heroContainer: '60vh',
+        brandIconMobV: '127px',
+        brandIconTabletV: '160px'
       },
       width: {
         brandImage: '270px',
@@ -113,10 +114,10 @@ module.exports = {
     },
   },
   variants: {
-    backgroundColor: ["responsive", "hover", "focus", "active"],
-    color: ["responsive", "hover", "focus", "active"]
+    backgroundColor: ["responsive", "hover", "focus", "active"]
   },
   plugins: [
     plugin(require('./src/tailwind-plugins/typography')),
+    plugin(require('./src/tailwind-plugins/containers')),
   ],
 };

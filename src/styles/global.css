@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+video {
+  object-fit: cover;
+  min-width: 100%;
+}
 ::placeholder,
 textarea,
 input {
@@ -94,6 +98,9 @@ input[type="range"]::-webkit-slider-thumb {
     width: 235px !important;
     height: 200px !important;
   }
+  #mainTitle {
+    width: 24rem;
+  }
 }
 
 @media (min-width: 640px) and (max-width: 1023px) {
@@ -135,9 +142,6 @@ input[type="range"]::-webkit-slider-thumb {
     height: 147px;
     width: 147px;
   }
-  /* .bg-contacBackground-send {
-    background-image: url("../images/svg/bg-contact-send.svg") no-repeat center;
-  } */
 }
 
 @media (min-width: 640px) and (max-width: 1024px) {
@@ -161,10 +165,6 @@ input[type="range"]::-webkit-slider-thumb {
     width: 150px;
     margin: 1.25rem;
   }
-  /* .bg-contacBackground {
-    background-image: url("../images/svg/bg-contact.svg") no-repeat center;
-    background-size: contain;
-  } */
 }
 @media only screen and (min-width: 1025px) {
   #brand-section {
