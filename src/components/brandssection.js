@@ -40,7 +40,7 @@ const BrandsSection = ({ brands }) => {
       )}
       <div className="md:pt-16 w-full xl:w-desktopsize flex-col flex items-center md:block">
         <PrimaryButton
-          className="sm:hidden w-buttonBrandMobile h-buttonBrandMobile mt-9 mb-12"
+          className="md:hidden btn-hero mt-9 mb-12"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
@@ -57,28 +57,25 @@ const BrandsSection = ({ brands }) => {
               {toggle ? (
                 <UpImg className="sm:hidden ml-2 text-content" />
               ) : (
-                <DownImg className="sm:hidden ml-2 text-content" />
-              )}
+                  <DownImg className="sm:hidden ml-2 text-content" />
+                )}
             </button>
           </div>
         </div>
         <div
-          className={`mb-16 flex sm:mb-0 lg:justify-start sm:-mx-4 ${
-            toggle && "flex-wrap flex-brands"
-          }`}
+          className={`mb-16 flex sm:mb-0 lg:justify-start sm:-mx-4 ${toggle && "flex-wrap flex-brands"
+            }`}
         >
           {brands.edges.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`${
-                toggle && "mb-12"
-              } sm:mb-14 mx-1.5 lg:mx-brandMargin w-brandIcon sm:w-brandIconMobV sm:h-brandIconMobV lg:w-brandIconTablet xl:w-brandImage shadow-main hover:shadow-hov h-brandIcon md:w-brandIconTabletV md:h-brandIconTabletV lg:h-brandIconTablet  xl:h-brandImage bg-white
-              ${
-                !toggle &&
+              className={`${toggle && "mb-12"
+                } sm:mb-14 mx-1.5 lg:mx-brandMargin w-brandIcon sm:w-brandIconMobV sm:h-brandIconMobV lg:w-brandIconTablet xl:w-brandImage shadow-main hover:shadow-hov h-brandIcon md:w-brandIconTabletV md:h-brandIconTabletV lg:h-brandIconTablet  xl:h-brandImage bg-white
+              ${!toggle &&
                 (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
-              }`}
+                }`}
             >
               <div className="flex justify-center items-center w-full h-full">
                 <Img

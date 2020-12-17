@@ -36,7 +36,7 @@ const Navbar = () => {
           </li>
           <li className="my-8 sm:my-4 md:my-8">
             <PrimaryButton
-              className="py-3 w-full"
+              className="py-3 btn-sideBar"
               title="CATÁLOGO"
               icon={true}
               onClick={() => {
@@ -96,7 +96,7 @@ const Navbar = () => {
             </AnchorLink>
           </div>
           <PrimaryButton
-            className="hidden px-5 py-3 lg:flex"
+            className="hidden btn-navbar px-5 py-3 lg:flex"
             title="CATÁLOGO"
             icon={true}
             onClick={() => setShowModal(true)}

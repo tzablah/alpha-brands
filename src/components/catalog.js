@@ -85,7 +85,7 @@ const Catalog = () => {
 
           <PrimaryButton
             type="submit"
-            className={` mt-8 w-full sm:w-72 ${!valid && "opacity-50 cursor-not-allowed disabled"
+            className={` mt-8 btn-modal ${!valid && "opacity-50 cursor-not-allowed disabled"
               }`}
             title="DESCARGAR CATÁLOGO"
           // onClick={() => handleDownloadCatalog()}

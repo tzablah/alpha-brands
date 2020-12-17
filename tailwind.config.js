@@ -119,5 +119,6 @@ module.exports = {
   plugins: [
     plugin(require('./src/tailwind-plugins/typography')),
     plugin(require('./src/tailwind-plugins/containers')),
+    plugin(require('./src/tailwind-plugins/buttons')),
   ],
 };

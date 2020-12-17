@@ -11,9 +11,9 @@ const PrimaryButton = ({
     <button
       type={submit}
       id={id && id}
-      className={`${className} bg-orangeLight hover:bg-orange ${icon
-          ? "flex justify-center lg:justify-between lg:w-40"
-          : "justify-center py-5"
+      className={`${className} btn ${icon
+        ? "flex justify-center lg:justify-between"
+        : "justify-center py-5"
         }`}
       onClick={() => onClick()}
     >
