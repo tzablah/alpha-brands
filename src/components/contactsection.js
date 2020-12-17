@@ -106,20 +106,20 @@ const ContactSection = () => {
             <input type="hidden" name="form-name" value="contact" />
 
             <input
-              className="z-20 w-inputSm h-inputSm md:w-inputMd lg:h-inputMd  xl:w-inputLg xl:h-input placeholder-input my-2 xl:my-3 p-4"
+              className="z-20 input-size placeholder-input my-2 xl:my-3 p-4"
               placeholder="Nombre"
               name="Nombre"
               onChange={handleInputs}
             />
             <input
-              className="z-20 w-inputSm h-inputSm md:w-inputMd lg:h-inputMd xl:w-inputLg placeholder-input xl:h-input my-2 xl:my-3 p-4"
+              className="z-20 input-size placeholder-input xl:h-input my-2 xl:my-3 p-4"
               placeholder="Correo electrónico"
               name="Correo electrónico"
               type="email"
               onChange={handleInputs}
             />
             <textarea
-              className="z-20 w-inputSm h-textAreaSm md:w-inputMd md:h-textAreaMd xl:w-inputLg lg:h-36 xl:h-32  placeholder-input mt-2 xl:mt-3 p-4"
+              className="z-20 textarea placeholder-input mt-2 xl:mt-3 p-4"
               placeholder="Mensaje..."
               name="Mensaje"
               onChange={handleInputs}

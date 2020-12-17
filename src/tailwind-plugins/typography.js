@@ -12,10 +12,14 @@ module.exports = function ({ theme, addUtilities }) {
         fontSize: '28px',
         lineHeight: '42px'
       },
-      '@media (max-width: 767px)': {
+      '@media (min-width: 360px) and (max-width: 767px)': {
         fontSize: '24px',
         lineHeight: '36px'
-      }
+      },
+      '@media (max-width: 359px)': {
+        fontSize: '22px',
+        lineHeight: '36px'
+      },
     },
     '.send': {
       fontWeight: '700',
