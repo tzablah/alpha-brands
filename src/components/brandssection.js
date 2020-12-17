@@ -39,7 +39,7 @@ const BrandsSection = ({ brands }) => {
       )}
       <div className=" md:pt-16 w-full xl:w-desktopsize flex-col flex items-center md:block">
         <PrimaryButton
-          className="md:hidden w-buttonBrandMobile h-buttonBrandMobile mt-9 mb-12"
+          className="md:hidden btn-hero mt-9 mb-12"
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowCatalog(true)}
         />
