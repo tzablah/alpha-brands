@@ -94,7 +94,7 @@ const BrandsSection = ({ brands }) => {
         </div>
         {!toggle && (
           <input
-            className="hidden sm:block w-full"
+            className="hidden mt-14 sm:block w-full"
             onChange={(e) => setSlideIndex(Number(e.target.value))}
             value={slideIndex}
             type="range"

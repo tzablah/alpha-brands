@@ -7,7 +7,7 @@ import Donde from "../images/svg/donde.svg";
 const InfoSection = ({ image, position, text, title, id }) => {
   console.log(image);
   return (
-    <article className="my-12 sm:my-24">
+    <article className="lg:my-20 sm:my-14">
       <div
         className={`flex flex-col items-center sm:justify-around sm:w-aboutSectionSm lg:w-aboutSectionMd xl:w-aboutSection ${
           position === "right" ? "sm:flex-row" : "sm:flex-row-reverse"
@@ -30,7 +30,7 @@ const InfoSection = ({ image, position, text, title, id }) => {
           </div>
         </div>
         <div
-          className={`mt-7 sm:mt:0 w-8/12 sm:w-8/12 md:w-inputMd lg:w-infoSectionLg xl:mb-24 flex justify-center ${
+          className={`mt-7 sm:mt:0 w-8/12 sm:w-8/12 md:w-inputMd lg:w-infoSectionLg flex justify-center ${
             position === "right"
               ? "sm:justify-end md:ml-3.5 xl:ml-brandMargin"
               : "sm:justify-start md:mr-3.5 xl:mr-brandMargin"
