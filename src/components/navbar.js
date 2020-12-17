@@ -19,17 +19,17 @@ const Navbar = () => {
       alignment="justify-end"
       children={
         <ul className="h-full sm:h-auto md:h-full w-full flex flex-col mt-8 pt-4">
-          <li className="my-5 sm:my-2 text-navgray focus:bg-blueLight focus:text-blue active:bg-blueLight active:text-blue p-3 w-full tracking-widest text-base">
+          <li className="my-5 sm:my-2 md:my-5 p-3 w-full nav-text">
             <Link to="#nuestras-marcas" onClick={() => setOpen(false)}>
               NUESTRAS MARCAS
             </Link>
           </li>
-          <li className="my-5 sm:my-2 md:my-5 text-navgray focus:bg-blueLight focus:text-blue active:bg-blueLight active:text-blue  p-3 w-full tracking-widest text-base">
+          <li className="my-5 sm:my-2 md:my-5 p-3 w-full nav-text">
             <Link to="#nosotros" onClick={() => setOpen(false)}>
               CONÓZCANOS
             </Link>
           </li>
-          <li className="my-5 sm:my-2 md:my-5 text-navgray focus:bg-blueLight focus:text-blue active:bg-blueLight active:text-blue p-3 w-full tracking-widest text-base">
+          <li className="my-5 sm:my-2 md:my-5 p-3 w-full nav-text">
             <Link to="#contacto" onClick={() => setOpen(false)}>
               CONTACTO
             </Link>
@@ -74,21 +74,21 @@ const Navbar = () => {
           </Link>
           <div className="font-poppins hidden lg:flex items-center w-2/4 md:justify-between lg:justify-around">
             <AnchorLink
-              className="text-navgray tracking-widest hover:text-blue"
+              className="nav-text hover:text-blue"
               to="/#nuestras-marcas"
               title="Marcas Alpha Brands"
             >
               Nuestras Marcas
             </AnchorLink>
             <AnchorLink
-              className="text-navgray tracking-widest hover:text-blue"
+              className="nav-text hover:text-blue"
               to="/#nosotros"
               title="Qué es Alpha Brands"
             >
               Conózcanos
             </AnchorLink>
             <AnchorLink
-              className="text-navgray tracking-widest hover:text-blue"
+              className="nav-text hover:text-blue"
               to="/#contacto"
               title="Contacto Alpha Brands"
             >

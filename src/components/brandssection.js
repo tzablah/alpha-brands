@@ -45,10 +45,10 @@ const BrandsSection = ({ brands }) => {
           onClick={() => setShowCatalog(true)}
         />
         <div className="flex items-center sm:block mb-nuestrasMarcas w-full">
-          <Title text="NUESTRAS MARCAS" id="nuestras-marcas" />
+          <h3 id="nuestras-marcas" className="header text-black font-bold">NUESTRAS MARCAS</h3>
           <div className="flex justify-end">
             <button
-              className="md:mt-7 text-blueBright text-xl"
+              className="md:mt-7 text-blueBright text-lg xl:text-xl "
               onClick={() => setToggle(!toggle)}
             >
               <span className="font-opensans hidden hover:text-blue sm:block">

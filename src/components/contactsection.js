@@ -47,22 +47,27 @@ const ContactSection = () => {
         className={`${send && "sm:py-56 lg:py-60"
           } lg:container xl:max-w-contactSection xl:h-full mx-auto text-center`}
       >
-        <Title
-          text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
-          id="contacto"
-          className={send && "send-text"}
-        />
         {send ? (
-          <p className="font-opensans text-base md:text-sm lg:text-base mt-3 mb-6">
-            Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
-            pronto posible.
-          </p>
+          <>
+            <h3 id="contacto" className="send text-black">
+              ¡Gracias por tu mensaje!
+            </h3>
+            <p className="font-opensans text-base md:text-sm lg:text-base mt-3 mb-6">
+              Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
+              pronto posible.
+            </p>
+          </>
         ) : (
-            <h4 className="text-sm xl:text-base mt-1 mb-7 sm:mb-12 md:mb-6 md:mt-4">
-              Si te interesa saber más de nuestras marcas y sus productos,
+            <>
+              <h3 id="contacto" className="header text-black font-bold">
+                CONTACTO
+              </h3>
+              <h4 className="text-sm xl:text-base mt-1 mb-7 sm:mb-12 md:mb-6 md:mt-4">
+                Si te interesa saber más de nuestras marcas y sus productos,
               <br className="hidden sm:block" />
-            ¡no dudes en contactarnos!
-            </h4>
+              ¡no dudes en contactarnos!
+              </h4>
+            </>
           )}
         <ul className="font-opensans text-sm md:text-sm xl:text-base flex justify-center items-center flex-col-reverse sm:flex-row lg:flex-row">
           <li className="flex items-center my-2 sm:my-0">

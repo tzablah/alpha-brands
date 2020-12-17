@@ -37,7 +37,7 @@ export default function Home({ data }) {
           fluid={data.heroImage.childImageSharp.fluid}
           alt={data.heroImage.childImageSharp.fluid.originalName}
         >
-          <h1 className="font-poppins px-4 text-center text-2xl md:text-brandmd lg:text-brandlg font-extrabold text-white tracking-widest">
+          <h1 className="text-center text-white header font-extrabold">
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton

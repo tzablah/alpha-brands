@@ -18,10 +18,10 @@ const InfoSection = ({ image, position, text, title, id }) => {
             }`}
         >
           <div className="flex justify-center items-center md:justify-start sm:w-full">
-            <Title text={title} id={id} />
+            <h3 id={id} className="header text-black font-bold">{title}</h3>
           </div>
           <div className="flex justify-center items-center py-4 mb-7 sm:mb-12 md:mb-0">
-            <h2 className="font-opensans text-center md:text-left lg:text-xl">
+            <h2 className="text-center md:text-left parragraph">
               {text}
             </h2>
           </div>

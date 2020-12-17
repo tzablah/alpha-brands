@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   future: {
     // removeDeprecatedGapUtilities: true,
@@ -101,8 +103,8 @@ module.exports = {
         title: "0.045em;"
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        opensans: ['Open Sans', 'sans-serif']
+        poppins: ['Poppins'],
+        opensans: ['Open Sans']
       },
       boxShadow: {
         main: "0px 0px 10px rgba(49, 74, 90, 0.16)",
@@ -114,5 +116,7 @@ module.exports = {
     backgroundColor: ["responsive", "hover", "focus", "active"],
     color: ["responsive", "hover", "focus", "active"]
   },
-  plugins: [],
+  plugins: [
+    plugin(require('./src/tailwind-plugins/typography')),
+  ],
 };
