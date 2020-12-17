@@ -1,4 +1,5 @@
-module.exports = {
+const plugin = require('tailwindcss/plugin') 
+ module.exports = {
   future: {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
@@ -114,5 +115,5 @@ module.exports = {
   variants: {
     backgroundColor: ["responsive", "hover", "focus", "active"]
   },
-  plugins: [],
+  plugins: [ plugin(require('./src/tailwind-plugins/sizes')),],
 };

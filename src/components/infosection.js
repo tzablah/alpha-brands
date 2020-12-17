@@ -8,14 +8,16 @@ const InfoSection = ({ image, position, text, title, id }) => {
   return (
     <article className="my-9 md:my-12 lg:my-14 xl:my-20">
       <div
-        className={`flex flex-col items-center sm:justify-around w-full lg:w-aboutSectionMd xl:w-aboutSection ${position === "right" ? "md:flex-row" : "md:flex-row-reverse"
-          }`}
+        className={`flex flex-col items-center sm:justify-around w-full lg:w-aboutSectionMd xl:w-aboutSection ${
+          position === "right" ? "md:flex-row" : "md:flex-row-reverse"
+        }`}
       >
         <div
-          className={`md:w-1/2  sm:flex sm:flex-wrap sm:flex-row sm:items-center ${position === "right"
-            ? "xl:mr-brandMargin md:mr-4"
-            : "md:ml-4 xl:ml-brandMargin"
-            }`}
+          className={`md:w-1/2  sm:flex sm:flex-wrap sm:flex-row sm:items-center ${
+            position === "right"
+              ? "xl:mr-brandMargin md:mr-4"
+              : "md:ml-4 xl:ml-brandMargin"
+          }`}
         >
           <div className="flex justify-center items-center md:justify-start sm:w-full">
             <Title text={title} id={id} />
@@ -27,18 +29,19 @@ const InfoSection = ({ image, position, text, title, id }) => {
           </div>
         </div>
         <div
-          className={`w-8/12 sm:w-8/12 flex justify-center ${position === "right"
-            ? "sm:justify-end md:ml-4 xl:ml-brandMargin"
-            : "sm:justify-start md:mr-4 xl:mr-brandMargin"
-            }`}
+          className={`w-8/12 sm:w-8/12 flex justify-center ${
+            position === "right"
+              ? "sm:justify-end md:ml-4 xl:ml-brandMargin"
+              : "sm:justify-start md:mr-4 xl:mr-brandMargin"
+          }`}
         >
-          <div className="img-size">
+          <div className="">
             {image === "nosotros.svg" ? (
-              <Nosotros />
+              <Nosotros className="circle" />
             ) : image === "objetivo.svg" ? (
-              <Objetivo />
+              <Objetivo className="circle" />
             ) : image === "donde.svg" ? (
-              <Donde />
+              <Donde className="circle" />
             ) : null}
           </div>
         </div>
