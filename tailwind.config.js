@@ -34,7 +34,8 @@ module.exports = {
         1.5: '5.5px',
         11: '44px',
         3.5: '.875rem',
-        nuestrasMarcas: '1.625rem'
+        nuestrasMarcas: '1.625rem',
+        brandMarginMd: '10px'
       },
       height: {
         brandImage: '270px',
@@ -71,6 +72,8 @@ module.exports = {
         brandIconTabletV: '160px',
         brandIconTablet: '203px',
         aboutSectionMd: '902px',
+        infoSectionLg: '470px',
+        aboutSectionSm: '697px',
         72: '18rem'
       },
       maxWidth: {
@@ -113,5 +116,6 @@ module.exports = {
     plugin(require('./src/tailwind-plugins/containers')),
     plugin(require('./src/tailwind-plugins/buttons')),
     plugin(require('./src/tailwind-plugins/inputs')),
+    plugin(require('./src/tailwind-plugins/sizes')),
   ],
 };
