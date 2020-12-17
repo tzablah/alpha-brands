@@ -9,7 +9,6 @@ module.exports = function ({ theme, addUtilities }) {
         width: "203px",
         height: "203px",
       },
-
       "@media (min-width:768px) and (max-width: 1023px)": {
         width: "160px",
         height: "160px",

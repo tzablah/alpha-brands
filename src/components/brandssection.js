@@ -31,6 +31,7 @@ const BrandsSection = ({ brands }) => {
 
   return (
     <section id="brand-section" className="px-2 flex justify-center">
+      {console.log(width)}
       {(showModal || showCatalog) && (
         <Modal
           show={showModal || showCatalog}
@@ -77,9 +78,9 @@ const BrandsSection = ({ brands }) => {
               key={i}
               onClick={() => brandClick(element)}
               className={`${toggle && "mb-12"
-                } image mx-1.5 md:brandMarginMd lg:mx-brandMargin shadow-main hover:shadow-hov bg-white
+                } image mx-1.5 md:mx-brandMarginMd lg:mx-brandMargin shadow-main hover:shadow-hov bg-white
               ${!toggle &&
-                (i > slideIndex + (width > 768 ? 3 : 2) || i < slideIndex) &&
+                (i > slideIndex + (width > 767 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
                 }`}
             >
@@ -101,7 +102,7 @@ const BrandsSection = ({ brands }) => {
         </div>
         {!toggle && (
           <input
-            className="hidden sm:block w-full sm:mb-20 xl:mb-12"
+            className="hidden mt-14 sm:block w-full"
             onChange={(e) => setSlideIndex(Number(e.target.value))}
             value={slideIndex}
             type="range"
