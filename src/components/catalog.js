@@ -2,9 +2,12 @@ import React, { useState, useRef } from "react";
 import PrimaryButton from "./primary-button";
 import Title from "./title";
 import documento from "../images/docs/sheet.pdf";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 const Catalog = () => {
   const [form, setForm] = useState({});
   const docuref = useRef();
+  const AlphaResponse = withReactContent(Swal);
   const valid = Object.values(form).length >= 2;
   const encode = (data) => {
     return Object.keys(data)
@@ -24,7 +27,6 @@ const Catalog = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form, "no tenemos form ??");
     const formName = e.target;
     fetch("/", {
       method: "POST",
@@ -35,6 +37,14 @@ const Catalog = () => {
         console.log("si llegamos", resp, form);
         if (resp.status === 200) {
           console.log(resp);
+          if (docuref.current === undefined) {
+            return AlphaResponse.fire({
+              title: <Title text="No se puede iniciar la descarga" sans />,
+              text: "Debes llenar los campos de Nombre y Email para continuar",
+              icon: "error",
+              confirmButtonText: "Ok",
+            });
+          }
           return docuref.current.click();
           //window.location.replace(`/success`);
         }
@@ -85,20 +95,23 @@ const Catalog = () => {
 
           <PrimaryButton
             type="submit"
-            className={` mt-8 w-full sm:w-72 ${!valid && "opacity-50 cursor-not-allowed disabled"
-              }`}
+            className={` mt-8 w-full sm:w-72 ${
+              !valid && "opacity-50 cursor-not-allowed disabled"
+            }`}
             title="DESCARGAR CATÁLOGO"
-          // onClick={() => handleDownloadCatalog()}
+            // onClick={() => handleDownloadCatalog()}
           />
         </div>
       </form>
-      <a
-        ref={docuref}
-        href={documento}
-        className={`hidden`}
-        target="_blank"
-        rel="noreferrer"
-      ></a>
+      {valid && (
+        <a
+          ref={docuref}
+          href={documento}
+          className={`hidden`}
+          target="_blank"
+          rel="noreferrer"
+        ></a>
+      )}
     </div>
   );
 };
