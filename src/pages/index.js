@@ -34,12 +34,17 @@ export default function Home({ data }) {
       <Layout>
         <SEO />
 
-        <video className="absolute hero-container" preload="auto" loop autoPlay muted>
+        <video
+          className="absolute hero-container"
+          preload="auto"
+          loop
+          autoPlay
+          muted
+        >
           <source src={alphaIntro} type="video/mp4" />
           Your browser does not support HTML5 video
         </video>
-        <div
-          className="w-full relative flex flex-col justify-center items-center hero-container">
+        <div className="w-full relative flex flex-col justify-center items-center hero-container">
           <h1
             id="mainTitle"
             className="font-poppins max-w-xs sm:max-w-full px-4 text-center mt-14 text-2xl md:text-brandmd lg:text-brandlg font-extrabold text-white tracking-widest"
@@ -114,10 +119,10 @@ export const hero = graphql`
         }
       }
     }
-    brands: allContentfulPostBrand {
+    brands: allContentfulAlphaBrands {
       edges {
         node {
-          titulo
+          title
           descripcion {
             descripcion
           }

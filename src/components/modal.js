@@ -8,7 +8,7 @@ const Modal = ({ children, show, onClick, width, alignment, className }) => {
         } ${alignment ? alignment : "justify-center"}`}
     >
       <div
-        className={`${className} bg-white h-full p-4 md:py-10 sm:px-12 max-w-full overflow-y-auto ${width ? `${width}` : "w-full m-auto"
+        className={`${className} max-h-80 bg-white h-full p-4 md:py-10 sm:px-12 max-w-full overflow-y-auto ${width ? `${width}` : "w-full m-auto"
           } md:w-2/5 xl:w-desktopsize overflow-y-scroll`}
       >
         <div className="flex justify-end">

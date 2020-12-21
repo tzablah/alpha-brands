@@ -73,12 +73,12 @@ const ContactSection = () => {
         <ul className="secondary-text flex justify-center items-center flex-col-reverse sm:flex-row lg:flex-row">
           <li className="flex items-center my-3 sm:my-0">
             <a
-              href="tel:5586824354"
+              href="tel:503-2528-8600"
               className="flex flex-col sm:flex-row justify-center items-center"
               title="Contacto Alpha Brands"
             >
               <PhoneImg className="mr-3" />
-              <p>123-456-7890</p>
+              <p>503-2528-8600</p>
             </a>
           </li>
           <li className="flex items-center my-3 sm:my-0 sm:ml-10">

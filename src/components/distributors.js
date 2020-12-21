@@ -5,16 +5,19 @@ const data = [
     title: "El Salvador",
     distributors: [
       {
-        name: "DIZNA",
-        description: "ILU, Starbrantdt, Estrella Blanca",
+        name: "DISNA",
+        description: "Starbrantdt, Estrella Blanca",
+        link: "https://disna.com.sv/",
       },
       {
         name: "UDISA",
         description: "Terramonte, El Bárbaro",
+        link: "https://www.udisa.com.sv/",
       },
       {
         name: "DISZASA",
         description: "Blanquita, Demonios, Productos Institucionales (PI)",
+        link: "http://www.diszasa.com/",
       },
     ],
   },
@@ -22,8 +25,9 @@ const data = [
     title: "Honduras",
     distributors: [
       {
-        name: "DIZNA Honduras",
+        name: "DISNA Honduras",
         description: "Estrella Blanca, Terramonte, Starbrandt, Blanquita, Tita",
+        link: "https://www.facebook.com/DisnaHN/",
       },
     ],
   },
@@ -33,6 +37,7 @@ const data = [
       {
         name: "Grupo Curtis",
         description: "Starbrandt",
+        link: "http://www.grupocurtis.com/",
       },
     ],
   },
@@ -42,6 +47,7 @@ const data = [
       {
         name: "Grupo Curtis",
         description: "Starbrandt",
+        link: "http://www.grupocurtis.com/",
       },
     ],
   },
@@ -49,7 +55,7 @@ const data = [
 
 const Distributors = () => {
   return (
-    <div className="container mx-auto py-8 lg:px-32">
+    <div className="container mx-auto pt-8 lg:px-32">
       <h3 className='header font-bold'>NUESTROS DISTRIBUIDORES</h3>
       {data.map((country, i) => (
         <div key={i} className="mt-8">
@@ -58,7 +64,7 @@ const Distributors = () => {
           </p>
           {country.distributors.map((element, idx) => (
             <div key={idx} className="mt-3 mb-2">
-              <a href="/" className="anchor-text">
+              <a href={element.link} className="anchor-text" target="_blank">
                 {element.name}
               </a>
               <p className="secondary-text mb-9">{element.description}</p>

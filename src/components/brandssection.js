@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Brand from "./brand";
 import Modal from "./modal";
 import PrimaryButton from "./primary-button";
-import Title from "./title";
 import DownImg from "../images/svg/chevron-down.svg";
 import UpImg from "../images/svg/chevron-up.svg";
 import Catalog from "./catalog";
@@ -31,7 +30,6 @@ const BrandsSection = ({ brands }) => {
 
   return (
     <section id="brand-section" className={`${toggle ? 'mb-16 sm:mb-0' : 'mb-32 sm:mb-16'} sm:mt-9 md:mt-0 sm:px-2 flex justify-center`}>
-      {console.log(width)}
       {(showModal || showCatalog) && (
         <Modal
           show={showModal || showCatalog}
@@ -42,7 +40,7 @@ const BrandsSection = ({ brands }) => {
           children={
             showModal ? <Brand {...element} /> : showCatalog ? <Catalog /> : ""
           }
-          className="md:h-auto md:w-11/12"
+          className="h-screen md:h-auto md:w-11/12"
         />
       )}
       <div className="md:pt-16 w-full xl:w-desktopsize flex-col flex md:block">
@@ -91,11 +89,11 @@ const BrandsSection = ({ brands }) => {
                   imgStyle={{
                     objectFit: "cover",
                   }}
-                  alt={element.node.titulo}
+                  alt={element.node.title}
                 />
               </div>
               <p className="mt-4 md:hidden font-opensans font-semibold text-xs text-center text-black">
-                {element.node.titulo}
+                {element.node.title}
               </p>
             </button>
           ))}

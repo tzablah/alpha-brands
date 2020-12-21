@@ -6,11 +6,11 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allContentfulPostBrand {
+        allContentfulAlphaBrands {
           edges {
             node {
               slug
-              titulo
+              title
             }
           }
         }
@@ -22,7 +22,7 @@ exports.createPages = ({ graphql, actions }) => {
         console.log("Error con data de contenful", result.errors);
       }
       const blogTemplate = path.resolve("./src/templates/brandTemplate.js");
-      result.data.allContentfulPostBrand.edges.forEach((blog) => {
+      result.data.allContentfulAlphaBrands.edges.forEach((blog) => {
         createPage({
           path: `/${blog.node.title}`,
           component: slash(blogTemplate),

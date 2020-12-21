@@ -5,7 +5,7 @@ import PrimaryButton from "./primary-button";
 import Title from "./title";
 import Img from "gatsby-image";
 const Brand = ({ node }) => {
-  const { descripcion, imagen, titulo } = node;
+  const { descripcion, imagen, title } = node;
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -31,13 +31,13 @@ const Brand = ({ node }) => {
               imgStyle={{
                 objectFit: "cover",
               }}
-              alt={titulo}
+              alt={title}
             />
           </div>
         ))}
       </div>
       <div className="text-left sm:text-center lg:text-left mt-8 lg:mt-0 lg:ml-8 xl:ml-16 modal-xs lg:w-1/2">
-        <p className="subheader ">{titulo}</p>
+        <p className="subheader ">{title}</p>
         <p className="secondary-text my-3 lg:my-4">{descripcion.descripcion}</p>
         <p className="font-semibold secondary-text my-6">
           Para ver todos los productos disponibles de esta marca,

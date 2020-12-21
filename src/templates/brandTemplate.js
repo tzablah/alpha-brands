@@ -12,10 +12,10 @@ const PostBrand = () => {
 export default PostBrand;
 export const pageQuery = graphql`
   query {
-    allContentfulPostBrand {
+    allContentfulAlphaBrands {
       edges {
         node {
-          titulo
+          title
           descripcion {
             descripcion
           }
