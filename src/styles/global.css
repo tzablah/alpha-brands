@@ -118,7 +118,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 
-@media (min-width: 640px) and (max-width: 768px) {
+@media (min-width: 640px) and (max-width: 767px) {
   .flex-brand {
     flex: 1 0 28%;
   }
@@ -155,13 +155,6 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  #brand-section {
-    margin-right: 25px;
-    margin-left: 25px;
-  }
-}
-
 @media (min-width: 640px) and (max-width: 767px) {
   #brand-section {
     margin-right: 27px;
@@ -171,6 +164,38 @@ input[type="range"]::-webkit-slider-thumb {
 @media (min-width: 768px) and (max-width: 1023px) {
   .flex-brands > button {
     flex: 0 0 21.8%;
+  }
+  #brand-section {
+    max-width: 718px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .flex-brand {
+    flex: 1 0 28%;
+  }
+  .brand-modal:first-child {
+    width: 215px;
+    height: 215px;
+    margin: 10px 176.5px 0 176.5px;
+    flex: 0 1 100%;
+  }
+  .brand-modal:nth-child(2){
+    width: 172px;
+    height: 172px;
+    margin: 28px 13px 0 0;
+  }
+  .brand-modal:nth-child(3){
+    width: 172px;
+    height: 172px;
+    margin: 28px 13px 0 13px;
+  }
+  .brand-modal:last-child {
+    width: 172px;
+    height: 172px;
+    margin: 28px 0 0 13px;
+  }
+  .flex-brands > button {
+    flex: 0 0 21.58%;
   }
 }
 @media only screen and (min-width: 1024px) {
