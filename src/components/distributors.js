@@ -6,7 +6,7 @@ const data = [
     distributors: [
       {
         name: "DIZNA",
-        description: "ILU, Starbrantdt, Estrella Blanca",
+        description: "Starbrantdt, Estrella Blanca",
         link: "https://disna.com.sv/",
       },
       {
@@ -25,7 +25,7 @@ const data = [
     title: "Honduras",
     distributors: [
       {
-        name: "DIZNA Honduras",
+        name: "DISNA Honduras",
         description: "Estrella Blanca, Terramonte, Starbrandt, Blanquita, Tita",
         link: "https://www.facebook.com/DisnaHN/",
       },
