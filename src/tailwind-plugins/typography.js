@@ -68,12 +68,6 @@ module.exports = function ({ theme, addUtilities }) {
       fontWeight: '400',
       fontFamily: theme('fontFamily')['poppins'],
       fontStyle: 'normal',
-      '&:focus': {
-        color: theme('colors')['blue']
-      },
-      '&:active': {
-        color: theme('colors')['blue']
-      },
       '@media (min-width: 1280px)': {
         fontSize: '14px',
         lineHeight: '21px',
@@ -89,10 +83,12 @@ module.exports = function ({ theme, addUtilities }) {
         lineHeight: '24px',
         letterSpacing: '0.1em',
         '&:focus': {
-          backgroundColor: theme('colors')['blueLight']
+          backgroundColor: theme('colors')['blueLight'],
+          color: theme('colors')['blue']
         },
         '&:active': {
-          backgroundColor: theme('colors')['blueLight']
+          backgroundColor: theme('colors')['blueLight'],
+          color: theme('colors')['blue']
         },
       }
     },
