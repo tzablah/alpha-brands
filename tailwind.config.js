@@ -1,5 +1,6 @@
-const plugin = require('tailwindcss/plugin') 
- module.exports = {
+const plugin = require('tailwindcss/plugin')
+
+module.exports = {
   future: {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
@@ -31,14 +32,12 @@ const plugin = require('tailwindcss/plugin')
         9: '2.25rem',
         17: '68px',
         1.5: '5.5px',
-        11:'44px',
-        3.5:'.875rem',
-        nuestrasMarcas: '1.625rem'
+        11: '44px',
+        3.5: '.875rem',
+        nuestrasMarcas: '1.625rem',
+        brandMarginMd: '10px'
       },
       height: {
-        input: '52px',
-        inputSm: '48px',
-        inputMd: '44px',
         brandImage: '270px',
         brandProductSm: '90px',
         brandProdcutMd: '147px',
@@ -51,8 +50,6 @@ const plugin = require('tailwindcss/plugin')
         buttonBrandMobile: '60px',
         brandIcon: '104px',
         brandIconTablet: '203px',
-        textAreaSm: '204px',
-        textAreaMd: '144px',
         heroContainer: '60vh',
         brandIconMobV: '127px',
         brandIconTabletV: '160px'
@@ -74,10 +71,9 @@ const plugin = require('tailwindcss/plugin')
         brandIconMobV: '127px',
         brandIconTabletV: '160px',
         brandIconTablet: '203px',
-        inputSm: '334px',
-        inputMd: '437px',
-        inputLg: '570px',
         aboutSectionMd: '902px',
+        infoSectionLg: '470px',
+        aboutSectionSm: '697px',
         72: '18rem'
       },
       maxWidth: {
@@ -103,8 +99,8 @@ const plugin = require('tailwindcss/plugin')
         title: "0.045em;"
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        opensans: ['Open Sans', 'sans-serif']
+        poppins: ['Poppins'],
+        opensans: ['Open Sans']
       },
       boxShadow: {
         main: "0px 0px 10px rgba(49, 74, 90, 0.16)",
@@ -115,5 +111,11 @@ const plugin = require('tailwindcss/plugin')
   variants: {
     backgroundColor: ["responsive", "hover", "focus", "active"]
   },
-  plugins: [ plugin(require('./src/tailwind-plugins/sizes')),],
+  plugins: [
+    plugin(require('./src/tailwind-plugins/typography')),
+    plugin(require('./src/tailwind-plugins/containers')),
+    plugin(require('./src/tailwind-plugins/buttons')),
+    plugin(require('./src/tailwind-plugins/inputs')),
+    plugin(require('./src/tailwind-plugins/sizes')),
+  ],
 };

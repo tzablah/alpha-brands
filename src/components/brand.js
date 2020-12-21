@@ -46,7 +46,7 @@ const Brand = ({ node }) => {
         <PrimaryButton
           title="DESCARGAR CATÁLOGO"
           onClick={() => setShowModal(true)}
-          className="w-full md:w-72"
+          className="btn-modal"
         />
       </div>
     </div>

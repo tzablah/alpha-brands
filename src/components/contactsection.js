@@ -39,7 +39,7 @@ const ContactSection = () => {
   return (
     <section className="mt-10 xl:mt-24 flex justify-center bg-contact px-4 py-20 xl:py-24 lg:h-contactSection relative contactBackground">
       {send ? (
-        <BgContactSend className="absolute hidden lg:block" />
+        <BgContactSend className="absolute hidden lg:block mt-4" />
       ) : (
           <BgContact className="absolute xl:ml-8 xl:w-full hidden lg:block" />
         )}
@@ -47,22 +47,27 @@ const ContactSection = () => {
         className={`${send && "sm:py-56 lg:py-60"
           } lg:container xl:max-w-contactSection xl:h-full mx-auto text-center`}
       >
-        <Title
-          text={send ? "¡Gracias por tu mensaje!" : "CONTACTO"}
-          id="contacto"
-          className={send && "send-text"}
-        />
         {send ? (
-          <p className="font-opensans text-base md:text-sm lg:text-base mt-3 mb-6">
-            Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
-            pronto posible.
-          </p>
+          <>
+            <h3 id="contacto" className="send text-black">
+              ¡Gracias por tu mensaje!
+            </h3>
+            <p className="font-opensans text-base md:text-sm lg:text-base mt-3 mb-6">
+              Gracias por tomar el tiempo de escribirnos. Te responderemos lo más
+              pronto posible.
+            </p>
+          </>
         ) : (
-            <h4 className="text-sm xl:text-base mt-1 mb-7 sm:mb-12 md:mb-6 md:mt-4">
-              Si te interesa saber más de nuestras marcas y sus productos,
+            <>
+              <h3 id="contacto" className="header text-black font-bold">
+                CONTACTO
+              </h3>
+              <h4 className="text-sm xl:text-base mt-1 mb-7 sm:mb-12 md:mb-6 md:mt-4">
+                Si te interesa saber más de nuestras marcas y sus productos,
               <br className="hidden sm:block" />
-            ¡no dudes en contactarnos!
-            </h4>
+              ¡no dudes en contactarnos!
+              </h4>
+            </>
           )}
         <ul className="font-opensans text-sm md:text-sm xl:text-base flex justify-center items-center flex-col-reverse sm:flex-row lg:flex-row">
           <li className="flex items-center my-2 sm:my-0">
@@ -101,27 +106,27 @@ const ContactSection = () => {
             <input type="hidden" name="form-name" value="contact" />
 
             <input
-              className="z-20 w-inputSm h-inputSm md:w-inputMd lg:h-inputMd  xl:w-inputLg xl:h-input placeholder-input my-2 xl:my-3 p-4"
+              className="z-20 input-size placeholder-input my-2 xl:my-3 p-4"
               placeholder="Nombre"
               name="Nombre"
               onChange={handleInputs}
             />
             <input
-              className="z-20 w-inputSm h-inputSm md:w-inputMd lg:h-inputMd xl:w-inputLg placeholder-input xl:h-input my-2 xl:my-3 p-4"
+              className="z-20 input-size placeholder-input xl:h-input my-2 xl:my-3 p-4"
               placeholder="Correo electrónico"
               name="Correo electrónico"
               type="email"
               onChange={handleInputs}
             />
             <textarea
-              className="z-20 w-inputSm h-textAreaSm md:w-inputMd md:h-textAreaMd xl:w-inputLg lg:h-36 xl:h-32  placeholder-input mt-2 xl:mt-3 p-4"
+              className="z-20 textarea placeholder-input mt-2 xl:mt-3 p-4"
               placeholder="Mensaje..."
               name="Mensaje"
               onChange={handleInputs}
             />
             <button
               type="submit"
-              className={` z-20 mt-11 bg-bg-blueBright w-64 py-5 rounded-full text-white tracking-widest font-semibold bg-blueBright hover:bg-blue
+              className={` z-20 mt-11 bg-bg-blueBright h-buttonBrandMobile w-64 py-5 rounded-full text-white tracking-widest font-semibold bg-blueBright hover:bg-blue
               ${!valid && "opacity-50 cursor-not-allowed"}`}
               disabled={!valid}
             >

@@ -5,18 +5,21 @@ module.exports = function ({ theme, addUtilities }) {
         width: "270px",
         height: "270px",
       },
-      "@media (min-width:768px) and (max-width: 1279px)": {
+      "@media (min-width:1024px) and (max-width: 1279px)": {
         width: "203px",
         height: "203px",
       },
-
-      "@media (max-width:767px)": {
-        width: "104px",
-        height: "104px",
+      "@media (min-width:768px) and (max-width: 1023px)": {
+        width: "160px",
+        height: "160px",
       },
-      "@media (max-width:740px)": {
+      "@media (min-width:640px) and (max-width:767px)": {
         width: "127px",
         height: "141px",
+      },
+      "@media (max-width:639px)": {
+        width: "96px",
+        height: "96px",
       },
     },
     ".circle": {

@@ -6,7 +6,7 @@ const Modal = ({ children, show, onClick, width, alignment, className }) => {
     <div
       className={`z-50 w-screen h-screen fixed top-0 left-0 bg-content flex items-center ${
         !show && "hidden"
-      } ${alignment ? alignment : "justify-center md:py-24"}`}
+      } ${alignment ? alignment : "justify-center md:pb-24 md:pt-4"}`}
     >
       <div
         className={`${className} bg-white h-auto p-4 md:py-10 md:px-12 max-w-full overflow-y-auto ${

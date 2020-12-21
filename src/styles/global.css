@@ -7,7 +7,6 @@
 video {
   object-fit: cover;
   min-width: 100%;
-  min-height: 60vh;
 }
 ::placeholder,
 textarea,
@@ -99,9 +98,6 @@ input[type="range"]::-webkit-slider-thumb {
     width: 235px !important;
     height: 200px !important;
   }
-  video {
-    min-height: 60vh;
-  }
   #mainTitle {
     width: 24rem;
   }
@@ -146,9 +142,6 @@ input[type="range"]::-webkit-slider-thumb {
     height: 147px;
     width: 147px;
   }
-  /* .bg-contacBackground-send {
-    background-image: url("../images/svg/bg-contact-send.svg") no-repeat center;
-  } */
 }
 
 @media (min-width: 640px) and (max-width: 1024px) {
@@ -172,10 +165,6 @@ input[type="range"]::-webkit-slider-thumb {
     width: 150px;
     margin: 1.25rem;
   }
-  /* .bg-contacBackground {
-    background-image: url("../images/svg/bg-contact.svg") no-repeat center;
-    background-size: contain;
-  } */
 }
 @media only screen and (min-width: 1025px) {
   #brand-section {

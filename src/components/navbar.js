@@ -19,24 +19,24 @@ const Navbar = () => {
       alignment="justify-end"
       children={
         <ul className="h-full sm:h-auto md:h-full w-full flex flex-col mt-8 pt-4">
-          <li className="my-5 sm:my-2 text-navgray focus:bg-blueLight focus:text-blue active:bg-blueLight active:text-blue p-3 w-full tracking-widest text-base">
+          <li className="my-5 sm:my-2 md:my-5 p-3 w-full nav-text">
             <Link to="#nuestras-marcas" onClick={() => setOpen(false)}>
               NUESTRAS MARCAS
             </Link>
           </li>
-          <li className="my-5 sm:my-2 md:my-5 text-navgray focus:bg-blueLight focus:text-blue active:bg-blueLight active:text-blue  p-3 w-full tracking-widest text-base">
+          <li className="my-5 sm:my-2 md:my-5 p-3 w-full nav-text">
             <Link to="#nosotros" onClick={() => setOpen(false)}>
               CONÓZCANOS
             </Link>
           </li>
-          <li className="my-5 sm:my-2 md:my-5 text-navgray focus:bg-blueLight focus:text-blue active:bg-blueLight active:text-blue p-3 w-full tracking-widest text-base">
+          <li className="my-5 sm:my-2 md:my-5 p-3 w-full nav-text">
             <Link to="#contacto" onClick={() => setOpen(false)}>
               CONTACTO
             </Link>
           </li>
           <li className="my-8 sm:my-4 md:my-8">
             <PrimaryButton
-              className="py-3 w-full"
+              className="py-3 btn-sideBar"
               title="CATÁLOGO"
               icon={true}
               onClick={() => {
@@ -61,7 +61,7 @@ const Navbar = () => {
         />
       )}
       {open && mobileNav()}
-      <div className="fixed text-sm uppercase top-0 z-40 bg-white md:h-16 md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow-main">
+      <div className="fixed text-sm uppercase top-0 z-40 bg-white nav-container md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow-main">
         <div className="flex justify-between items-center w-full xl:w-desktopsize">
           <Link
             className="ml-5 md:ml-0 w-logoNav h-logoNav md:w-logoNavMd md:h-logoNavMd lg:h-logoNavLg lg:w-logoNavLg "
@@ -74,21 +74,21 @@ const Navbar = () => {
           </Link>
           <div className="font-poppins hidden lg:flex items-center w-2/4 md:justify-between lg:justify-around">
             <AnchorLink
-              className="text-navgray tracking-widest hover:text-blue"
+              className="nav-text hover:text-blue"
               to="/#nuestras-marcas"
               title="Marcas Alpha Brands"
             >
               Nuestras Marcas
             </AnchorLink>
             <AnchorLink
-              className="text-navgray tracking-widest hover:text-blue"
+              className="nav-text hover:text-blue"
               to="/#nosotros"
               title="Qué es Alpha Brands"
             >
               Conózcanos
             </AnchorLink>
             <AnchorLink
-              className="text-navgray tracking-widest hover:text-blue"
+              className="nav-text hover:text-blue"
               to="/#contacto"
               title="Contacto Alpha Brands"
             >
@@ -96,7 +96,7 @@ const Navbar = () => {
             </AnchorLink>
           </div>
           <PrimaryButton
-            className="hidden px-5 py-3 lg:flex"
+            className="hidden btn-navbar px-5 py-3 lg:flex"
             title="CATÁLOGO"
             icon={true}
             onClick={() => setShowModal(true)}
