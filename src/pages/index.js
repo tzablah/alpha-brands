@@ -28,7 +28,7 @@ export default function Home({ data }) {
           children={
             showModal ? <Distributors /> : showCatalog ? <Catalog /> : ""
           }
-          className="h-screen md:h-auto md:w-11/12"
+          className="h-5/6 md:w-11/12"
         />
       )}
       <Layout>
