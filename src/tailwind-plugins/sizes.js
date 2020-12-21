@@ -15,7 +15,7 @@ module.exports = function ({ theme, addUtilities }) {
       },
       "@media (min-width:640px) and (max-width:767px)": {
         width: "127px",
-        height: "141px",
+        height: "127px",
       },
       "@media (max-width:639px)": {
         width: "96px",
@@ -27,14 +27,39 @@ module.exports = function ({ theme, addUtilities }) {
         width: "355px",
         height: "375px",
       },
-
-      "@media (min-width:768px) and (max-width: 1279px)": {
-        width: "354px",
-        height: "369px",
+      "@media (min-width:1024px) and (max-width: 1279px)": {
+        width: "370px",
+        height: "370px",
+      },
+      "@media (min-width:768px) and (max-width: 1023px)": {
+        width: "340px",
+        height: "340px",
       },
       "@media (max-width:767px)": {
-        width: "235px",
-        height: "244px",
+        width: "316px",
+        height: "316px",
+      },
+    },
+    ".modal-image": {
+      "@media (min-width: 1280px)": {
+        width: "220px",
+        height: "220px",
+      },
+      "@media (min-width:1024px) and (max-width: 1279px)": {
+        width: "175px",
+        height: "175px",
+      },
+      "@media (min-width:768px) and (max-width: 1023px)": {
+        width: "160px",
+        height: "160px",
+      },
+      "@media (min-width:640px) and (max-width:767px)": {
+        width: "127px",
+        height: "127px",
+      },
+      "@media (max-width:639px)": {
+        width: "104px",
+        height: "104px",
       },
     },
   });

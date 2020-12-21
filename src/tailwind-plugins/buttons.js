@@ -20,34 +20,33 @@ module.exports = function ({ theme, addUtilities }) {
         letterSpacing: '.145em',
       },
       '@media (min-width: 360px) and (max-width: 639px)': {
-        width: '334px'
+        width: '100%'
       },
       '@media (max-width: 359px)': {
         width: '100%'
       },
     },
     '.btn-sideBar': {
-      width: '246px',
+      width: '100%',
       height: '44px',
-      '@media (max-width: 359px)': {
-        width: '100%'
-      },
       'p': {
         fontSize: '14.5px',
         letterSpacing: '.06em'
       },
     },
     '.btn-modal': {
-      width: '335px',
       height: '60px',
       'p': {
         fontSize: '16px',
         letterSpacing: '.145em',
       },
-      '@media (min-width: 360px) and (min-width: 639px)': {
+      '@media (min-width: 640px)': {
+        width: '335px'
+      },
+      '@media (min-width: 426px) and (max-width: 639px)': {
         width: '288px'
       },
-      '@media (max-width: 359px)': {
+      '@media (max-width: 425px)': {
         width: '100%'
       },
     },

@@ -47,10 +47,11 @@ const Catalog = () => {
   };
   return (
     <div className="container mx-auto text-center py-8">
-      <Title text="Catálogo de AlphaBrands" sans />
-      <p className="mt-4 font-opensans text-content text-sm md:text-sm lg:text-base">
-        Compártenos tu información para poder descargar nuestro catálogo
-        <br className="hidden sm:block" /> de productos completo.
+      <p className="subheader">Catálogo de AlphaBrands</p>
+      <p className="mt-3 md:mt-4 secondary-text">
+        Compártenos tu información para poder descargar nuestro
+        <br className="hidden md:block xl:hidden" /> catálogo
+        <br className="hidden sm:block md:hidden xl:block" /> de productos completo.
       </p>
       <form
         action="/success"
@@ -60,23 +61,23 @@ const Catalog = () => {
         data-netlify="true"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col items-center mt-12 xl:mt-9">
+        <div className="flex flex-col items-center mt-10 md:mt-12 xl:mt-9">
           <input type="hidden" name="form-name" value="catalog" />
           <input
-            className="input-size my-3 p-4  placeholder-input bg-gray text-sm"
+            className="input-size mt-0 mb-4 md:my-3 p-4  secondary-text bg-gray text-sm"
             placeholder="Nombre"
             name="name"
             onChange={handleInputs}
           />
           <input
-            className="input-size my-3 p-4 placeholder-input bg-gray text-sm"
+            className="input-size mt-0 mb-4 md:my-3 p-4 secondary-text bg-gray text-sm"
             placeholder="Correo electrónico"
             name="email"
             type="email"
             onChange={handleInputs}
           />
           <input
-            className="input-size my-3 p-4 placeholder-input bg-gray text-sm"
+            className="input-size mt-0 mb-4 md:my-3 p-4 secondary-text bg-gray text-sm"
             placeholder="Teléfono (opcional)"
             name="phone"
             type="text"
@@ -85,7 +86,7 @@ const Catalog = () => {
 
           <PrimaryButton
             type="submit"
-            className={`mt-8 btn-modal ${!valid && "opacity-50 cursor-not-allowed disabled"
+            className={`mt-7 btn-modal ${!valid && "opacity-50 cursor-not-allowed disabled"
               }`}
             title="DESCARGAR CATÁLOGO"
           // onClick={() => handleDownloadCatalog()}

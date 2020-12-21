@@ -21,6 +21,27 @@ module.exports = function ({ theme, addUtilities }) {
         lineHeight: '36px'
       },
     },
+    '.subheader': {
+      fontFamily: theme('fontFamily')['poppins'],
+      fontStyle: 'normal',
+      fontWeight: '700',
+      color: theme('colors')['black'],
+      '@media (min-width: 1280px)': {
+        fontSize: '26px',
+        lineHeight: '39px',
+        letterSpacing: '0.045em',
+      },
+      '@media (min-width: 768px) and (max-width: 1279px)': {
+        fontSize: '24px',
+        lineHeight: '33px',
+        letterSpacing: '0.045em',
+      },
+      '@media (max-width: 767px)': {
+        fontSize: '20px',
+        lineHeight: '27px',
+        letterSpacing: '0.03em',
+      }
+    },
     '.send': {
       fontWeight: '700',
       fontFamily: theme('fontFamily')['poppins'],
@@ -93,5 +114,38 @@ module.exports = function ({ theme, addUtilities }) {
         lineHeight: '24px'
       }
     },
+    '.secondary-text': {
+      fontFamily: theme('fontFamily')['opensans'],
+      fontStyle: 'normal',
+      color: theme('colors')['content'],
+      '@media (min-width: 1280px)': {
+        fontSize: '15px',
+        lineHeight: '24px'
+      },
+      '@media (min-width: 768px) and (max-width: 1279px)': {
+        fontSize: '14px',
+        lineHeight: '20px'
+      },
+      '@media (max-width: 767px)': {
+        fontSize: '14px',
+        lineHeight: '24px'
+      }
+    },
+    '.anchor-text': {
+      fontFamily: theme('fontFamily')['opensans'],
+      fontStyle: 'normal',
+      color: theme('colors')['blueBright'],
+      '&:hover': {
+        color: theme('colors')['blue'],
+      },
+      '@media (min-width: 768px)': {
+        fontSize: '16px',
+        lineHeight: '22px'
+      },
+      '@media (max-width: 767px)': {
+        fontSize: '14px',
+        lineHeight: '19px'
+      }
+    }
   });
 };

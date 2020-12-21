@@ -18,23 +18,23 @@ const Navbar = () => {
       width="w-3/4 md:w-2/5"
       alignment="justify-end"
       children={
-        <ul className="h-full sm:h-auto md:h-full w-full flex flex-col mt-8 pt-4">
-          <li className="my-5 sm:my-2 md:my-5 p-3 w-full nav-text">
+        <ul className="h-full sm:h-auto w-full flex flex-col mt-8 pt-4 sm:pt-0 md:pt-4 px-4 md:px-0">
+          <li className="my-2.5 p-3 w-full nav-text">
             <Link to="#nuestras-marcas" onClick={() => setOpen(false)}>
               NUESTRAS MARCAS
             </Link>
           </li>
-          <li className="my-5 sm:my-2 md:my-5 p-3 w-full nav-text">
+          <li className="my-2.5 p-3 w-full nav-text">
             <Link to="#nosotros" onClick={() => setOpen(false)}>
               CONÓZCANOS
             </Link>
           </li>
-          <li className="my-5 sm:my-2 md:my-5 p-3 w-full nav-text">
+          <li className="my-2.5 p-3 w-full nav-text">
             <Link to="#contacto" onClick={() => setOpen(false)}>
               CONTACTO
             </Link>
           </li>
-          <li className="my-8 sm:my-4 md:my-8">
+          <li className="my-8 sm:my-4 md:my-10">
             <PrimaryButton
               className="py-3 btn-sideBar"
               title="CATÁLOGO"

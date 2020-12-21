@@ -47,14 +47,14 @@ export default function Home({ data }) {
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton
-            className="hidden md:flex btn-hero mt-12"
+            className="hidden sm:flex btn-hero mt-5 md:mt-12"
             size="large"
             title="DESCARGAR CATÁLOGO"
             onClick={() => setShowCatalog(true)}
           />
         </div>
         <BrandsSection brands={brands} />
-        <section id="nosotros" className="px-5 mt-16 sm:mt-0 md:px-14 xl:px-16">
+        <section id="nosotros" className="px-5 sm:mt-0 lg:mt-14 xl:mt-0 md:px-14 xl:px-16">
           <div className="flex flex-col items-center w-full">
             <InfoSection
               title="NOSOTROS"
@@ -80,7 +80,7 @@ export default function Home({ data }) {
                     Honduras, Guatemala y Costa Rica.
                   </p>
                   <button
-                    className="mt-4 text-blueBright hover:text-blue text-base"
+                    className="mt-4 anchor-text"
                     onClick={() => setShowModal(true)}
                   >
                     Nuestros distribuidores

@@ -9,7 +9,7 @@ const Brand = ({ node }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="container pt-12 md:py-4 lg:py-6 flex flex-col lg:flex-row md:px-3 xl:px-12">
+    <div className="container pt-12 md:py-4 lg:py-6 flex items-center lg:items-start flex-col lg:flex-row md:px-3 xl:px-12">
       {showModal && (
         <Modal
           show={showModal}
@@ -18,11 +18,11 @@ const Brand = ({ node }) => {
           className="h-full md:h-auto md:w-11/12"
         />
       )}
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-start images-container">
         {imagen.map((img, i) => (
           <div
             key={i}
-            className="flex justify-center items-center w-full h-full flex-brand brand-modal h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd xl:h-brandProductLg xl:w-brandProductLg"
+            className="flex-brand brand-modal modal-image"
           >
             <Img
               key={i}
@@ -36,12 +36,13 @@ const Brand = ({ node }) => {
           </div>
         ))}
       </div>
-      <div className="text-justify mt-6 lg:mt-0 lg:ml-8 xl:ml-16 lg:w-infoBrandLg xl:w-infoBrandXl">
-        <Title text={titulo} sans />
-        <p className="text-sm my-4 font-opensans">{descripcion.descripcion}</p>
-        <p className="font-semibold text-sm my-6 font-opensans">
-          Para ver todos los productos disponibles de esta marca, descarga
-          nuestro catálogo completo.
+      <div className="text-left sm:text-center lg:text-left mt-8 lg:mt-0 lg:ml-8 xl:ml-16 modal-xs lg:w-1/2">
+        <p className="subheader ">{titulo}</p>
+        <p className="secondary-text my-3 lg:my-4">{descripcion.descripcion}</p>
+        <p className="font-semibold secondary-text my-6">
+          Para ver todos los productos disponibles de esta marca,
+          <br className="hidden sm:block lg:hidden" /> {""}
+          descarga nuestro catálogo completo.
         </p>
         <PrimaryButton
           title="DESCARGAR CATÁLOGO"
