@@ -57,5 +57,17 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Alpha Brands`,
+        short_name: `Alphabrands`,
+        start_url: `/`,
+        background_color: `#F49725`,
+        theme_color: `#3380CC`,
+        display: `standalone`,
+        icon: `${__dirname}/src/images/assets/favicon.png`
+      }
+    }
   ],
 };
