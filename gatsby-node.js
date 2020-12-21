@@ -6,11 +6,11 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        allContentfulPostBrand {
+        allContentfulAlphaBrands {
           edges {
             node {
               slug
-              titulo
+              title
             }
           }
         }
@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
     `
   )
     .then((result) => {
+      console.log(result);
       if (result.errors) {
         console.log("Error con data de contenful", result.errors);
       }

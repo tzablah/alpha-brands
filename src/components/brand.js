@@ -5,7 +5,7 @@ import PrimaryButton from "./primary-button";
 import Title from "./title";
 import Img from "gatsby-image";
 const Brand = ({ node }) => {
-  const { descripcion, imagen, titulo } = node;
+  const { descripcion, imagen, title } = node;
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -22,7 +22,7 @@ const Brand = ({ node }) => {
         {imagen.map((img, i) => (
           <div
             key={i}
-            className="flex justify-center items-center w-full h-full flex-brand brand-modal h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd xl:h-brandProductLg xl:w-brandProductLg"
+            className="flex justify-center items-center flex-brand brand-modal h-brandProductSm w-brandProductSm md:h-brandProdcutMd md:w-brandProdcutMd xl:h-brandProductLg xl:w-brandProductLg"
           >
             <Img
               key={i}
@@ -31,13 +31,13 @@ const Brand = ({ node }) => {
               imgStyle={{
                 objectFit: "cover",
               }}
-              alt={titulo}
+              alt={title}
             />
           </div>
         ))}
       </div>
       <div className="text-justify mt-6 lg:mt-0 lg:ml-8 xl:ml-16 lg:w-infoBrandLg xl:w-infoBrandXl">
-        <Title text={titulo} sans />
+        <Title text={title} sans />
         <p className="text-sm my-4 font-opensans">{descripcion.descripcion}</p>
         <p className="font-semibold text-sm my-6 font-opensans">
           Para ver todos los productos disponibles de esta marca, descarga

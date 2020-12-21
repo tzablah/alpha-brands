@@ -52,7 +52,9 @@ const BrandsSection = ({ brands }) => {
           onClick={() => setShowCatalog(true)}
         />
         <div className="flex items-center sm:block mb-nuestrasMarcas w-full">
-          <h3 id="nuestras-marcas" className="header text-black font-bold">NUESTRAS MARCAS</h3>
+          <h3 id="nuestras-marcas" className="header text-black font-bold">
+            NUESTRAS MARCAS
+          </h3>
           <div className="flex justify-end">
             <button
               className="md:mt-7 text-blueBright text-lg xl:text-xl "
@@ -64,25 +66,28 @@ const BrandsSection = ({ brands }) => {
               {toggle ? (
                 <UpImg className="sm:hidden ml-2 text-content" />
               ) : (
-                  <DownImg className="sm:hidden ml-2 text-content" />
-                )}
+                <DownImg className="sm:hidden ml-2 text-content" />
+              )}
             </button>
           </div>
         </div>
         <div
-          className={`mb-16 flex sm:mb-0 lg:justify-start sm:-mx-4 ${toggle && "flex-wrap flex-brands"
-            }`}
+          className={`mb-16 flex sm:mb-0 lg:justify-start sm:-mx-4 ${
+            toggle && "flex-wrap flex-brands"
+          }`}
         >
           {brands.edges.map((element, i) => (
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`${toggle && "mb-12"
-                } image mx-1.5 md:mx-brandMarginMd lg:mx-brandMargin shadow-main hover:shadow-hov bg-white
-              ${!toggle &&
+              className={`${
+                toggle && "mb-12"
+              } image mx-1.5 md:mx-brandMarginMd lg:mx-brandMargin shadow-main hover:shadow-hov bg-white
+              ${
+                !toggle &&
                 (i > slideIndex + (width > 767 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
-                }`}
+              }`}
             >
               <div className="flex justify-center items-center w-full h-full">
                 <Img
@@ -91,11 +96,11 @@ const BrandsSection = ({ brands }) => {
                   imgStyle={{
                     objectFit: "cover",
                   }}
-                  alt={element.node.titulo}
+                  alt={element.node.title}
                 />
               </div>
               <p className="sm:hidden font-opensans font-bold text-xs text-center text-black">
-                {element.node.titulo}
+                {element.node.title}
               </p>
             </button>
           ))}
