@@ -56,7 +56,7 @@ const data = [
 const Distributors = () => {
   return (
     <div className="container mx-auto pt-8 lg:px-32">
-      <h3 className='header font-bold'>NUESTROS DISTRIBUIDORES</h3>
+      <h3 className='header font-bold text-black'>NUESTROS DISTRIBUIDORES</h3>
       {data.map((country, i) => (
         <div key={i} className="mt-8">
           <p className="subheader">

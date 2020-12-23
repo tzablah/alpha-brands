@@ -14,14 +14,19 @@ const BrandsSection = ({ brands }) => {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
 
+  const handleResize = () => {
+    if (typeof window !== 'undefined') {
+      setWidth(window.innerWidth)
+    }
+  }
+
   useEffect(() => {
-    function handleResize() {
-      setWidth(window.innerWidth);
+    if (typeof window !== 'undefined') {
+      setWidth(window.innerWidth)
     }
     window.addEventListener("resize", handleResize);
-    handleResize();
     return () => window.removeEventListener("resize", handleResize);
-  }, [width]);
+  }, []);
 
   const brandClick = (element) => {
     setElement(element);
@@ -29,7 +34,7 @@ const BrandsSection = ({ brands }) => {
   };
 
   return (
-    <section id="brand-section" className={`${toggle ? 'mb-16 sm:mb-0' : 'mb-32 sm:mb-16'} sm:mt-9 md:mt-0 sm:px-2 flex justify-center`}>
+    <section id="brand-section" className={`${toggle ? 'mb-16 sm:mb-0' : 'mb-32 sm:mb-16'} sm:mt-9 md:mt-0 xl:px-2 flex justify-center`}>
       {(showModal || showCatalog) && (
         <Modal
           show={showModal || showCatalog}
@@ -68,17 +73,18 @@ const BrandsSection = ({ brands }) => {
           </div>
         </div>
         <div
-          className={`flex sm:justify-start -mx-3 sm:-mx-2 md:-mx-4 ${toggle && "flex-wrap flex-brands"
+          className={`flex sm:justify-start -mx-3 sm:-mx-2 lg:-mx-4 ${toggle && "flex-wrap flex-brands"
             }`}
         >
           {brands.edges.map((element, i) => (
+
             <button
               key={i}
               onClick={() => brandClick(element)}
-              className={`${toggle && "mb-20"
+              className={`${toggle && "mb-20 md:mb-10"
                 } image mx-2 sm:mx-1.5 md:mx-brandMarginMd lg:mx-brandMargin shadow-main hover:shadow-hov bg-white
               ${!toggle &&
-                (i > slideIndex + (width > 767 ? 3 : 2) || i < slideIndex) &&
+                (i > slideIndex + (width > 639 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
                 }`}
             >
