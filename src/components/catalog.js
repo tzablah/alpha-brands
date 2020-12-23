@@ -57,7 +57,7 @@ const Catalog = () => {
   };
   return (
     <div className="container mx-auto text-center py-8">
-      <p className="subheader">Catálogo de AlphaBrands</p>
+      <p className="subheader mt-8 sm:mt-0">Catálogo de AlphaBrands</p>
       <p className="mt-3 md:mt-4 secondary-text">
         Compártenos tu información para poder descargar nuestro
         <br className="hidden md:block xl:hidden" /> catálogo

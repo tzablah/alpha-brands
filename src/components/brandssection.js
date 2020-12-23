@@ -14,14 +14,19 @@ const BrandsSection = ({ brands }) => {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
 
+  const handleResize = () => {
+    if (typeof window !== 'undefined') {
+      setWidth(window.innerWidth)
+    }
+  }
+
   useEffect(() => {
-    function handleResize() {
-      setWidth(window.innerWidth);
+    if (typeof window !== 'undefined') {
+      setWidth(window.innerWidth)
     }
     window.addEventListener("resize", handleResize);
-    handleResize();
     return () => window.removeEventListener("resize", handleResize);
-  }, [width]);
+  }, []);
 
   const brandClick = (element) => {
     setElement(element);
@@ -72,13 +77,14 @@ const BrandsSection = ({ brands }) => {
             }`}
         >
           {brands.edges.map((element, i) => (
+
             <button
               key={i}
               onClick={() => brandClick(element)}
               className={`${toggle && "mb-20"
                 } image mx-2 sm:mx-1.5 md:mx-brandMarginMd lg:mx-brandMargin shadow-main hover:shadow-hov bg-white
               ${!toggle &&
-                (i > slideIndex + (width > 767 ? 3 : 2) || i < slideIndex) &&
+                (i > slideIndex + (width > 639 ? 3 : 2) || i < slideIndex) &&
                 "hidden"
                 }`}
             >
