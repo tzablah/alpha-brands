@@ -61,14 +61,14 @@ const Navbar = () => {
         />
       )}
       {open && mobileNav()}
-      <div className="fixed text-sm uppercase top-0 z-40 bg-white nav-container md:px-20 p-2 xl:px-32 flex w-full justify-start md:justify-between lg:justify-around items-center shadow-main">
-        <div className="flex justify-between items-center w-full xl:w-desktopsize">
+      <div className="fixed text-sm uppercase top-0 z-40 bg-white nav-container p-2 md:px-0 lg:px-12 flex w-full justify-start md:justify-between lg:justify-around items-center shadow-main">
+        <div className="navbar flex justify-between items-center w-full xl:w-desktopsize xl:mx-auto">
           <Link
             className="ml-5 md:ml-0 w-logoNav h-logoNav md:w-logoNavMd md:h-logoNavMd lg:h-logoNavLg lg:w-logoNavLg "
             title="Alpha Brands"
             to="/"
           >
-            <div className="md:h-10  ml-2 h-auto">
+            <div className="md:h-10 ml-2 md:ml-0 h-auto">
               <AlphaLogo />
             </div>
           </Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
           />
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden mr-5 md:mr-8 absolute z-20 right-0 pr-3"
+            className="lg:hidden mr-5 absolute md:relative z-20 right-0 pr-3 md:pr-0 md:mr-0"
           >
             <MenuImg />
           </button>

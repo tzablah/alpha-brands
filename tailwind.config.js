@@ -33,7 +33,6 @@ module.exports = {
         17: '68px',
         1.5: '10px',
         11: '44px',
-        3.5: '.875rem',
         nuestrasMarcas: '1.625rem',
         brandMarginMd: '10px',
         2.5: '0.625rem'

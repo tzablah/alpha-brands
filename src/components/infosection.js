@@ -13,8 +13,8 @@ const InfoSection = ({ image, position, text, title, id }) => {
       >
         <div
           className={`md:w-inputMd lg:w-infoSectionLg sm:flex sm:flex-wrap sm:flex-row sm:items-center ${position === "right"
-            ? "xl:mr-brandMargin lg:mr-3.5"
-            : "md:ml-3.5 xl:ml-brandMargin"
+            ? "xl:mr-brandMargin md:mr-5"
+            : "md:ml-5 xl:ml-brandMargin"
             }`}
         >
           <div className="flex justify-center items-center md:justify-start sm:w-full">
@@ -28,8 +28,8 @@ const InfoSection = ({ image, position, text, title, id }) => {
         </div>
         <div
           className={`md:w-inputMd lg:w-infoSectionLg flex justify-center ${position === "right"
-            ? "sm:justify-end md:ml-3.5 xl:ml-brandMargin"
-            : "sm:justify-start md:mr-3.5 xl:mr-brandMargin"
+            ? "sm:justify-end xl:ml-brandMargin"
+            : "sm:justify-start xl:mr-brandMargin"
             }`}
         >
           <div className="">
