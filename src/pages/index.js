@@ -11,11 +11,12 @@ import Modal from "../components/modal";
 import PrimaryButton from "../components/primary-button";
 import SEO from "../components/seo";
 //media video
-const alphaIntro = require("../images/media/1.mp4");
+const alphaIntro = require("../images/media/2.mp4");
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
   const { brands, contactImage } = data;
+
   return (
     <div>
       {(showModal || showCatalog) && (
@@ -59,7 +60,10 @@ export default function Home({ data }) {
           />
         </div>
         <BrandsSection brands={brands} />
-        <section id="nosotros" className="px-5 sm:mt-0 lg:mt-14 xl:mt-0 md:px-14 xl:px-16">
+        <section
+          id="nosotros"
+          className="px-5 sm:mt-0 lg:mt-14 xl:mt-0 md:px-14 xl:px-16"
+        >
           <div className="flex flex-col items-center w-full">
             <InfoSection
               title="NOSOTROS"
@@ -119,7 +123,7 @@ export const hero = graphql`
         }
       }
     }
-    brands: allContentfulAlphaBrands {
+    brands: allContentfulAlphaBrands(filter: { node_locale: { eq: "en-US" } }) {
       edges {
         node {
           title

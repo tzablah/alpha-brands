@@ -69,7 +69,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .flex-brands > button {
-  flex: 0 0 28%;
+  flex: 0 0 27.9%;
 }
 
 @media only screen and (max-width: 639px) {
@@ -118,7 +118,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 
-@media (min-width: 640px) and (max-width: 768px) {
+@media (min-width: 640px) and (max-width: 767px) {
   .flex-brand {
     flex: 1 0 28%;
   }
@@ -144,7 +144,7 @@ input[type="range"]::-webkit-slider-thumb {
     margin: 28px 0 0 13px;
   }
   .flex-brands > button {
-    flex: 0 0 21.58%;
+    flex: 0 0 21.1%;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -155,20 +155,46 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  #brand-section {
-    margin-right: 25px;
-    margin-left: 25px;
-  }
-}
-
 @media (min-width: 640px) and (max-width: 767px) {
   #brand-section {
-    margin-right: 27px;
-    margin-left: 27px;
+    max-width: 586px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
+  .flex-brands > button {
+    flex: 0 0 21.8%;
+  }
+  #brand-section, .navbar {
+    max-width: 718px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .flex-brand {
+    flex: 1 0 28%;
+  }
+  .brand-modal:first-child {
+    width: 215px;
+    height: 215px;
+    margin: 10px 176.5px 0 176.5px;
+    flex: 0 1 100%;
+  }
+  .brand-modal:nth-child(2){
+    width: 172px;
+    height: 172px;
+    margin: 28px 13px 0 0;
+  }
+  .brand-modal:nth-child(3){
+    width: 172px;
+    height: 172px;
+    margin: 28px 13px 0 13px;
+  }
+  .brand-modal:last-child {
+    width: 172px;
+    height: 172px;
+    margin: 28px 0 0 13px;
+  }
   .flex-brands > button {
     flex: 0 0 21.8%;
   }
@@ -188,10 +214,6 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 @media only screen and (min-width: 1025px) {
-  #brand-section {
-    margin-right: 135px;
-    margin-left: 135px;
-  }
   #nosotros {
     margin-right: 235px;
     margin-left: 235px;
@@ -201,9 +223,10 @@ input[type="range"]::-webkit-slider-thumb {
   .flex-brands > button {
     flex: 0 0 21.74%;
   }
-  #brand-section {
-    margin-right: 60px;
-    margin-left: 60px;
+  #brand-section, .navbar {
+    max-width: 904px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 @media only screen and (min-width: 1280px) {
