@@ -63,7 +63,7 @@ const ContactSection = () => {
               <h3 id="contacto" className="header text-black font-bold">
                 CONTACTO
               </h3>
-              <h4 className="secondary-text mt-1 mb-3.5 sm:mb-7 md:mb-6 md:mt-4">
+              <h4 className="secondary-text mt-1 mb-3 sm:mb-7 md:mb-6 md:mt-4">
                 Si te interesa saber más de nuestras marcas y sus productos,
               <br className="hidden sm:block" />
                 {""} ¡no dudes en contactarnos!

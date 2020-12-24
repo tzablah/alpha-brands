@@ -33,7 +33,6 @@ module.exports = {
         17: '68px',
         1.5: '10px',
         11: '44px',
-        3.5: '1.25rem',
         nuestrasMarcas: '1.625rem',
         brandMarginMd: '10px',
         2.5: '0.625rem'
@@ -67,6 +66,7 @@ module.exports = {
         brandIconTabletV: '160px',
         brandIconTablet: '203px',
         aboutSectionMd: '902px',
+        infosectionXl:'475px',
         infoSectionLg: '435px',
         aboutSectionM: '698px',
         aboutSectionSm: '570px',
