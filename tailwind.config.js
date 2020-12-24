@@ -66,6 +66,7 @@ module.exports = {
         brandIconTabletV: '160px',
         brandIconTablet: '203px',
         aboutSectionMd: '902px',
+        infosectionXl:'475px',
         infoSectionLg: '435px',
         aboutSectionM: '698px',
         aboutSectionSm: '570px',

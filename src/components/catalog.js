@@ -26,31 +26,31 @@ const Catalog = () => {
     });
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
     const formName = e.target;
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": formName.getAttribute("name"), ...form }),
-    })
-      .then((resp) => {
-        console.log("si llegamos", resp, form);
-        if (resp.status === 200) {
-          console.log(resp);
-          if (docuref.current === undefined) {
-            return AlphaResponse.fire({
-              title: <Title text="No se puede iniciar la descarga" sans />,
-              text: "Debes llenar los campos de Nombre y Email para continuar",
-              icon: "error",
-              confirmButtonText: "Ok",
-            });
-          }
-          return docuref.current.click();
-          //window.location.replace(`/success`);
-        }
+    e.preventDefault();
+    if (docuref.current === undefined) {
+      return AlphaResponse.fire({
+        title: <Title text="No se puede iniciar la descarga" sans />,
+        text: "Debes llenar los campos de Nombre y Email para continuar",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
+    } else {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": formName.getAttribute("name"), ...form }),
       })
-      .then(() => window.location.replace(`/`))
-      .catch((error) => alert(error));
+        .then((resp) => {
+          if (resp.status === 400) {
+          } else if (resp.status === 200) {
+            return docuref.current.click();
+            //window.location.replace(`/success`);
+          }
+        })
+        .then(() => window.location.replace(`/`))
+        .catch((error) => alert(error));
+    }
   };
   const handleDownloadCatalog = () => {
     return;
@@ -61,7 +61,8 @@ const Catalog = () => {
       <p className="mt-3 md:mt-4 secondary-text">
         Compártenos tu información para poder descargar nuestro
         <br className="hidden md:block xl:hidden" /> catálogo
-        <br className="hidden sm:block md:hidden xl:block" /> de productos completo.
+        <br className="hidden sm:block md:hidden xl:block" /> de productos
+        completo.
       </p>
       <form
         action="/success"
@@ -96,10 +97,11 @@ const Catalog = () => {
 
           <PrimaryButton
             type="submit"
-            className={`mt-7 btn-modal ${!valid && "opacity-50 cursor-not-allowed disabled"
-              }`}
+            className={`mt-7 btn-modal ${
+              !valid && "opacity-50 cursor-not-allowed disabled"
+            }`}
             title="DESCARGAR CATÁLOGO"
-          // onClick={() => handleDownloadCatalog()}
+            // onClick={() => handleDownloadCatalog()}
           />
         </div>
       </form>
