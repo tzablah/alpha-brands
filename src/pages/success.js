@@ -25,6 +25,18 @@ const Success = () => {
         <input placeholder="Correo electrónico" name="email" type="email" />
         <input placeholder="Teléfono (opcional)" name="phone" type="number" />
       </form> */}
+      <form
+        name="catalog"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        hidden
+      >
+        <input type="hidden" name="form-name" value="catalog" />
+        <input placeholder="Nombre" name="name" />
+        <input placeholder="Correo electrónico" name="email" type="email" />
+        <input placeholder="Teléfono (opcional)" name="phone" type="number" />
+      </form>
       <p className="text-2xl mb-12">Gracias por tu informacion</p>
       <Link to="/">
         <PrimaryButton title="VOLVER AL INICIO" className="w-full md:w-72" />
