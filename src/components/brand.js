@@ -22,7 +22,7 @@ const Brand = ({ node }) => {
         {imagen.map((img, i) => (
           <div
             key={i}
-            className="flex-brand brand-modal modal-image"
+            className="brand-modal modal-image"
           >
             <Img
               key={i}

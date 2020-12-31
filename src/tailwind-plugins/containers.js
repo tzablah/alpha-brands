@@ -27,7 +27,7 @@ module.exports = function ({ theme, addUtilities }) {
     },
     '.images-container': {
       '@media (min-width: 1280px)': {
-        width: '520px'
+        width: '527px'
       },
       '@media (min-width: 1024px) and (max-width: 1279px)': {
         width: '385px'
