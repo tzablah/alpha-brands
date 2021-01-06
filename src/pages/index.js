@@ -11,7 +11,7 @@ import Modal from "../components/modal";
 import PrimaryButton from "../components/primary-button";
 import SEO from "../components/seo";
 //media video
-const alphaIntro = require("../images/media/2.mp4");
+const alphaIntro = require("../images/media/1.mp4");
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
@@ -48,7 +48,7 @@ export default function Home({ data }) {
         <div className="w-full relative flex flex-col justify-center items-center hero-container">
           <h1
             id="mainTitle"
-            className="font-poppins max-w-xs sm:max-w-full px-4 text-center mt-14 text-2xl md:text-brandmd lg:text-brandlg font-extrabold text-white tracking-widest"
+            className="hidden font-poppins max-w-xs sm:max-w-full px-4 text-center mt-14 text-2xl md:text-brandmd lg:text-brandlg font-extrabold text-white tracking-widest"
           >
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
@@ -70,7 +70,7 @@ export default function Home({ data }) {
               id="#nosotros"
               image="nosotros.svg"
               position="right"
-              text="Sabemos que en la vida se aprecia una mano amiga y nosotros queremos brindártela. Nuestros productos son de alta calidad, sostenibles, innovadores y sobre todos accesibles para acompañarte a ti y a tu familia en el día a día."
+              text="Sabemos que en la vida se aprecia una mano amiga y nosotros queremos brindártela. Nuestros productos son de alta calidad, innovadores y sobre todo accesibles para acompañarte a ti y a tu familia en el día a día."
             />
             <InfoSection
               title="NUESTRO OBJETIVO"
@@ -85,8 +85,8 @@ export default function Home({ data }) {
               text={
                 <div>
                   <p>
-                    Actualmente vendemos a distribuidores en El Salvador,
-                    Honduras, Guatemala y Costa Rica.
+                    Actualmente podes encontrar nuestros productos en El
+                    Salvador, Honduras, Guatemala, y Costa Rica.
                   </p>
                   <button
                     className="mt-4 anchor-text"
