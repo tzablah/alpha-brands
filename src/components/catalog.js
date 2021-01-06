@@ -42,16 +42,18 @@ const Catalog = () => {
         body: encode({ "form-name": formName.getAttribute("name"), ...form }),
       })
         .then((resp) => {
-          if (resp.status >= 400 <= 404) {
+          if (resp.status == 404) {
             console.log(resp.status);
-            return AlphaResponse.fire({
+            AlphaResponse.fire({
               title: <Title text="No se puede iniciar la descarga" sans />,
               text: "A Ocurrido un error en el envio de datos",
               icon: "error",
               confirmButtonText: "Ok",
             });
+          } else {
+            return docuref.current.click();
           }
-          return docuref.current.click();
+
           //window.location.replace(`/success`);
         })
         .then(() => setTimeout(() => window.location.replace(`/`), 3000))
