@@ -35,30 +35,28 @@ const Catalog = () => {
         icon: "error",
         confirmButtonText: "Ok",
       });
-    } else {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": formName.getAttribute("name"), ...form }),
-      })
-        .then((resp) => {
-          if (resp.status == 404) {
-            console.log(resp.status);
-            AlphaResponse.fire({
-              title: <Title text="No se puede iniciar la descarga" sans />,
-              text: "A Ocurrido un error en el envio de datos",
-              icon: "error",
-              confirmButtonText: "Ok",
-            });
-          } else {
-            return docuref.current.click();
-          }
-
-          //window.location.replace(`/success`);
-        })
-        .then(() => setTimeout(() => window.location.replace(`/`), 3000))
-        .catch((error) => alert(error));
     }
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": formName.getAttribute("name"), ...form }),
+    })
+      .then((resp) => {
+        console.log(resp.status);
+        if (resp.status === 200) {
+          docuref.current.click();
+        }
+      })
+      .then(() => setTimeout(() => window.location.replace(`/`), 2000))
+      .catch((error) =>
+        AlphaResponse.fire({
+          title: <Title text="No se puede iniciar la descarga" sans />,
+          text: "A Ocurrido un error en el envio de datos",
+          error,
+          icon: "error",
+          confirmButtonText: "Ok",
+        })
+      );
   };
   const handleDownloadCatalog = () => {
     return;
