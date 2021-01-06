@@ -44,16 +44,15 @@ const Catalog = () => {
         .then((resp) => {
           if (resp.status >= 400 <= 404) {
             console.log(resp.status);
-            AlphaResponse.fire({
+            return AlphaResponse.fire({
               title: <Title text="No se puede iniciar la descarga" sans />,
               text: "A Ocurrido un error en el envio de datos",
               icon: "error",
               confirmButtonText: "Ok",
             });
-          } else if (resp.status === 200) {
-            return docuref.current.click();
-            //window.location.replace(`/success`);
           }
+          return docuref.current.click();
+          //window.location.replace(`/success`);
         })
         .then(() => setTimeout(() => window.location.replace(`/`), 3000))
         .catch((error) => alert(error));
