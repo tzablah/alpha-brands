@@ -12,6 +12,7 @@ import PrimaryButton from "../components/primary-button";
 import SEO from "../components/seo";
 //media video
 import alphaIntro from "../images/media/1.mp4";
+import alphaIntro2 from "../images/media/1.webm";
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
@@ -42,6 +43,7 @@ export default function Home({ data }) {
           autoPlay
           muted
         >
+          <source src={alphaIntro2} type="video/webm" />
           <source src={alphaIntro} type="video/mp4" />
           Your browser does not support HTML5 video
         </video>

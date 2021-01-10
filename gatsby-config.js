@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-ffmpeg`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -66,8 +67,8 @@ module.exports = {
         background_color: `#F49725`,
         theme_color: `#3380CC`,
         display: `standalone`,
-        icon: `${__dirname}/src/images/assets/favicon.png`
-      }
-    }
+        icon: `${__dirname}/src/images/assets/favicon.png`,
+      },
+    },
   ],
 };
