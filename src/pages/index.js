@@ -11,7 +11,7 @@ import Modal from "../components/modal";
 import PrimaryButton from "../components/primary-button";
 import SEO from "../components/seo";
 //media video
-const alphaIntro = require("../images/media/1.mp4");
+import alphaIntro from "../images/media/1.mp4";
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
