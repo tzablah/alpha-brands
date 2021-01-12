@@ -11,8 +11,6 @@ import Modal from "../components/modal";
 import PrimaryButton from "../components/primary-button";
 import SEO from "../components/seo";
 //media video
-import Plyr from "plyr-react";
-import "plyr-react/dist/plyr.css";
 import alphaIntro from "../images/media/1.mp4";
 import alphaIntro2 from "../images/media/1.webm";
 
@@ -60,7 +58,7 @@ export default function Home({ data }) {
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
           <PrimaryButton
-            className="hidden sm:flex btn-hero mt-5 md:mt-12"
+            className="hidden sm:flex btn-hero mt-5 md:mt-12 md:hidden"
             size="large"
             title="DESCARGAR CATÁLOGO"
             onClick={() => setShowCatalog(true)}
