@@ -11,8 +11,11 @@ import Modal from "../components/modal";
 import PrimaryButton from "../components/primary-button";
 import SEO from "../components/seo";
 //media video
+import Plyr from "plyr-react";
+import "plyr-react/dist/plyr.css";
 import alphaIntro from "../images/media/1.mp4";
 import alphaIntro2 from "../images/media/1.webm";
+
 export default function Home({ data }) {
   const [showModal, setShowModal] = useState(false);
   const [showCatalog, setShowCatalog] = useState(false);
@@ -37,11 +40,13 @@ export default function Home({ data }) {
         <SEO />
 
         <video
+          id="player"
           className="absolute hero-container"
-          preload="auto"
+          preload="metadata"
           loop
           autoPlay
           muted
+          playsInline
         >
           <source src={alphaIntro2} type="video/webm" />
           <source src={alphaIntro} type="video/mp4" />
@@ -50,7 +55,7 @@ export default function Home({ data }) {
         <div className="w-full relative flex flex-col justify-center items-center hero-container">
           <h1
             id="mainTitle"
-            className="hidden font-poppins max-w-xs sm:max-w-full px-4 text-center mt-14 text-2xl md:text-brandmd lg:text-brandlg font-extrabold text-white tracking-widest"
+            className="mb-6 hidden font-poppins max-w-xs sm:max-w-full px-4 text-center mt-14 text-2xl md:text-brandmd lg:text-brandlg font-extrabold text-white tracking-widest"
           >
             MARCAS INNOVADORAS DE LATINOÁMERICA
           </h1>
